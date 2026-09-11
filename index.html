@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FullStop STORE</title>
 
 <style>
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -19,185 +28,391 @@ html {
 }
 
 body {
-    background: #090909;
+
+    background: #080808;
+
     color: white;
+
 }
 
-/* ================= HEADER ================= */
+
+/* =========================
+   HEADER
+========================= */
 
 header {
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
     padding: 18px 8%;
 
     background: #0d0d0d;
+
     border-bottom: 2px solid #7b2cff;
+
 }
+
 
 .logo {
+
     font-size: 25px;
+
     font-weight: bold;
+
 }
+
 
 .logo span {
+
     color: #8f3cff;
+
 }
+
 
 nav {
+
     display: flex;
+
     gap: 25px;
+
 }
+
 
 nav a {
+
     color: white;
+
     text-decoration: none;
+
     font-weight: bold;
+
     transition: 0.3s;
+
 }
+
 
 nav a:hover {
+
     color: #9d5cff;
+
 }
+
+
+/* BOTÃO CARRINHO */
 
 .cart-button {
+
     background: #7b2cff;
+
     border: none;
-    padding: 10px 18px;
+
+    padding: 11px 18px;
+
     border-radius: 8px;
+
     color: white;
+
     font-weight: bold;
+
     cursor: pointer;
+
+    transition: 0.3s;
+
 }
 
-/* ================= INÍCIO ================= */
+
+.cart-button:hover {
+
+    background: #9d5cff;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
+
     min-height: 500px;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
+    padding: 40px;
+
     background:
-    radial-gradient(circle at center, #401080, #090909 65%);
+
+    radial-gradient(
+        circle at center,
+        #421080,
+        #080808 70%
+    );
+
 }
+
 
 .hero h1 {
-    font-size: 55px;
+
+    font-size: 60px;
+
     margin-bottom: 15px;
+
 }
+
 
 .hero h1 span {
-    color: #8f3cff;
+
+    color: #9d5cff;
+
 }
+
 
 .hero p {
-    font-size: 18px;
+
+    font-size: 19px;
+
     color: #cccccc;
+
     margin-bottom: 30px;
+
 }
 
+
 .hero button {
+
     padding: 15px 30px;
 
     border: none;
+
     border-radius: 10px;
 
     background: #7b2cff;
+
     color: white;
 
     font-size: 17px;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0px 0px 20px #7b2cff;
+    box-shadow:
+
+    0px 0px 25px
+
+    rgba(123, 44, 255, 0.7);
+
+    transition: 0.3s;
+
 }
 
-/* ================= PRODUTOS ================= */
+
+.hero button:hover {
+
+    transform: scale(1.05);
+
+    background: #9d5cff;
+
+}
+
+
+/* =========================
+   PRODUTOS
+========================= */
 
 .products-section {
+
     padding: 70px 8%;
+
 }
 
-.section-title {
+
+.category-title {
+
+    font-size: 30px;
+
+    margin-top: 60px;
+
+    margin-bottom: 30px;
+
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 10px;
+
 }
 
-.section-title span {
-    color: #8f3cff;
+
+/* TÍTULO MÍTICAS */
+
+.mythical-title {
+
+    color: #b45cff;
+
 }
+
+
+/* TÍTULO LENDÁRIAS */
+
+.legendary-title {
+
+    color: #ffd54a;
+
+}
+
 
 .subtitle {
+
     text-align: center;
+
     color: #aaa;
+
     margin-bottom: 40px;
+
 }
 
+
 .products {
+
     display: grid;
 
     grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
+
+    repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
 
     gap: 25px;
+
 }
 
-/* ================= CARD ================= */
+
+/* =========================
+   CARD PRODUTO
+========================= */
 
 .product {
+
     background: #111;
 
-    border: 1px solid #2b2b2b;
+    border: 1px solid #292929;
+
     border-radius: 15px;
 
-    padding: 25px;
+    padding: 20px;
 
     text-align: center;
 
     transition: 0.3s;
+
 }
 
+
 .product:hover {
-    transform: translateY(-8px);
+
+    transform:
+
+    translateY(-8px);
 
     border-color: #7b2cff;
 
     box-shadow:
-    0px 0px 20px
+
+    0px 0px 25px
+
     rgba(123, 44, 255, 0.5);
+
 }
+
+
+/* =========================
+   IMAGEM DA FRUTA
+========================= */
 
 .product-icon {
-    font-size: 55px;
+
+    width: 100%;
+
+    height: 150px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
     margin-bottom: 15px;
+
 }
+
+
+.product-icon img {
+
+    max-width: 130px;
+
+    max-height: 130px;
+
+    object-fit: contain;
+
+    transition: 0.3s;
+
+}
+
+
+.product:hover img {
+
+    transform:
+
+    scale(1.08);
+
+}
+
 
 .product h3 {
+
     font-size: 22px;
+
     margin-bottom: 10px;
+
 }
 
-.price {
-    color: #9d5cff;
 
-    font-size: 22px;
+/* =========================
+   PREÇO
+========================= */
+
+.price {
+
+    color: #a45cff;
+
+    font-size: 21px;
+
     font-weight: bold;
 
     margin-bottom: 18px;
+
 }
+
+
+/* =========================
+   BOTÃO COMPRAR
+========================= */
 
 .product button {
 
@@ -206,6 +421,7 @@ nav a:hover {
     padding: 12px;
 
     border: none;
+
     border-radius: 8px;
 
     background: #7b2cff;
@@ -213,29 +429,42 @@ nav a:hover {
     color: white;
 
     font-weight: bold;
+
     cursor: pointer;
 
     transition: 0.3s;
+
 }
+
 
 .product button:hover {
+
     background: #9d5cff;
+
 }
 
-/* ================= CARRINHO ================= */
+
+/* =========================
+   CARRINHO
+========================= */
 
 .cart {
+
     position: fixed;
 
-    right: -400px;
+    right: -420px;
+
     top: 0;
 
-    width: 350px;
+    width: 380px;
+
     height: 100vh;
 
     background: #101010;
 
-    border-left: 2px solid #7b2cff;
+    border-left:
+
+    2px solid #7b2cff;
 
     z-index: 2000;
 
@@ -244,21 +473,33 @@ nav a:hover {
     transition: 0.4s;
 
     overflow-y: auto;
+
 }
+
 
 .cart.active {
+
     right: 0;
+
 }
+
 
 .cart h2 {
+
     margin-bottom: 25px;
+
 }
 
+
+/* FECHAR */
+
 .close-cart {
+
     position: absolute;
 
+    top: 12px;
+
     right: 20px;
-    top: 15px;
 
     background: none;
 
@@ -266,41 +507,72 @@ nav a:hover {
 
     color: white;
 
-    font-size: 28px;
+    font-size: 30px;
 
     cursor: pointer;
+
 }
 
+
+/* ITEM */
+
 .cart-item {
+
+    background: #191919;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.cart-item-info {
 
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
-    background: #181818;
-
-    padding: 12px;
-
-    border-radius: 8px;
-
-    margin-bottom: 12px;
 }
 
-.cart-item button {
+
+/* CONTROLES */
+
+.quantity-controls {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+}
+
+
+.quantity-controls button {
 
     background: #7b2cff;
 
-    border: none;
-
     color: white;
 
-    padding: 6px 10px;
+    border: none;
 
-    border-radius: 5px;
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 6px;
 
     cursor: pointer;
+
 }
+
+
+/* TOTAL */
 
 .total {
 
@@ -309,11 +581,13 @@ nav a:hover {
     font-size: 22px;
 
     font-weight: bold;
+
 }
 
-.discord-button {
 
-    display: block;
+/* FINALIZAR */
+
+.discord-button {
 
     width: 100%;
 
@@ -321,24 +595,33 @@ nav a:hover {
 
     padding: 15px;
 
-    text-align: center;
+    border: none;
 
-    text-decoration: none;
+    border-radius: 8px;
 
     background: #7b2cff;
 
     color: white;
 
-    border-radius: 8px;
-
     font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
 }
+
 
 .discord-button:hover {
+
     background: #9d5cff;
+
 }
 
-/* ================= SOBRE ================= */
+
+/* =========================
+   SOBRE
+========================= */
 
 .about {
 
@@ -348,59 +631,81 @@ nav a:hover {
 
     background: #101010;
 
-    border-top: 1px solid #222;
 }
+
 
 .about h2 {
 
-    font-size: 35px;
+    font-size: 32px;
 
     margin-bottom: 20px;
+
 }
 
-.about p {
 
-    color: #bbb;
+.about p {
 
     max-width: 700px;
 
     margin: auto;
 
+    color: #aaa;
+
     line-height: 1.7;
+
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
+
+    background: #050505;
 
     text-align: center;
 
     padding: 25px;
 
-    background: #070707;
-
     color: #777;
+
 }
 
-/* ================= CELULAR ================= */
+
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 700px) {
 
     header {
+
         padding: 15px 5%;
+
     }
+
 
     nav {
+
         display: none;
+
     }
+
 
     .hero h1 {
-        font-size: 38px;
+
+        font-size: 40px;
+
     }
 
+
     .cart {
+
         width: 100%;
+
         right: -100%;
+
     }
 
 }
@@ -409,46 +714,91 @@ footer {
 
 </head>
 
+
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
 <div class="logo">
+
 FullStop <span>STORE</span>
+
 </div>
+
 
 <nav>
 
-<a href="#inicio">Início</a>
+<a href="#inicio">
 
-<a href="#frutas">Frutas</a>
+Início
 
-<a href="#sobre">Sobre</a>
+</a>
+
+<a href="#miticas">
+
+Míticas
+
+</a>
+
+<a href="#lendarias">
+
+Lendárias
+
+</a>
+
+<a href="#sobre">
+
+Sobre
+
+</a>
 
 </nav>
 
-<button class="cart-button" onclick="openCart()">
 
-🛒 Carrinho
-(<span id="cart-count">0</span>)
+<button
+class="cart-button"
+onclick="openCart()">
+
+🛒
+
+<span id="cart-count">
+
+0
+
+</span>
 
 </button>
 
 </header>
 
 
-<!-- INÍCIO -->
 
-<section class="hero" id="inicio">
+<!-- =========================
+     INÍCIO
+========================= -->
+
+<section
+class="hero"
+id="inicio">
+
 
 <h1>
 
-FULLSTOP <span>STORE</span>
+FULLSTOP
+
+<span>
+
+STORE
+
+</span>
 
 </h1>
+
 
 <p>
 
@@ -456,28 +806,43 @@ FULLSTOP <span>STORE</span>
 
 </p>
 
-<button onclick="document.getElementById('frutas').scrollIntoView()">
 
-VER PRODUTOS
+<button
+onclick="document.getElementById('miticas').scrollIntoView()">
+
+VER FRUTAS
 
 </button>
+
 
 </section>
 
 
-<!-- FRUTAS -->
 
-<section class="products-section" id="frutas">
+<!-- =========================
+     PRODUTOS
+========================= -->
 
-<h2 class="section-title">
+<section
+class="products-section">
 
-🍎 <span>FRUTAS</span>
+
+<!-- =========================
+     MÍTICAS
+========================= -->
+
+<h2
+id="miticas"
+class="category-title mythical-title">
+
+🟣 FRUTAS MÍTICAS
 
 </h2>
 
+
 <p class="subtitle">
 
-Escolha sua fruta e adicione ao carrinho.
+Frutas Míticas disponíveis na FullStop STORE
 
 </p>
 
@@ -485,149 +850,17 @@ Escolha sua fruta e adicione ao carrinho.
 <div class="products">
 
 
-<!-- BUDDHA -->
-
-<div class="product">
-
-<div class="product-icon">🟡</div>
-
-<h3>Buddha</h3>
-
-<div class="price">
-
-R$ 5,00
-
-</div>
-
-<button onclick="addToCart('Buddha', 5)">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-
-<!-- PORTAL -->
-
-<div class="product">
-
-<div class="product-icon">🌀</div>
-
-<h3>Portal</h3>
-
-<div class="price">
-
-R$ 6,00
-
-</div>
-
-<button onclick="addToCart('Portal', 6)">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-
-<!-- DOUGH -->
-
-<div class="product">
-
-<div class="product-icon">🍩</div>
-
-<h3>Dough</h3>
-
-<div class="price">
-
-R$ 8,00
-
-</div>
-
-<button onclick="addToCart('Dough', 8)">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-
-<!-- MAMMOTH -->
-
-<div class="product">
-
-<div class="product-icon">🦣</div>
-
-<h3>Mammoth</h3>
-
-<div class="price">
-
-R$ 6,00
-
-</div>
-
-<button onclick="addToCart('Mammoth', 6)">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-
-<!-- T-REX -->
-
-<div class="product">
-
-<div class="product-icon">🦖</div>
-
-<h3>T-Rex</h3>
-
-<div class="price">
-
-R$ 6,00
-
-</div>
-
-<button onclick="addToCart('T-Rex', 6)">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-
-<!-- SPIRIT -->
-
-<div class="product">
-
-<div class="product-icon">👻</div>
-
-<h3>Spirit</h3>
-
-<div class="price">
-
-R$ 8,00
-
-</div>
-
-<button onclick="addToCart('Spirit', 8)">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-
 <!-- CONTROL -->
 
 <div class="product">
 
-<div class="product-icon">🎮</div>
+<div class="product-icon">
+
+<img
+src="imagens/control.png"
+alt="Control">
+
+</div>
 
 <h3>Control</h3>
 
@@ -637,7 +870,8 @@ R$ 20,00
 
 </div>
 
-<button onclick="addToCart('Control', 20)">
+<button
+onclick="addToCart('Control', 20)">
 
 Adicionar ao carrinho
 
@@ -646,21 +880,29 @@ Adicionar ao carrinho
 </div>
 
 
-<!-- RUMBLE -->
+
+<!-- VENOM -->
 
 <div class="product">
 
-<div class="product-icon">⚡</div>
+<div class="product-icon">
 
-<h3>Rumble</h3>
-
-<div class="price">
-
-R$ 20,00
+<img
+src="imagens/venom.png"
+alt="Venom">
 
 </div>
 
-<button onclick="addToCart('Rumble', 20)">
+<h3>Venom</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Venom', 0)">
 
 Adicionar ao carrinho
 
@@ -669,34 +911,142 @@ Adicionar ao carrinho
 </div>
 
 
-<!-- KITSUNE -->
+
+<!-- SPIRIT -->
 
 <div class="product">
 
-<div class="product-icon">🦊</div>
+<div class="product-icon">
 
-<h3>Kitsune</h3>
-
-<div class="price">
-
-R$ 35,00
+<img
+src="imagens/spirit.png"
+alt="Spirit">
 
 </div>
 
-<button onclick="addToCart('Kitsune', 35)">
+<h3>Spirit</h3>
+
+<div class="price">
+
+R$ 8,00
+
+</div>
+
+<button
+onclick="addToCart('Spirit', 8)">
 
 Adicionar ao carrinho
 
 </button>
 
 </div>
+
+
+
+<!-- SHADOW -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/shadow.png"
+alt="Shadow">
+
+</div>
+
+<h3>Shadow</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Shadow', 0)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- DOUGH -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/dough.png"
+alt="Dough">
+
+</div>
+
+<h3>Dough</h3>
+
+<div class="price">
+
+R$ 8,00
+
+</div>
+
+<button
+onclick="addToCart('Dough', 8)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- LEOPARD -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/leopard.png"
+alt="Leopard">
+
+</div>
+
+<h3>Leopard</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Leopard', 0)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
 
 
 <!-- DRAGON -->
 
 <div class="product">
 
-<div class="product-icon">🐉</div>
+<div class="product-icon">
+
+<img
+src="imagens/dragon.png"
+alt="Dragon">
+
+</div>
 
 <h3>Dragon</h3>
 
@@ -706,7 +1056,101 @@ R$ 75,00
 
 </div>
 
-<button onclick="addToCart('Dragon', 75)">
+<button
+onclick="addToCart('Dragon', 75)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- KITSUNE -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/kitsune.png"
+alt="Kitsune">
+
+</div>
+
+<h3>Kitsune</h3>
+
+<div class="price">
+
+R$ 35,00
+
+</div>
+
+<button
+onclick="addToCart('Kitsune', 35)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- T-REX -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/trex.png"
+alt="T-Rex">
+
+</div>
+
+<h3>T-Rex</h3>
+
+<div class="price">
+
+R$ 6,00
+
+</div>
+
+<button
+onclick="addToCart('T-Rex', 6)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- MAMMOTH -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/mammoth.png"
+alt="Mammoth">
+
+</div>
+
+<h3>Mammoth</h3>
+
+<div class="price">
+
+R$ 6,00
+
+</div>
+
+<button
+onclick="addToCart('Mammoth', 6)">
 
 Adicionar ao carrinho
 
@@ -717,35 +1161,288 @@ Adicionar ao carrinho
 
 </div>
 
+
+
+<!-- =========================
+     LENDÁRIAS
+========================= -->
+
+<h2
+id="lendarias"
+class="category-title legendary-title">
+
+🟡 FRUTAS LENDÁRIAS
+
+</h2>
+
+
+<p class="subtitle">
+
+Frutas Lendárias disponíveis na FullStop STORE
+
+</p>
+
+
+<div class="products">
+
+
+<!-- BLIZZARD -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/blizzard.png"
+alt="Blizzard">
+
+</div>
+
+<h3>Blizzard</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Blizzard', 0)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- RUMBLE -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/rumble.png"
+alt="Rumble">
+
+</div>
+
+<h3>Rumble</h3>
+
+<div class="price">
+
+R$ 20,00
+
+</div>
+
+<button
+onclick="addToCart('Rumble', 20)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- PORTAL -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/portal.png"
+alt="Portal">
+
+</div>
+
+<h3>Portal</h3>
+
+<div class="price">
+
+R$ 6,00
+
+</div>
+
+<button
+onclick="addToCart('Portal', 6)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- PHOENIX -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/phoenix.png"
+alt="Phoenix">
+
+</div>
+
+<h3>Phoenix</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Phoenix', 0)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- SOUND -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/sound.png"
+alt="Sound">
+
+</div>
+
+<h3>Sound</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Sound', 0)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- PAIN -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/pain.png"
+alt="Pain">
+
+</div>
+
+<h3>Pain</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Pain', 0)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+
+<!-- GRAVITY -->
+
+<div class="product">
+
+<div class="product-icon">
+
+<img
+src="imagens/gravity.png"
+alt="Gravity">
+
+</div>
+
+<h3>Gravity</h3>
+
+<div class="price">
+
+R$ 0,00
+
+</div>
+
+<button
+onclick="addToCart('Gravity', 0)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+</div>
+
+
 </section>
 
 
-<!-- SOBRE -->
 
-<section class="about" id="sobre">
+<!-- =========================
+     SOBRE
+========================= -->
+
+<section
+class="about"
+id="sobre">
+
 
 <h2>
 
-🟣 Sobre a FullStop STORE
+🟣 FullStop STORE
 
 </h2>
+
 
 <p>
 
 Bem-vindo à FullStop STORE!
 
-Aqui você encontra produtos relacionados ao Blox Fruits.
-
-Escolha seus produtos, adicione ao carrinho
-e entre em contato pelo nosso Discord para
-realizar seu pedido.
+Escolha suas frutas favoritas,
+adicione ao carrinho e finalize
+seu pedido pelo nosso Discord.
 
 </p>
+
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -754,12 +1451,19 @@ realizar seu pedido.
 </footer>
 
 
-<!-- CARRINHO -->
 
-<div class="cart" id="cart">
+<!-- =========================
+     CARRINHO
+========================= -->
+
+<div
+class="cart"
+id="cart">
 
 
-<button class="close-cart" onclick="closeCart()">
+<button
+class="close-cart"
+onclick="closeCart()">
 
 × 
 
@@ -780,24 +1484,35 @@ realizar seu pedido.
 
 <div class="total">
 
-Total: R$ <span id="total">0</span>
+💰 Total:
+
+R$
+
+<span id="total">
+
+0,00
+
+</span>
 
 </div>
 
 
-<a
-href="https://discord.gg/unYvTKkX4"
-target="_blank"
-class="discord-button">
+<button
+class="discord-button"
+onclick="finalizarPedido()">
 
-💬 FINALIZAR PEDIDO NO DISCORD
+💬 FINALIZAR PEDIDO
 
-</a>
+</button>
 
 
 </div>
 
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
@@ -805,7 +1520,9 @@ class="discord-button">
 let cart = [];
 
 
-/* ABRIR CARRINHO */
+/* =========================
+   ABRIR CARRINHO
+========================= */
 
 function openCart() {
 
@@ -817,7 +1534,9 @@ document
 }
 
 
-/* FECHAR CARRINHO */
+/* =========================
+   FECHAR CARRINHO
+========================= */
 
 function closeCart() {
 
@@ -829,42 +1548,107 @@ document
 }
 
 
-/* ADICIONAR PRODUTO */
+/* =========================
+   ADICIONAR PRODUTO
+========================= */
 
 function addToCart(name, price) {
+
+
+let product = cart.find(
+
+item => item.name === name
+
+);
+
+
+/* PRODUTO JÁ EXISTE */
+
+if (product) {
+
+product.quantity++;
+
+}
+
+
+/* NOVO PRODUTO */
+
+else {
 
 cart.push({
 
 name: name,
 
-price: price
+price: price,
+
+quantity: 1
 
 });
 
+}
+
+
+updateCart();
+
+openCart();
+
+}
+
+
+/* =========================
+   AUMENTAR
+========================= */
+
+function increaseQuantity(index) {
+
+cart[index].quantity++;
+
 updateCart();
 
 }
 
 
-/* REMOVER PRODUTO */
+/* =========================
+   DIMINUIR
+========================= */
 
-function removeFromCart(index) {
+function decreaseQuantity(index) {
+
+
+if (
+
+cart[index].quantity > 1
+
+) {
+
+cart[index].quantity--;
+
+}
+
+
+else {
 
 cart.splice(index, 1);
 
+}
+
+
 updateCart();
 
 }
 
 
-/* ATUALIZAR CARRINHO */
+/* =========================
+   ATUALIZAR CARRINHO
+========================= */
 
 function updateCart() {
 
 
 let cartItems =
 
-document.getElementById("cart-items");
+document
+.getElementById("cart-items");
 
 
 cartItems.innerHTML = "";
@@ -872,14 +1656,47 @@ cartItems.innerHTML = "";
 
 let total = 0;
 
+let quantityTotal = 0;
+
+
+/* CARRINHO VAZIO */
+
+if (cart.length === 0) {
+
+cartItems.innerHTML =
+
+"<p style='color:#888'>Seu carrinho está vazio.</p>";
+
+}
+
 
 /* PRODUTOS */
 
-cart.forEach(function(item, index) {
+cart.forEach(
+
+function(item, index) {
 
 
-total += item.price;
+let subtotal =
 
+item.price *
+
+item.quantity;
+
+
+/* TOTAL */
+
+total += subtotal;
+
+
+/* QUANTIDADE */
+
+quantityTotal +=
+
+item.quantity;
+
+
+/* MOSTRAR ITEM */
 
 cartItems.innerHTML +=
 
@@ -887,44 +1704,248 @@ cartItems.innerHTML +=
 
 <div class="cart-item">
 
+
+<div class="cart-item-info">
+
+
 <div>
 
-<b>${item.name}</b>
+<b>
+
+${item.name}
+
+</b>
 
 <br>
 
-R$ ${item.price},00
+R$ ${item.price
+.toFixed(2)
+.replace(".", ",")}
 
 </div>
 
 
-<button onclick="removeFromCart(${index})">
+<div>
 
-Remover
+<b>
+
+R$
+
+${subtotal
+.toFixed(2)
+.replace(".", ",")}
+
+</b>
+
+</div>
+
+
+</div>
+
+
+<div class="quantity-controls">
+
+
+<button
+
+onclick="decreaseQuantity(${index})">
+
+−
+
+</button>
+
+
+<span>
+
+${item.quantity}
+
+</span>
+
+
+<button
+
+onclick="increaseQuantity(${index})">
+
++
 
 </button>
 
 
 </div>
 
+
+</div>
+
 `;
 
-});
+}
+
+);
 
 
 /* TOTAL */
 
 document
 .getElementById("total")
-.innerText = total.toFixed(2)
+.innerText =
+
+total
+.toFixed(2)
 .replace(".", ",");
 
 
-/* QUANTIDADE */
+/* CONTADOR */
 
 document
 .getElementById("cart-count")
-.innerText = cart.length;
+.innerText =
+
+quantityTotal;
+
+
+}
+
+
+/* =========================
+   FINALIZAR PEDIDO
+========================= */
+
+function finalizarPedido() {
+
+
+if (
+
+cart.length === 0
+
+) {
+
+alert(
+
+"Seu carrinho está vazio!"
+
+);
+
+return;
+
+}
+
+
+/* TEXTO DO PEDIDO */
+
+let pedido =
+
+`🟣 PEDIDO - FULLSTOP STORE 🟣
+
+Olá! Gostaria de fazer um pedido.
+
+📦 PRODUTOS:
+
+`;
+
+
+let total = 0;
+
+
+/* PRODUTOS */
+
+cart.forEach(
+
+function(item) {
+
+
+let subtotal =
+
+item.price *
+
+item.quantity;
+
+
+/* ADICIONAR TEXTO */
+
+pedido +=
+
+`• ${item.name}
+
+Quantidade: ${item.quantity}
+
+Subtotal: R$ ${subtotal
+.toFixed(2)
+.replace(".", ",")}
+
+`;
+
+
+/* TOTAL */
+
+total += subtotal;
+
+}
+
+);
+
+
+/* FINAL */
+
+pedido +=
+
+`
+
+💰 TOTAL:
+
+R$ ${total
+.toFixed(2)
+.replace(".", ",")}
+
+
+Aguardo atendimento! 🟣
+
+`;
+
+
+/* COPIAR */
+
+navigator.clipboard
+
+.writeText(pedido)
+
+.then(
+
+function() {
+
+
+alert(
+
+"✅ Pedido copiado! O Discord será aberto agora. Cole a mensagem no canal de pedidos."
+
+);
+
+
+window.open(
+
+"https://discord.gg/unYvTKkX4",
+
+"_blank"
+
+);
+
+}
+
+)
+
+.catch(
+
+function() {
+
+
+alert(
+
+"Não foi possível copiar o pedido automaticamente."
+
+);
+
+}
+
+);
 
 
 }
