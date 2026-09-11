@@ -12,826 +12,1271 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
     background: #080808;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
-/* HEADER */
+/* CABEÇALHO */
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 18px 8%;
-
-    background: #0d0d0d;
-    border-bottom: 2px solid #7b2cff;
-}
-
-.logo {
-    font-size: 26px;
-    font-weight: bold;
-}
-
-.logo span {
-    color: #9d5cff;
-}
-
-nav {
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #9d5cff;
-}
-
-.cart-button {
-    background: #7b2cff;
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-
-    padding: 11px 18px;
-
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* HERO */
-
-.hero {
-    min-height: 450px;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
+    background: #111;
+    padding: 20px;
     text-align: center;
-
-    background:
-    radial-gradient(circle, #421080, #080808 70%);
-
-    padding: 30px;
+    border-bottom: 2px solid #ed1c24;
 }
 
-.hero h1 {
-    font-size: 55px;
-    margin-bottom: 15px;
+header h1 {
+    color: #ff2b35;
+    font-size: 32px;
 }
 
-.hero h1 span {
-    color: #9d5cff;
-}
-
-.hero p {
-    color: #ccc;
-    margin-bottom: 25px;
-    font-size: 18px;
-}
-
-.hero button {
-    padding: 14px 28px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #7b2cff;
-    color: white;
-
-    font-weight: bold;
-    cursor: pointer;
+header p {
+    color: #aaa;
+    margin-top: 5px;
 }
 
 /* PRODUTOS */
 
-.products-section {
-    padding: 60px 8%;
-}
+.produtos {
 
-.category-title {
-    text-align: center;
-    font-size: 32px;
+    max-width: 1100px;
 
-    margin-top: 40px;
-    margin-bottom: 10px;
-}
+    margin: 30px auto;
 
-.mythical-title {
-    color: #b45cff;
-}
+    padding: 10px;
 
-.legendary-title {
-    color: #ffd54a;
-}
-
-.subtitle {
-    text-align: center;
-    color: #aaa;
-
-    margin-bottom: 35px;
-}
-
-.products {
     display: grid;
 
-    grid-template-columns:
-    repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 22px;
+    gap: 18px;
+
 }
 
 /* CARD */
 
-.product {
-    background: #111;
+.produto {
+
+    background: #111216;
 
     border: 1px solid #292929;
-    border-radius: 15px;
 
-    padding: 20px;
+    border-radius: 18px;
 
-    text-align: center;
+    overflow: hidden;
 
     transition: 0.3s;
+
 }
 
-.product:hover {
-    transform: translateY(-7px);
+.produto:hover {
 
-    border-color: #7b2cff;
+    transform: scale(1.02);
 
-    box-shadow:
-    0 0 20px rgba(123,44,255,.4);
+    border-color: #ff202b;
+
 }
 
 /* IMAGEM */
 
-.product-icon {
-    height: 140px;
+.produto img {
 
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-}
-
-.product-icon img {
-    width: 120px;
-    height: 120px;
-
-    object-fit: contain;
-}
-
-.product h3 {
-    font-size: 22px;
-    margin: 10px 0;
-}
-
-.price {
-    color: #b45cff;
-
-    font-size: 19px;
-    font-weight: bold;
-
-    margin-bottom: 15px;
-}
-
-.product button {
     width: 100%;
 
-    padding: 12px;
+    height: 280px;
 
-    border: none;
-    border-radius: 8px;
+    object-fit: cover;
 
-    background: #7b2cff;
-    color: white;
+    display: block;
 
-    font-weight: bold;
-    cursor: pointer;
 }
 
-.product button:hover {
-    background: #9d5cff;
+/* INFORMAÇÕES */
+
+.info {
+
+    padding: 15px;
+
+}
+
+.nome {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+}
+
+.avaliacao {
+
+    color: #ffc400;
+
+    margin-bottom: 12px;
+
+}
+
+.avaliacao span {
+
+    color: #aaa;
+
+    font-size: 13px;
+
+}
+
+.preco-antigo {
+
+    color: #777;
+
+    text-decoration: line-through;
+
+    font-size: 13px;
+
+}
+
+.desconto {
+
+    color: #ff5555;
+
+    border: 1px solid #9b2424;
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+
+    margin-left: 8px;
+
+    font-size: 13px;
+
+}
+
+.preco {
+
+    color: #ff3b42;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-top: 12px;
+
+}
+
+.estoque {
+
+    color: #ccc;
+
+    margin-top: 18px;
+
+    margin-bottom: 15px;
+
+}
+
+.botao {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #e51620,
+        #ff3540
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.botao:hover {
+
+    filter: brightness(1.2);
+
 }
 
 /* CARRINHO */
 
-.cart {
+#carrinho {
+
     position: fixed;
 
-    top: 0;
-    right: -400px;
+    top: 20px;
 
-    width: 370px;
-    height: 100vh;
-
-    background: #101010;
-
-    border-left: 2px solid #7b2cff;
-
-    padding: 25px;
-
-    z-index: 2000;
-
-    transition: .4s;
-
-    overflow-y: auto;
-}
-
-.cart.active {
-    right: 0;
-}
-
-.close-cart {
-    position: absolute;
-
-    top: 10px;
     right: 20px;
 
-    background: none;
-    border: none;
+    background: #ed1c24;
 
-    color: white;
-    font-size: 30px;
-
-    cursor: pointer;
-}
-
-.cart h2 {
-    margin-bottom: 25px;
-}
-
-.cart-item {
-    background: #191919;
-
-    padding: 15px;
-    margin-bottom: 12px;
+    padding: 12px 20px;
 
     border-radius: 10px;
-}
 
-.cart-info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.quantity-controls {
-    display: flex;
-    gap: 12px;
-
-    margin-top: 12px;
-
-    align-items: center;
-}
-
-.quantity-controls button {
-    width: 30px;
-    height: 30px;
-
-    background: #7b2cff;
-
-    border: none;
-    border-radius: 5px;
-
-    color: white;
-    cursor: pointer;
-}
-
-.total {
-    font-size: 22px;
-    font-weight: bold;
-
-    margin-top: 25px;
-}
-
-.discord-button {
-    width: 100%;
-
-    margin-top: 20px;
-    padding: 15px;
-
-    background: #7b2cff;
-
-    border: none;
-    border-radius: 8px;
-
-    color: white;
     font-weight: bold;
 
     cursor: pointer;
+
 }
 
-/* FOOTER */
+/* RESPONSIVO */
 
-footer {
-    margin-top: 40px;
+@media (max-width: 700px) {
 
-    padding: 25px;
+    .produtos {
 
-    background: #050505;
+        grid-template-columns: 1fr;
 
-    text-align: center;
-    color: #777;
-}
-
-/* CELULAR */
-
-@media(max-width:700px) {
-
-    nav {
-        display: none;
     }
 
-    .hero h1 {
-        font-size: 38px;
-    }
+    .produto img {
 
-    .cart {
-        width: 100%;
-        right: -100%;
+        height: 230px;
+
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+
 <header>
 
-<div class="logo">
-FullStop <span>STORE</span>
-</div>
+<h1>🔥 FullStop STORE 🔥</h1>
 
-<nav>
-<a href="#inicio">Início</a>
-<a href="#miticas">Míticas</a>
-<a href="#lendarias">Lendárias</a>
-</nav>
-
-<button class="cart-button" onclick="openCart()">
-🛒 <span id="cart-count">0</span>
-</button>
+<p>Frutas Permanentes • Blox Fruits</p>
 
 </header>
 
 
-<section class="hero" id="inicio">
+<div id="carrinho">
 
-<h1>
-FULLSTOP <span>STORE</span>
-</h1>
-
-<p>🟣 Sua loja de Blox Fruits 🟣</p>
-
-<button onclick="document.getElementById('miticas').scrollIntoView()">
-VER FRUTAS
-</button>
-
-</section>
-
-
-<section class="products-section">
-
-<!-- MÍTICAS -->
-
-<h2 id="miticas" class="category-title mythical-title">
-🟣 FRUTAS MÍTICAS
-</h2>
-
-<p class="subtitle">
-Frutas Míticas disponíveis
-</p>
-
-<div class="products">
-
-<script>
-
-const mythicals = [
-["Gravity","gravity.png",0],
-["Mammoth","mammoth.png",6],
-["T-Rex","trex.png",6],
-["Dough","dough.png",8],
-["Shadow","shadow.png",0],
-["Venom","venom.png",0],
-["Gas","gas.png",0],
-["Spirit","spirit.png",8],
-["Tiger","tiger.png",0],
-["Yeti","yeti.png",0],
-["Kitsune","kitsune.png",35],
-["Control","control.png",20],
-["Dragon","dragon.png",75]
-];
-
-</script>
+🛒 Carrinho: <span id="quantidade">0</span>
 
 </div>
 
 
-<!-- LENDÁRIAS -->
-
-<h2 id="lendarias" class="category-title legendary-title">
-🟡 FRUTAS LENDÁRIAS
-</h2>
-
-<p class="subtitle">
-Frutas Lendárias disponíveis
-</p>
-
-<div class="products" id="legendary-products"></div>
-
-</section>
+<div class="produtos">
 
 
-<!-- CARRINHO -->
+<!-- MAGMA -->
 
-<div class="cart" id="cart">
+<div class="produto">
 
-<button class="close-cart" onclick="closeCart()">×</button>
+<img src="imagens/magma.png">
 
-<h2>🛒 Seu Carrinho</h2>
+<div class="info">
 
-<div id="cart-items"></div>
-
-<div class="total">
-💰 Total: R$ <span id="total">0,00</span>
+<div class="nome">
+MAGMA PERMANENTE
 </div>
 
-<button class="discord-button" onclick="finalizarPedido()">
-💬 FINALIZAR PEDIDO
-</button>
-
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
 </div>
 
-
-<footer>
-© 2026 FullStop STORE
-</footer>
-
-
-<script>
-
-/* LISTA DE FRUTAS */
-
-const legendaries = [
-
-["Quake","quake.png",0],
-["Buddha","buddha.png",5],
-["Love","love.png",0],
-["Creation","creation.png",0],
-["Spider","spider.png",0],
-["Sound","sound.png",0],
-["Phoenix","phoenix.png",0],
-["Portal","portal.png",6],
-["Lightning","lightning.png",0],
-["Pain","pain.png",0],
-["Blizzard","blizzard.png",0]
-
-];
-
-
-/* MOSTRAR MÍTICAS */
-
-const mythicalContainer =
-document.querySelector(".products");
-
-
-mythicals.forEach(function(fruit){
-
-mythicalContainer.innerHTML += `
-
-<div class="product">
-
-<div class="product-icon">
-
-<img src="imagens/${fruit[1]}"
-alt="${fruit[0]}">
-
-</div>
-
-<h3>${fruit[0]}</h3>
-
-<div class="price">
-
-R$ ${fruit[2].toFixed(2).replace(".",",")}
-
-</div>
-
-<button onclick="addToCart('${fruit[0]}',${fruit[2]})">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-`;
-
-});
-
-
-/* MOSTRAR LENDÁRIAS */
-
-const legendaryContainer =
-document.getElementById("legendary-products");
-
-
-legendaries.forEach(function(fruit){
-
-legendaryContainer.innerHTML += `
-
-<div class="product">
-
-<div class="product-icon">
-
-<img src="imagens/${fruit[1]}"
-alt="${fruit[0]}">
-
-</div>
-
-<h3>${fruit[0]}</h3>
-
-<div class="price">
-
-R$ ${fruit[2].toFixed(2).replace(".",",")}
-
-</div>
-
-<button onclick="addToCart('${fruit[0]}',${fruit[2]})">
-
-Adicionar ao carrinho
-
-</button>
-
-</div>
-
-`;
-
-});
-
-
-/* CARRINHO */
-
-let cart = [];
-
-
-function openCart() {
-
-document.getElementById("cart")
-.classList.add("active");
-
-}
-
-
-function closeCart() {
-
-document.getElementById("cart")
-.classList.remove("active");
-
-}
-
-
-function addToCart(name,price) {
-
-let product =
-cart.find(item => item.name === name);
-
-
-if(product){
-
-product.quantity++;
-
-}else{
-
-cart.push({
-
-name:name,
-price:price,
-quantity:1
-
-});
-
-}
-
-
-updateCart();
-
-openCart();
-
-}
-
-
-function increaseQuantity(index){
-
-cart[index].quantity++;
-
-updateCart();
-
-}
-
-
-function decreaseQuantity(index){
-
-if(cart[index].quantity > 1){
-
-cart[index].quantity--;
-
-}else{
-
-cart.splice(index,1);
-
-}
-
-updateCart();
-
-}
-
-
-function updateCart(){
-
-let container =
-document.getElementById("cart-items");
-
-
-container.innerHTML="";
-
-
-let total=0;
-
-let quantityTotal=0;
-
-
-cart.forEach(function(item,index){
-
-let subtotal =
-item.price * item.quantity;
-
-
-total += subtotal;
-
-quantityTotal += item.quantity;
-
-
-container.innerHTML += `
-
-<div class="cart-item">
-
-<div class="cart-info">
-
-<div>
-
-<b>${item.name}</b>
-
-<br>
-
-R$ ${item.price
-.toFixed(2)
-.replace(".",",")}
-
-</div>
-
-<div>
-
-R$ ${subtotal
-.toFixed(2)
-.replace(".",",")}
-
-</div>
-
-</div>
-
-
-<div class="quantity-controls">
-
-<button onclick="decreaseQuantity(${index})">
-−
-</button>
-
-<span>
-${item.quantity}
+<span class="preco-antigo">
+R$ 60,99
 </span>
 
-<button onclick="increaseQuantity(${index})">
-+
+<span class="desconto">
+-7%
+</span>
+
+<div class="preco">
+💎 R$ 46,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Magma Permanente')">
+
+🛒 Comprar agora
+
 </button>
 
 </div>
 
 </div>
 
-`;
 
-});
+<!-- LIGHT -->
 
+<div class="produto">
 
-document.getElementById("total")
-.innerText =
-total.toFixed(2).replace(".",",");
+<img src="imagens/light.png">
 
+<div class="info">
 
-document.getElementById("cart-count")
-.innerText =
-quantityTotal;
+<div class="nome">
+LIGHT PERMANENTE
+</div>
 
-}
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
 
+<span class="preco-antigo">
+R$ 44,99
+</span>
 
-/* FINALIZAR */
+<span class="desconto">
+-10%
+</span>
 
-function finalizarPedido(){
+<div class="preco">
+💎 R$ 38,00
+</div>
 
-if(cart.length === 0){
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
 
-alert("Seu carrinho está vazio!");
+<button class="botao"
+onclick="comprar('Light Permanente')">
 
-return;
+🛒 Comprar agora
 
-}
+</button>
 
+</div>
 
-let pedido =
-`🟣 PEDIDO - FULLSTOP STORE 🟣
-
-📦 PRODUTOS:
-
-`;
-
-
-let total=0;
-
-
-cart.forEach(function(item){
-
-let subtotal =
-item.price * item.quantity;
-
-
-pedido +=
-
-`• ${item.name}
-Quantidade: ${item.quantity}
-Subtotal: R$ ${subtotal.toFixed(2).replace(".",",")}
-
-`;
+</div>
 
 
-total += subtotal;
+<!-- ICE -->
 
-});
+<div class="produto">
+
+<img src="imagens/ice.png">
+
+<div class="info">
+
+<div class="nome">
+ICE PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 35,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Ice Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
 
 
-pedido +=
+<!-- PORTAL -->
 
-`💰 TOTAL: R$ ${total.toFixed(2).replace(".",",")}
+<div class="produto">
 
-Aguardo atendimento! 🟣`;
+<img src="imagens/portal.png">
+
+<div class="info">
+
+<div class="nome">
+PORTAL PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 66,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Portal Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
 
 
-/* COPIAR */
+<!-- SOUND -->
 
-navigator.clipboard
-.writeText(pedido)
-.then(function(){
+<div class="produto">
 
-alert(
-"Pedido copiado! O Discord será aberto."
-);
+<img src="imagens/sound.png">
 
-window.open(
-"https://discord.gg/unYvTKkX4",
-"_blank"
-);
+<div class="info">
 
-});
+<div class="nome">
+SOUND PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 62,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Sound Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- BUDDHA -->
+
+<div class="produto">
+
+<img src="imagens/buddha.png">
+
+<div class="info">
+
+<div class="nome">
+BUDDHA PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 55,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Buddha Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- QUAKE -->
+
+<div class="produto">
+
+<img src="imagens/quake.png">
+
+<div class="info">
+
+<div class="nome">
+QUAKE PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 50,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Quake Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- DRAGON -->
+
+<div class="produto">
+
+<img src="imagens/dragon.png">
+
+<div class="info">
+
+<div class="nome">
+DRAGON PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 165,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Dragon Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- KITSUNE -->
+
+<div class="produto">
+
+<img src="imagens/kitsune.png">
+
+<div class="info">
+
+<div class="nome">
+KITSUNE PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 132,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Kitsune Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CONTROL -->
+
+<div class="produto">
+
+<img src="imagens/control.png">
+
+<div class="info">
+
+<div class="nome">
+CONTROL PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 80,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Control Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MAGNET -->
+
+<div class="produto">
+
+<img src="imagens/magnet.png">
+
+<div class="info">
+
+<div class="nome">
+MAGNET PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 80,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Magnet Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- YETI -->
+
+<div class="produto">
+
+<img src="imagens/yeti.png">
+
+<div class="info">
+
+<div class="nome">
+YETI PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 100,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Yeti Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- TIGER -->
+
+<div class="produto">
+
+<img src="imagens/tiger.png">
+
+<div class="info">
+
+<div class="nome">
+TIGER PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 100,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Tiger Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- SHADOW -->
+
+<div class="produto">
+
+<img src="imagens/shadow.png">
+
+<div class="info">
+
+<div class="nome">
+SHADOW PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 80,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Shadow Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GAS -->
+
+<div class="produto">
+
+<img src="imagens/gas.png">
+
+<div class="info">
+
+<div class="nome">
+GAS PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 82,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Gas Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- VENOM -->
+
+<div class="produto">
+
+<img src="imagens/venom.png">
+
+<div class="info">
+
+<div class="nome">
+VENOM PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 85,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Venom Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- DOUGH -->
+
+<div class="produto">
+
+<img src="imagens/dough.png">
+
+<div class="info">
+
+<div class="nome">
+DOUGH PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 85,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Dough Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MAMMOTH -->
+
+<div class="produto">
+
+<img src="imagens/mammoth.png">
+
+<div class="info">
+
+<div class="nome">
+MAMMOTH PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 77,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Mammoth Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- T REX -->
+
+<div class="produto">
+
+<img src="imagens/trex.png">
+
+<div class="info">
+
+<div class="nome">
+T-REX PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 77,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('T-Rex Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GRAVITY -->
+
+<div class="produto">
+
+<img src="imagens/gravity.png">
+
+<div class="info">
+
+<div class="nome">
+GRAVITY PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 75,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Gravity Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- BLIZZARD -->
+
+<div class="produto">
+
+<img src="imagens/blizzard.png">
+
+<div class="info">
+
+<div class="nome">
+BLIZZARD PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 75,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Blizzard Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PAIN -->
+
+<div class="produto">
+
+<img src="imagens/pain.png">
+
+<div class="info">
+
+<div class="nome">
+PAIN PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 72,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Pain Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- LIGHTNING -->
+
+<div class="produto">
+
+<img src="imagens/lightning.png">
+
+<div class="info">
+
+<div class="nome">
+LIGHTNING PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 69,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Lightning Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RUMBLE -->
+
+<div class="produto">
+
+<img src="imagens/rumble.png">
+
+<div class="info">
+
+<div class="nome">
+RUMBLE PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 65,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Rumble Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PHOENIX -->
+
+<div class="produto">
+
+<img src="imagens/phoenix.png">
+
+<div class="info">
+
+<div class="nome">
+PHOENIX PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 60,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Phoenix Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- SPIRIT -->
+
+<div class="produto">
+
+<img src="imagens/spirit.png">
+
+<div class="info">
+
+<div class="nome">
+SPIRIT PERMANENTE
+</div>
+
+<div class="avaliacao">
+★★★★★ 4,9
+<span>(avaliações)</span>
+</div>
+
+<div class="preco">
+💎 R$ 80,00
+</div>
+
+<div class="estoque">
+📦 Estoque: <b>4000</b>
+</div>
+
+<button class="botao"
+onclick="comprar('Spirit Permanente')">
+
+🛒 Comprar agora
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+let quantidade = 0;
+
+function comprar(fruta) {
+
+    quantidade++;
+
+    document.getElementById(
+        "quantidade"
+    ).innerText = quantidade;
+
+    alert(
+        fruta +
+        " adicionada ao carrinho!"
+    );
 
 }
 
 </script>
+
 
 </body>
 </html>
