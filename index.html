@@ -3,901 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FullStop STORE</title>
-
+<title>Frutas Permanentes</title>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#08090c;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
 }
-
-html {
-    scroll-behavior: smooth;
+header{
+  padding:28px 18px;
+  text-align:center;
+  background:linear-gradient(180deg,#12151b,#08090c);
+  border-bottom:1px solid #292d35;
 }
-
-body {
-    background: #080808;
-    color: white;
+header h1{margin:0;font-size:28px;color:#fff}
+header p{margin:8px 0 0;color:#aeb4c0}
+.container{
+  max-width:1120px;
+  margin:0 auto;
+  padding:18px;
 }
-
-/* ===== CABEÇALHO ===== */
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 18px 7%;
-
-    background: #0d0d0d;
-    border-bottom: 2px solid #7b2cff;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
 }
-
-.logo {
-    font-size: 26px;
-    font-weight: bold;
+.card{
+  background:#111318;
+  border:1px solid #292d35;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 0 18px rgba(255,0,0,.08);
 }
-
-.logo span {
-    color: #9d5cff;
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  display:block;
 }
-
-nav {
-    display: flex;
-    gap: 20px;
+.info{padding:16px}
+.info h2{
+  margin:0 0 12px;
+  font-size:18px;
+  text-transform:uppercase;
+  letter-spacing:.3px;
 }
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.rating{color:#ffd34d;font-size:14px;font-weight:bold}
+.rating span{color:#a7a7a7;font-weight:normal;margin-left:5px}
+.price{
+  margin:14px 0;
+  color:#ff4b52;
+  font-size:28px;
+  font-weight:800;
 }
-
-.cart-button {
-    border: none;
-    background: #7b2cff;
-    color: white;
-
-    padding: 11px 16px;
-    border-radius: 8px;
-
-    font-weight: bold;
-    cursor: pointer;
+.stock{color:#c4c7ce;font-size:14px;margin-bottom:16px}
+.stock b{color:#fff}
+button{
+  width:100%;
+  border:0;
+  border-radius:11px;
+  padding:15px;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  cursor:pointer;
+  background:linear-gradient(90deg,#e81720,#ff3440);
 }
-
-/* ===== INÍCIO ===== */
-
-.hero {
-    min-height: 400px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    background: radial-gradient(circle, #421080, #080808 70%);
-}
-
-.hero h1 {
-    font-size: 55px;
-}
-
-.hero h1 span {
-    color: #9d5cff;
-}
-
-.hero p {
-    color: #ccc;
-    margin: 20px;
-}
-
-.hero button {
-    background: #7b2cff;
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-
-    padding: 14px 25px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* ===== ABAS ===== */
-
-.tabs {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-
-    padding: 35px 10px;
-}
-
-.tab {
-    padding: 13px 25px;
-
-    background: #181818;
-    color: white;
-
-    border: 1px solid #333;
-    border-radius: 10px;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.tab.active {
-    background: #7b2cff;
-}
-
-/* ===== SEÇÕES ===== */
-
-.section {
-    display: none;
-    padding: 20px 7% 60px;
-}
-
-.section.active {
-    display: block;
-}
-
-.title {
-    text-align: center;
-    font-size: 32px;
-
-    margin-top: 30px;
-    margin-bottom: 8px;
-}
-
-.mythical {
-    color: #b45cff;
-}
-
-.legendary {
-    color: #ffd54a;
-}
-
-.perm-title {
-    color: #b45cff;
-}
-
-.subtitle {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 30px;
-}
-
-/* ===== PRODUTOS ===== */
-
-.products {
-    max-width: 1150px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-.product {
-    background: #111;
-    border: 1px solid #292929;
-
-    border-radius: 15px;
-    padding: 18px;
-
-    text-align: center;
-
-    transition: 0.3s;
-}
-
-.product:hover {
-    transform: translateY(-5px);
-    border-color: #7b2cff;
-
-    box-shadow: 0 0 20px rgba(123,44,255,0.4);
-}
-
-.product-image {
-    height: 180px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.product-image img {
-    max-width: 160px;
-    max-height: 160px;
-
-    object-fit: contain;
-}
-
-.product h3 {
-    font-size: 22px;
-    margin: 12px 0;
-}
-
-.price {
-    color: #b45cff;
-    font-size: 21px;
-    font-weight: bold;
-
-    margin-bottom: 15px;
-}
-
-.product button {
-    width: 100%;
-
-    padding: 13px;
-
-    background: #7b2cff;
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.product button:hover {
-    background: #9d5cff;
-}
-
-/* ===== CARRINHO ===== */
-
-.cart {
-    position: fixed;
-
-    top: 0;
-    right: -420px;
-
-    width: 390px;
-    height: 100vh;
-
-    background: #101010;
-    border-left: 2px solid #7b2cff;
-
-    padding: 25px;
-
-    z-index: 2000;
-
-    transition: 0.4s;
-    overflow-y: auto;
-}
-
-.cart.active {
-    right: 0;
-}
-
-.close-cart {
-    position: absolute;
-
-    top: 10px;
-    right: 20px;
-
-    background: none;
-    border: none;
-
-    color: white;
-    font-size: 32px;
-
-    cursor: pointer;
-}
-
-.cart h2 {
-    margin-bottom: 25px;
-}
-
-.cart-item {
-    background: #191919;
-
-    padding: 15px;
-    border-radius: 10px;
-
-    margin-bottom: 12px;
-}
-
-.cart-info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-    margin-top: 12px;
-}
-
-.quantity button {
-    width: 30px;
-    height: 30px;
-
-    border: none;
-    border-radius: 6px;
-
-    background: #7b2cff;
-    color: white;
-
-    cursor: pointer;
-}
-
-.total {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.discord-button {
-    width: 100%;
-
-    margin-top: 20px;
-    padding: 15px;
-
-    background: #5865F2;
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* ===== FOOTER ===== */
-
-footer {
-    background: #050505;
-    text-align: center;
-
-    padding: 25px;
-    color: #777;
-}
-
-/* ===== CELULAR ===== */
-
-@media (max-width: 700px) {
-
-    header {
-        padding: 15px 5%;
-    }
-
-    nav {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .products {
-        grid-template-columns: 1fr;
-    }
-
-    .cart {
-        width: 100%;
-        right: -100%;
-    }
-
-    .tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tab {
-        width: 220px;
-    }
+button:hover{filter:brightness(1.08)}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .card img{height:auto;aspect-ratio:16/9}
+  header h1{font-size:23px}
 }
 </style>
 </head>
-
 <body>
-
 <header>
-
-<div class="logo">
-    FullStop <span>STORE</span>
-</div>
-
-<nav>
-    <a href="#inicio">Início</a>
-    <a href="#loja">Loja</a>
-</nav>
-
-<button class="cart-button" onclick="openCart()">
-    🛒 <span id="cart-count">0</span>
-</button>
-
+  <h1>🔥 FRUTAS PERMANENTES</h1>
+  <p>Escolha sua fruta permanente</p>
 </header>
 
-
-<section class="hero" id="inicio">
-
-<h1>FULLSTOP <span>STORE</span></h1>
-
-<p>🟣 Sua loja de Blox Fruits 🟣</p>
-
-<button onclick="document.getElementById('loja').scrollIntoView()">
-    VER PRODUTOS
-</button>
-
-</section>
-
-
-<div class="tabs" id="loja">
-
-<button class="tab active" onclick="openTab('normal', this)">
-    🍎 Frutas Normais
-</button>
-
-<button class="tab" onclick="openTab('perm', this)">
-    ✨ Frutas PERM
-</button>
-
-</div>
-
-
-<!-- FRUTAS NORMAIS -->
-
-<section id="normal" class="section active">
-
-<h2 class="title mythical">
-    🟣 FRUTAS MÍTICAS
-</h2>
-
-<p class="subtitle">
-    Frutas Míticas disponíveis
-</p>
-
-<div class="products" id="mythical-products"></div>
-
-
-<h2 class="title legendary">
-    🟡 FRUTAS LENDÁRIAS
-</h2>
-
-<p class="subtitle">
-    Frutas Lendárias disponíveis
-</p>
-
-<div class="products" id="legendary-products"></div>
-
-</section>
-
-
-<!-- FRUTAS PERM -->
-
-<section id="perm" class="section">
-
-<h2 class="title perm-title">
-    ✨ FRUTAS PERMANENTES
-</h2>
-
-<p class="subtitle">
-    Frutas PERM listadas de 2 em 2
-</p>
-
-<div class="products" id="perm-products"></div>
-
-</section>
-
-
-<!-- CARRINHO -->
-
-<div class="cart" id="cart">
-
-<button class="close-cart" onclick="closeCart()">×</button>
-
-<h2>🛒 Seu Carrinho</h2>
-
-<div id="cart-items">
-    <p style="color:#888">Seu carrinho está vazio.</p>
-</div>
-
-<div class="total">
-    💰 Total: R$ <span id="total">0,00</span>
-</div>
-
-<button class="discord-button" onclick="finalizarPedido()">
-    💬 FINALIZAR PEDIDO NO DISCORD
-</button>
-
-</div>
-
-
-<footer>
-    © 2026 FullStop STORE
-</footer>
-
+<main class="container">
+  <section class="grid" id="grid"></section>
+</main>
 
 <script>
-
-/* ===============================
-   FRUTAS MÍTICAS NORMAIS
-================================ */
-
-const mythicals = [
-
-    ["Gravity", "gravity.png", 0],
-    ["Mammoth", "mammoth.png", 6],
-    ["T-Rex", "trex.png", 6],
-    ["Dough", "dough.png", 8],
-    ["Shadow", "shadow.png", 0],
-    ["Venom", "venom.png", 0],
-    ["Gas", "gas.png", 0],
-    ["Spirit", "spirit.png", 8],
-    ["Tiger", "tiger.png", 0],
-    ["Yeti", "yeti.png", 0],
-    ["Kitsune", "kitsune.png", 35],
-    ["Control", "control.png", 20],
-    ["Dragon", "dragon.png", 75]
-
+const frutas = [
+{name:"Dragon", image:"assets/dragon.jpg", price:"165,00"},
+{name:"Kitsune", image:"assets/kitsune.jpg", price:"132,00"},
+{name:"Control", image:"assets/control.jpg", price:"—"},
+{name:"Magnete", image:"assets/magnete.jpg", price:"—"},
+{name:"Yeti", image:"assets/yeti.jpg", price:"100,00"},
+{name:"Tiger", image:"assets/tiger.jpg", price:"100,00"},
+{name:"Shadow", image:"assets/shadow.jpg", price:"—"},
+{name:"Gass", image:"assets/gass.jpg", price:"—"},
+{name:"Venom", image:"assets/venom.jpg", price:"80,00"},
+{name:"Dough", image:"assets/dough.jpg", price:"79,00"},
+{name:"Mamuth", image:"assets/mamuth.jpg", price:"—"},
+{name:"T Rex", image:"assets/t-rex.jpg", price:"—"},
+{name:"Gravity", image:"assets/gravity.jpg", price:"75,00"},
+{name:"Blizzard", image:"assets/blizzard.jpg", price:"75,00"},
+{name:"Pain", image:"assets/pain.jpg", price:"—"},
+{name:"Lightning", image:"assets/lightning.jpg", price:"—"},
+{name:"Portal", image:"assets/portal.jpg", price:"66,00"},
+{name:"Sound", image:"assets/sound.jpg", price:"62,00"},
+{name:"Buddha", image:"assets/buddha.jpg", price:"—"},
+{name:"Quake", image:"assets/quake.jpg", price:"—"},
+{name:"Magma", image:"assets/magma.jpg", price:"46,00"},
+{name:"Light", image:"assets/light.jpg", price:"38,00"},
+{name:"Ice", image:"assets/ice.jpg", price:"—"}
 ];
 
+const grid = document.getElementById("grid");
 
-/* ===============================
-   FRUTAS LENDÁRIAS NORMAIS
-================================ */
-
-const legendaries = [
-
-    ["Quake", "quake.png", 0],
-    ["Buddha", "buddha.png", 5],
-    ["Love", "love.png", 0],
-    ["Spider", "spider.png", 0],
-    ["Sound", "sound.png", 0],
-    ["Phoenix", "phoenix.png", 0],
-    ["Portal", "portal.png", 6],
-    ["Lightning", "lightning.png", 0],
-    ["Pain", "pain.png", 0],
-    ["Blizzard", "blizzard.png", 0],
-    ["Rumble", "rumble.png", 12]
-
-];
-
-
-/* ===============================
-   FRUTAS PERM
-
-   SEM COMUNS E RARAS
-================================ */
-
-const perms = [
-
-    ["Quake PERM", "quake.png", 50],
-    ["Buddha PERM", "buddha.png", 55],
-    ["Phoenix PERM", "phoenix.png", 60],
-    ["Rumble PERM", "rumble.png", 65],
-    ["Portal PERM", "portal.png", 66],
-    ["Lightning PERM", "lightning.png", 69],
-    ["Pain PERM", "pain.png", 72],
-    ["Blizzard PERM", "blizzard.png", 75],
-
-    ["Gravity PERM", "gravity.png", 75],
-    ["Mammoth PERM", "mammoth.png", 77],
-    ["T-Rex PERM", "trex.png", 77],
-    ["Control PERM", "control.png", 80],
-    ["Spirit PERM", "spirit.png", 80],
-    ["Shadow PERM", "shadow.png", 80],
-    ["Gas PERM", "gas.png", 82],
-    ["Venom PERM", "venom.png", 85],
-    ["Dough PERM", "dough.png", 85],
-    ["Yeti PERM", "yeti.png", 100],
-    ["Tiger PERM", "tiger.png", 100],
-    ["Kitsune PERM", "kitsune.png", 132],
-    ["Dragon PERM", "dragon.png", 165]
-
-];
-
-
-/* ===============================
-   CRIAR CARD
-================================ */
-
-function createProduct(fruit) {
-
-    return `
-        <div class="product">
-
-            <div class="product-image">
-                <img src="imagens/${fruit[1]}" alt="${fruit[0]}">
-            </div>
-
-            <h3>${fruit[0]}</h3>
-
-            <div class="price">
-                R$ ${fruit[2].toFixed(2).replace(".", ",")}
-            </div>
-
-            <button onclick="addToCart('${fruit[0]}', ${fruit[2]})">
-                🛒 Adicionar ao carrinho
-            </button>
-
-        </div>
-    `;
-}
-
-
-/* ===============================
-   MOSTRAR FRUTAS
-================================ */
-
-const mythicalContainer =
-    document.getElementById("mythical-products");
-
-const legendaryContainer =
-    document.getElementById("legendary-products");
-
-const permContainer =
-    document.getElementById("perm-products");
-
-
-mythicals.forEach(fruit => {
-    mythicalContainer.innerHTML += createProduct(fruit);
+frutas.forEach(fruta => {
+  const preco = fruta.price === "—" ? "R$ —" : "R$ " + fruta.price;
+  grid.innerHTML += `
+    <article class="card">
+      <img src="${fruta.image}" alt="${fruta.name} Permanente">
+      <div class="info">
+        <h2>${fruta.name.toUpperCase()} PERMANENTE</h2>
+        <div class="rating">★★★★★ <span>4,9 (avaliações)</span></div>
+        <div class="price">${preco}</div>
+        <div class="stock">📦 Estoque: <b>4000</b></div>
+        <button onclick="comprar('${fruta.name}')">🛒 Comprar agora</button>
+      </div>
+    </article>
+  `;
 });
 
-
-legendaries.forEach(fruit => {
-    legendaryContainer.innerHTML += createProduct(fruit);
-});
-
-
-perms.forEach(fruit => {
-    permContainer.innerHTML += createProduct(fruit);
-});
-
-
-/* ===============================
-   ABAS
-================================ */
-
-function openTab(tabName, button) {
-
-    document.querySelectorAll(".section").forEach(section => {
-        section.classList.remove("active");
-    });
-
-    document.querySelectorAll(".tab").forEach(tab => {
-        tab.classList.remove("active");
-    });
-
-    document.getElementById(tabName)
-        .classList.add("active");
-
-    button.classList.add("active");
+function comprar(nome) {
+  alert("Você selecionou: " + nome + " Permanente");
 }
-
-
-/* ===============================
-   CARRINHO
-================================ */
-
-let cart = [];
-
-
-function openCart() {
-    document.getElementById("cart")
-        .classList.add("active");
-}
-
-
-function closeCart() {
-    document.getElementById("cart")
-        .classList.remove("active");
-}
-
-
-function addToCart(name, price) {
-
-    let product = cart.find(item =>
-        item.name === name
-    );
-
-    if (product) {
-        product.quantity++;
-    } else {
-        cart.push({
-            name: name,
-            price: price,
-            quantity: 1
-        });
-    }
-
-    updateCart();
-    openCart();
-}
-
-
-function increaseQuantity(index) {
-    cart[index].quantity++;
-    updateCart();
-}
-
-
-function decreaseQuantity(index) {
-
-    if (cart[index].quantity > 1) {
-        cart[index].quantity--;
-    } else {
-        cart.splice(index, 1);
-    }
-
-    updateCart();
-}
-
-
-/* ===============================
-   ATUALIZAR CARRINHO
-================================ */
-
-function updateCart() {
-
-    const container =
-        document.getElementById("cart-items");
-
-    container.innerHTML = "";
-
-    let total = 0;
-    let quantityTotal = 0;
-
-
-    if (cart.length === 0) {
-
-        container.innerHTML =
-            `<p style="color:#888">
-                Seu carrinho está vazio.
-            </p>`;
-    }
-
-
-    cart.forEach((item, index) => {
-
-        const subtotal =
-            item.price * item.quantity;
-
-        total += subtotal;
-        quantityTotal += item.quantity;
-
-
-        container.innerHTML += `
-
-        <div class="cart-item">
-
-            <div class="cart-info">
-
-                <div>
-                    <b>${item.name}</b>
-
-                    <br>
-
-                    R$ ${item.price
-                        .toFixed(2)
-                        .replace(".", ",")}
-                </div>
-
-                <div>
-                    R$ ${subtotal
-                        .toFixed(2)
-                        .replace(".", ",")}
-                </div>
-
-            </div>
-
-
-            <div class="quantity">
-
-                <button onclick="decreaseQuantity(${index})">
-                    −
-                </button>
-
-                <span>
-                    ${item.quantity}
-                </span>
-
-                <button onclick="increaseQuantity(${index})">
-                    +
-                </button>
-
-            </div>
-
-        </div>
-        `;
-    });
-
-
-    document.getElementById("total").innerText =
-        total.toFixed(2).replace(".", ",");
-
-
-    document.getElementById("cart-count").innerText =
-        quantityTotal;
-}
-
-
-/* ===============================
-   FINALIZAR PEDIDO
-================================ */
-
-function finalizarPedido() {
-
-    if (cart.length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-    }
-
-
-    let pedido =
-`🟣 PEDIDO - FULLSTOP STORE 🟣
-
-📦 PRODUTOS:
-
-`;
-
-
-    let total = 0;
-
-
-    cart.forEach(item => {
-
-        const subtotal =
-            item.price * item.quantity;
-
-
-        pedido +=
-`• ${item.name}
-Quantidade: ${item.quantity}
-Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}
-
-`;
-
-
-        total += subtotal;
-    });
-
-
-    pedido +=
-`💰 TOTAL: R$ ${total.toFixed(2).replace(".", ",")}
-
-Aguardo atendimento! 🟣`;
-
-
-    navigator.clipboard.writeText(pedido)
-        .then(() => {
-
-            alert(
-                "✅ Pedido copiado! O Discord será aberto."
-            );
-
-            window.open(
-                "https://discord.gg/unYvTKkX4",
-                "_blank"
-            );
-
-        })
-        .catch(() => {
-
-            alert(
-                "Não foi possível copiar o pedido."
-            );
-
-        });
-}
-
 </script>
-
 </body>
 </html>
