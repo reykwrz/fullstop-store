@@ -7,502 +7,471 @@
 <title>FullStop STORE</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#080808;
-    color:white;
+body {
+    background: #080808;
+    color: white;
 }
 
-/* ================= HEADER ================= */
+/* ===== CABEÇALHO ===== */
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    padding:18px 7%;
+    padding: 18px 7%;
 
-    background:#0d0d0d;
-    border-bottom:2px solid #7b2cff;
+    background: #0d0d0d;
+    border-bottom: 2px solid #7b2cff;
 }
 
-.logo{
-    font-size:25px;
-    font-weight:bold;
+.logo {
+    font-size: 26px;
+    font-weight: bold;
 }
 
-.logo span{
-    color:#9d5cff;
+.logo span {
+    color: #9d5cff;
 }
 
-nav{
-    display:flex;
-    gap:22px;
+nav {
+    display: flex;
+    gap: 20px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-nav a:hover{
-    color:#9d5cff;
+.cart-button {
+    border: none;
+    background: #7b2cff;
+    color: white;
+
+    padding: 11px 16px;
+    border-radius: 8px;
+
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.cart-button{
-    background:#7b2cff;
-    color:white;
-    border:none;
+/* ===== INÍCIO ===== */
 
-    padding:11px 16px;
-    border-radius:8px;
+.hero {
+    min-height: 400px;
 
-    cursor:pointer;
-    font-weight:bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: radial-gradient(circle, #421080, #080808 70%);
 }
 
-/* ================= HERO ================= */
-
-.hero{
-    min-height:420px;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:30px;
-
-    background:
-    radial-gradient(circle,#421080,#080808 70%);
+.hero h1 {
+    font-size: 55px;
 }
 
-.hero h1{
-    font-size:58px;
+.hero h1 span {
+    color: #9d5cff;
 }
 
-.hero h1 span{
-    color:#9d5cff;
+.hero p {
+    color: #ccc;
+    margin: 20px;
 }
 
-.hero p{
-    color:#ccc;
-    margin:18px 0 25px;
-    font-size:18px;
+.hero button {
+    background: #7b2cff;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 14px 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.hero button{
-    background:#7b2cff;
-    color:white;
+/* ===== ABAS ===== */
 
-    border:none;
-    border-radius:9px;
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 
-    padding:15px 28px;
-
-    font-weight:bold;
-    cursor:pointer;
+    padding: 35px 10px;
 }
 
-/* ================= ABAS ================= */
+.tab {
+    padding: 13px 25px;
 
-.tabs{
-    display:flex;
-    justify-content:center;
-    gap:15px;
+    background: #181818;
+    color: white;
 
-    margin:35px 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
 }
 
-.tab{
-    padding:13px 25px;
-
-    border:none;
-    border-radius:10px;
-
-    background:#181818;
-    color:white;
-
-    font-size:16px;
-    font-weight:bold;
-
-    cursor:pointer;
+.tab.active {
+    background: #7b2cff;
 }
 
-.tab.active{
-    background:#7b2cff;
+/* ===== SEÇÕES ===== */
+
+.section {
+    display: none;
+    padding: 20px 7% 60px;
 }
 
-/* ================= SEÇÕES ================= */
-
-.section{
-    display:none;
-    padding:20px 7% 60px;
+.section.active {
+    display: block;
 }
 
-.section.active{
-    display:block;
+.title {
+    text-align: center;
+    font-size: 32px;
+
+    margin-top: 30px;
+    margin-bottom: 8px;
 }
 
-.title{
-    text-align:center;
-    font-size:32px;
-    margin:30px 0 8px;
+.mythical {
+    color: #b45cff;
 }
 
-.mythical{
-    color:#b45cff;
+.legendary {
+    color: #ffd54a;
 }
 
-.legendary{
-    color:#ffd54a;
+.perm-title {
+    color: #b45cff;
 }
 
-.perm-title{
-    color:#9d5cff;
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
 }
 
-.subtitle{
-    text-align:center;
-    color:#aaa;
-    margin-bottom:30px;
+/* ===== PRODUTOS ===== */
+
+.products {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
 }
 
-/* ================= PRODUTOS ================= */
+.product {
+    background: #111;
+    border: 1px solid #292929;
 
-.products{
-    max-width:1100px;
-    margin:auto;
+    border-radius: 15px;
+    padding: 18px;
 
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
+    text-align: center;
 
-    gap:20px;
+    transition: 0.3s;
 }
 
-.product{
-    background:#111;
+.product:hover {
+    transform: translateY(-5px);
+    border-color: #7b2cff;
 
-    border:1px solid #292929;
-    border-radius:15px;
-
-    padding:18px;
-
-    text-align:center;
-
-    transition:.3s;
+    box-shadow: 0 0 20px rgba(123,44,255,0.4);
 }
 
-.product:hover{
-    transform:translateY(-5px);
-    border-color:#7b2cff;
+.product-image {
+    height: 180px;
 
-    box-shadow:
-    0 0 20px rgba(123,44,255,.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.product-image{
-    height:160px;
+.product-image img {
+    max-width: 160px;
+    max-height: 160px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    object-fit: contain;
 }
 
-.product-image img{
-    max-width:145px;
-    max-height:145px;
-
-    object-fit:contain;
+.product h3 {
+    font-size: 22px;
+    margin: 12px 0;
 }
 
-.product h3{
-    font-size:21px;
-    margin:12px 0;
+.price {
+    color: #b45cff;
+    font-size: 21px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
 }
 
-.price{
-    color:#b45cff;
+.product button {
+    width: 100%;
 
-    font-size:22px;
-    font-weight:bold;
+    padding: 13px;
 
-    margin-bottom:15px;
+    background: #7b2cff;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.product button{
-    width:100%;
-
-    padding:12px;
-
-    border:none;
-    border-radius:8px;
-
-    background:#7b2cff;
-    color:white;
-
-    font-weight:bold;
-    cursor:pointer;
+.product button:hover {
+    background: #9d5cff;
 }
 
-.product button:hover{
-    background:#9d5cff;
+/* ===== CARRINHO ===== */
+
+.cart {
+    position: fixed;
+
+    top: 0;
+    right: -420px;
+
+    width: 390px;
+    height: 100vh;
+
+    background: #101010;
+    border-left: 2px solid #7b2cff;
+
+    padding: 25px;
+
+    z-index: 2000;
+
+    transition: 0.4s;
+    overflow-y: auto;
 }
 
-/* ================= CARRINHO ================= */
-
-.cart{
-    position:fixed;
-
-    top:0;
-    right:-420px;
-
-    width:390px;
-    height:100vh;
-
-    background:#101010;
-
-    border-left:2px solid #7b2cff;
-
-    z-index:2000;
-
-    padding:25px;
-
-    transition:.4s;
-
-    overflow-y:auto;
+.cart.active {
+    right: 0;
 }
 
-.cart.active{
-    right:0;
+.close-cart {
+    position: absolute;
+
+    top: 10px;
+    right: 20px;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 32px;
+
+    cursor: pointer;
 }
 
-.close-cart{
-    position:absolute;
-
-    top:10px;
-    right:20px;
-
-    background:none;
-    border:none;
-
-    color:white;
-
-    font-size:32px;
-    cursor:pointer;
+.cart h2 {
+    margin-bottom: 25px;
 }
 
-.cart h2{
-    margin-bottom:25px;
+.cart-item {
+    background: #191919;
+
+    padding: 15px;
+    border-radius: 10px;
+
+    margin-bottom: 12px;
 }
 
-.cart-item{
-    background:#191919;
-
-    padding:14px;
-    border-radius:10px;
-
-    margin-bottom:12px;
+.cart-info {
+    display: flex;
+    justify-content: space-between;
 }
 
-.cart-info{
-    display:flex;
-    justify-content:space-between;
+.quantity {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+    margin-top: 12px;
 }
 
-.quantity{
-    display:flex;
+.quantity button {
+    width: 30px;
+    height: 30px;
 
-    align-items:center;
-    gap:12px;
+    border: none;
+    border-radius: 6px;
 
-    margin-top:12px;
+    background: #7b2cff;
+    color: white;
+
+    cursor: pointer;
 }
 
-.quantity button{
-    width:30px;
-    height:30px;
-
-    border:none;
-    border-radius:6px;
-
-    background:#7b2cff;
-    color:white;
-
-    cursor:pointer;
+.total {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-.total{
-    margin-top:20px;
+.discord-button {
+    width: 100%;
 
-    font-size:22px;
-    font-weight:bold;
+    margin-top: 20px;
+    padding: 15px;
+
+    background: #5865F2;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.discord-button{
-    width:100%;
+/* ===== FOOTER ===== */
 
-    margin-top:20px;
-    padding:15px;
+footer {
+    background: #050505;
+    text-align: center;
 
-    border:none;
-    border-radius:8px;
-
-    background:#7b2cff;
-    color:white;
-
-    font-size:16px;
-    font-weight:bold;
-
-    cursor:pointer;
+    padding: 25px;
+    color: #777;
 }
 
-/* ================= FOOTER ================= */
+/* ===== CELULAR ===== */
 
-footer{
-    background:#050505;
+@media (max-width: 700px) {
 
-    text-align:center;
-
-    padding:25px;
-    color:#777;
-}
-
-/* ================= CELULAR ================= */
-
-@media(max-width:700px){
-
-    header{
-        padding:15px 5%;
+    header {
+        padding: 15px 5%;
     }
 
-    nav{
-        display:none;
+    nav {
+        display: none;
     }
 
-    .hero h1{
-        font-size:40px;
+    .hero h1 {
+        font-size: 38px;
     }
 
-    .products{
-        grid-template-columns:1fr;
+    .products {
+        grid-template-columns: 1fr;
     }
 
-    .cart{
-        width:100%;
-        right:-100%;
+    .cart {
+        width: 100%;
+        right: -100%;
     }
 
-    .tabs{
-        flex-direction:column;
-        align-items:center;
+    .tabs {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .tab{
-        width:220px;
+    .tab {
+        width: 220px;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
 <div class="logo">
-FullStop <span>STORE</span>
+    FullStop <span>STORE</span>
 </div>
 
 <nav>
-<a href="#inicio">Início</a>
-<a href="#loja">Loja</a>
+    <a href="#inicio">Início</a>
+    <a href="#loja">Loja</a>
 </nav>
 
 <button class="cart-button" onclick="openCart()">
-🛒 <span id="cart-count">0</span>
+    🛒 <span id="cart-count">0</span>
 </button>
 
 </header>
 
 
-<!-- INÍCIO -->
-
 <section class="hero" id="inicio">
 
-<h1>
-FULLSTOP <span>STORE</span>
-</h1>
+<h1>FULLSTOP <span>STORE</span></h1>
 
 <p>🟣 Sua loja de Blox Fruits 🟣</p>
 
 <button onclick="document.getElementById('loja').scrollIntoView()">
-VER PRODUTOS
+    VER PRODUTOS
 </button>
 
 </section>
 
 
-<!-- ABAS -->
+<div class="tabs" id="loja">
 
-<div id="loja" class="tabs">
-
-<button class="tab active"
-onclick="openTab('normal',this)">
-🍎 Frutas Normais
+<button class="tab active" onclick="openTab('normal', this)">
+    🍎 Frutas Normais
 </button>
 
-<button class="tab"
-onclick="openTab('perm',this)">
-✨ Frutas PERM
+<button class="tab" onclick="openTab('perm', this)">
+    ✨ Frutas PERM
 </button>
 
 </div>
 
 
-<!-- ================= FRUTAS NORMAIS ================= -->
+<!-- FRUTAS NORMAIS -->
 
 <section id="normal" class="section active">
 
 <h2 class="title mythical">
-🟣 FRUTAS MÍTICAS
+    🟣 FRUTAS MÍTICAS
 </h2>
 
 <p class="subtitle">
-Frutas Míticas disponíveis
+    Frutas Míticas disponíveis
 </p>
 
 <div class="products" id="mythical-products"></div>
 
 
 <h2 class="title legendary">
-🟡 FRUTAS LENDÁRIAS
+    🟡 FRUTAS LENDÁRIAS
 </h2>
 
 <p class="subtitle">
-Frutas Lendárias disponíveis
+    Frutas Lendárias disponíveis
 </p>
 
 <div class="products" id="legendary-products"></div>
@@ -510,16 +479,16 @@ Frutas Lendárias disponíveis
 </section>
 
 
-<!-- ================= PERM ================= -->
+<!-- FRUTAS PERM -->
 
 <section id="perm" class="section">
 
 <h2 class="title perm-title">
-✨ FRUTAS PERMANENTES
+    ✨ FRUTAS PERMANENTES
 </h2>
 
 <p class="subtitle">
-Frutas PERM Lendárias e Míticas
+    Frutas PERM listadas de 2 em 2
 </p>
 
 <div class="products" id="perm-products"></div>
@@ -527,574 +496,405 @@ Frutas PERM Lendárias e Míticas
 </section>
 
 
-<!-- ================= CARRINHO ================= -->
+<!-- CARRINHO -->
 
 <div class="cart" id="cart">
 
-<button class="close-cart" onclick="closeCart()">
-×
-</button>
+<button class="close-cart" onclick="closeCart()">×</button>
 
 <h2>🛒 Seu Carrinho</h2>
 
 <div id="cart-items">
-<p style="color:#888">
-Seu carrinho está vazio.
-</p>
+    <p style="color:#888">Seu carrinho está vazio.</p>
 </div>
 
 <div class="total">
-💰 Total: R$
-<span id="total">0,00</span>
+    💰 Total: R$ <span id="total">0,00</span>
 </div>
 
-<button class="discord-button"
-onclick="finalizarPedido()">
-
-💬 FINALIZAR PEDIDO
-
+<button class="discord-button" onclick="finalizarPedido()">
+    💬 FINALIZAR PEDIDO NO DISCORD
 </button>
 
 </div>
 
 
 <footer>
-© 2026 FullStop STORE
+    © 2026 FullStop STORE
 </footer>
 
 
 <script>
 
-/* ==================================
-   FRUTAS NORMAIS - MÍTICAS
-================================== */
+/* ===============================
+   FRUTAS MÍTICAS NORMAIS
+================================ */
 
 const mythicals = [
 
-["Gravity","gravity.png",0],
-
-["Mammoth","mammoth.png",6],
-
-["T-Rex","trex.png",6],
-
-["Dough","dough.png",8],
-
-["Shadow","shadow.png",0],
-
-["Venom","venom.png",0],
-
-["Gas","gas.png",0],
-
-["Spirit","spirit.png",8],
-
-["Tiger","tiger.png",0],
-
-["Yeti","yeti.png",0],
-
-["Kitsune","kitsune.png",35],
-
-["Control","control.png",20],
-
-["Dragon","dragon.png",75]
+    ["Gravity", "gravity.png", 0],
+    ["Mammoth", "mammoth.png", 6],
+    ["T-Rex", "trex.png", 6],
+    ["Dough", "dough.png", 8],
+    ["Shadow", "shadow.png", 0],
+    ["Venom", "venom.png", 0],
+    ["Gas", "gas.png", 0],
+    ["Spirit", "spirit.png", 8],
+    ["Tiger", "tiger.png", 0],
+    ["Yeti", "yeti.png", 0],
+    ["Kitsune", "kitsune.png", 35],
+    ["Control", "control.png", 20],
+    ["Dragon", "dragon.png", 75]
 
 ];
 
 
-/* ==================================
-   FRUTAS NORMAIS - LENDÁRIAS
-================================== */
+/* ===============================
+   FRUTAS LENDÁRIAS NORMAIS
+================================ */
 
 const legendaries = [
 
-["Quake","quake.png",0],
-
-["Buddha","buddha.png",5],
-
-["Love","love.png",0],
-
-["Spider","spider.png",0],
-
-["Sound","sound.png",0],
-
-["Phoenix","phoenix.png",0],
-
-["Portal","portal.png",6],
-
-["Lightning","lightning.png",0],
-
-["Pain","pain.png",0],
-
-["Blizzard","blizzard.png",0],
-
-["Rumble","rumble.png",12]
+    ["Quake", "quake.png", 0],
+    ["Buddha", "buddha.png", 5],
+    ["Love", "love.png", 0],
+    ["Spider", "spider.png", 0],
+    ["Sound", "sound.png", 0],
+    ["Phoenix", "phoenix.png", 0],
+    ["Portal", "portal.png", 6],
+    ["Lightning", "lightning.png", 0],
+    ["Pain", "pain.png", 0],
+    ["Blizzard", "blizzard.png", 0],
+    ["Rumble", "rumble.png", 12]
 
 ];
 
 
-/* ==================================
-   FRUTAS PERMANENTES
+/* ===============================
+   FRUTAS PERM
 
-   Somente Lendárias e Míticas
-   Sem Comuns e Raras
-================================== */
+   SEM COMUNS E RARAS
+================================ */
 
 const perms = [
 
-["Magma PERM","magma.png",46],
+    ["Quake PERM", "quake.png", 50],
+    ["Buddha PERM", "buddha.png", 55],
+    ["Phoenix PERM", "phoenix.png", 60],
+    ["Rumble PERM", "rumble.png", 65],
+    ["Portal PERM", "portal.png", 66],
+    ["Lightning PERM", "lightning.png", 69],
+    ["Pain PERM", "pain.png", 72],
+    ["Blizzard PERM", "blizzard.png", 75],
 
-["Light PERM","light.png",38],
-
-["Ice PERM","ice.png",35],
-
-["Quake PERM","quake.png",50],
-
-["Buddha PERM","buddha.png",55],
-
-["Phoenix PERM","phoenix.png",60],
-
-["Rumble PERM","rumble.png",65],
-
-["Portal PERM","portal.png",66],
-
-["Lightning PERM","lightning.png",69],
-
-["Pain PERM","pain.png",72],
-
-["Blizzard PERM","blizzard.png",75],
-
-["Gravity PERM","gravity.png",75],
-
-["Mammoth PERM","mammoth.png",77],
-
-["T-Rex PERM","trex.png",77],
-
-["Control PERM","control.png",80],
-
-["Spirit PERM","spirit.png",80],
-
-["Shadow PERM","shadow.png",80],
-
-["Gas PERM","gas.png",82],
-
-["Venom PERM","venom.png",85],
-
-["Dough PERM","dough.png",85],
-
-["Yeti PERM","yeti.png",100],
-
-["Tiger PERM","tiger.png",100],
-
-["Kitsune PERM","kitsune.png",132],
-
-["Dragon PERM","dragon.png",165]
+    ["Gravity PERM", "gravity.png", 75],
+    ["Mammoth PERM", "mammoth.png", 77],
+    ["T-Rex PERM", "trex.png", 77],
+    ["Control PERM", "control.png", 80],
+    ["Spirit PERM", "spirit.png", 80],
+    ["Shadow PERM", "shadow.png", 80],
+    ["Gas PERM", "gas.png", 82],
+    ["Venom PERM", "venom.png", 85],
+    ["Dough PERM", "dough.png", 85],
+    ["Yeti PERM", "yeti.png", 100],
+    ["Tiger PERM", "tiger.png", 100],
+    ["Kitsune PERM", "kitsune.png", 132],
+    ["Dragon PERM", "dragon.png", 165]
 
 ];
 
 
-/* ==================================
+/* ===============================
    CRIAR CARD
-================================== */
+================================ */
 
-function createProduct(fruit){
+function createProduct(fruit) {
 
-return `
+    return `
+        <div class="product">
 
-<div class="product">
+            <div class="product-image">
+                <img src="imagens/${fruit[1]}" alt="${fruit[0]}">
+            </div>
 
-<div class="product-image">
+            <h3>${fruit[0]}</h3>
 
-<img
-src="imagens/${fruit[1]}"
-alt="${fruit[0]}">
+            <div class="price">
+                R$ ${fruit[2].toFixed(2).replace(".", ",")}
+            </div>
 
-</div>
+            <button onclick="addToCart('${fruit[0]}', ${fruit[2]})">
+                🛒 Adicionar ao carrinho
+            </button>
 
-<h3>${fruit[0]}</h3>
-
-<div class="price">
-
-R$ ${fruit[2]
-.toFixed(2)
-.replace(".",",")}
-
-</div>
-
-<button onclick="addToCart('${fruit[0]}',${fruit[2]})">
-
-🛒 Adicionar ao carrinho
-
-</button>
-
-</div>
-
-`;
-
+        </div>
+    `;
 }
 
 
-/* ==================================
-   MOSTRAR PRODUTOS
-================================== */
+/* ===============================
+   MOSTRAR FRUTAS
+================================ */
 
 const mythicalContainer =
-document.getElementById("mythical-products");
+    document.getElementById("mythical-products");
 
 const legendaryContainer =
-document.getElementById("legendary-products");
+    document.getElementById("legendary-products");
 
 const permContainer =
-document.getElementById("perm-products");
+    document.getElementById("perm-products");
 
 
-mythicals.forEach(function(fruit){
-
-mythicalContainer.innerHTML +=
-createProduct(fruit);
-
+mythicals.forEach(fruit => {
+    mythicalContainer.innerHTML += createProduct(fruit);
 });
 
 
-legendaries.forEach(function(fruit){
-
-legendaryContainer.innerHTML +=
-createProduct(fruit);
-
+legendaries.forEach(fruit => {
+    legendaryContainer.innerHTML += createProduct(fruit);
 });
 
 
-perms.forEach(function(fruit){
-
-permContainer.innerHTML +=
-createProduct(fruit);
-
+perms.forEach(fruit => {
+    permContainer.innerHTML += createProduct(fruit);
 });
 
 
-/* ==================================
-   TROCAR ABA
-================================== */
+/* ===============================
+   ABAS
+================================ */
 
-function openTab(tabName,button){
+function openTab(tabName, button) {
 
-document
-.querySelectorAll(".section")
-.forEach(function(section){
+    document.querySelectorAll(".section").forEach(section => {
+        section.classList.remove("active");
+    });
 
-section.classList.remove("active");
+    document.querySelectorAll(".tab").forEach(tab => {
+        tab.classList.remove("active");
+    });
 
-});
+    document.getElementById(tabName)
+        .classList.add("active");
 
-
-document
-.querySelectorAll(".tab")
-.forEach(function(tab){
-
-tab.classList.remove("active");
-
-});
-
-
-document
-.getElementById(tabName)
-.classList.add("active");
-
-
-button.classList.add("active");
-
+    button.classList.add("active");
 }
 
 
-/* ==================================
+/* ===============================
    CARRINHO
-================================== */
+================================ */
 
 let cart = [];
 
 
-function openCart(){
-
-document
-.getElementById("cart")
-.classList.add("active");
-
+function openCart() {
+    document.getElementById("cart")
+        .classList.add("active");
 }
 
 
-function closeCart(){
-
-document
-.getElementById("cart")
-.classList.remove("active");
-
+function closeCart() {
+    document.getElementById("cart")
+        .classList.remove("active");
 }
 
 
-function addToCart(name,price){
+function addToCart(name, price) {
 
-let product = cart.find(
-item => item.name === name
-);
+    let product = cart.find(item =>
+        item.name === name
+    );
 
+    if (product) {
+        product.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
 
-if(product){
-
-product.quantity++;
-
-}else{
-
-cart.push({
-
-name:name,
-price:price,
-quantity:1
-
-});
-
+    updateCart();
+    openCart();
 }
 
 
-updateCart();
-
-openCart();
-
+function increaseQuantity(index) {
+    cart[index].quantity++;
+    updateCart();
 }
 
 
-function increaseQuantity(index){
+function decreaseQuantity(index) {
 
-cart[index].quantity++;
+    if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+    } else {
+        cart.splice(index, 1);
+    }
 
-updateCart();
-
+    updateCart();
 }
 
 
-function decreaseQuantity(index){
-
-if(cart[index].quantity > 1){
-
-cart[index].quantity--;
-
-}else{
-
-cart.splice(index,1);
-
-}
-
-updateCart();
-
-}
-
-
-/* ==================================
+/* ===============================
    ATUALIZAR CARRINHO
-================================== */
+================================ */
 
-function updateCart(){
+function updateCart() {
 
-let container =
-document.getElementById("cart-items");
+    const container =
+        document.getElementById("cart-items");
 
+    container.innerHTML = "";
 
-container.innerHTML="";
-
-
-let total=0;
-
-let quantityTotal=0;
+    let total = 0;
+    let quantityTotal = 0;
 
 
-if(cart.length===0){
+    if (cart.length === 0) {
 
-container.innerHTML=
+        container.innerHTML =
+            `<p style="color:#888">
+                Seu carrinho está vazio.
+            </p>`;
+    }
 
-`<p style="color:#888">
-Seu carrinho está vazio.
-</p>`;
 
+    cart.forEach((item, index) => {
+
+        const subtotal =
+            item.price * item.quantity;
+
+        total += subtotal;
+        quantityTotal += item.quantity;
+
+
+        container.innerHTML += `
+
+        <div class="cart-item">
+
+            <div class="cart-info">
+
+                <div>
+                    <b>${item.name}</b>
+
+                    <br>
+
+                    R$ ${item.price
+                        .toFixed(2)
+                        .replace(".", ",")}
+                </div>
+
+                <div>
+                    R$ ${subtotal
+                        .toFixed(2)
+                        .replace(".", ",")}
+                </div>
+
+            </div>
+
+
+            <div class="quantity">
+
+                <button onclick="decreaseQuantity(${index})">
+                    −
+                </button>
+
+                <span>
+                    ${item.quantity}
+                </span>
+
+                <button onclick="increaseQuantity(${index})">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+        `;
+    });
+
+
+    document.getElementById("total").innerText =
+        total.toFixed(2).replace(".", ",");
+
+
+    document.getElementById("cart-count").innerText =
+        quantityTotal;
 }
 
 
-cart.forEach(function(item,index){
-
-let subtotal =
-item.price * item.quantity;
-
-
-total += subtotal;
-
-quantityTotal += item.quantity;
-
-
-container.innerHTML += `
-
-<div class="cart-item">
-
-<div class="cart-info">
-
-<div>
-
-<b>${item.name}</b>
-
-<br>
-
-R$ ${item.price
-.toFixed(2)
-.replace(".",",")}
-
-</div>
-
-<div>
-
-<b>
-
-R$ ${subtotal
-.toFixed(2)
-.replace(".",",")}
-
-</b>
-
-</div>
-
-</div>
-
-
-<div class="quantity">
-
-<button
-onclick="decreaseQuantity(${index})">
-
-−
-
-</button>
-
-
-<span>
-
-${item.quantity}
-
-</span>
-
-
-<button
-onclick="increaseQuantity(${index})">
-
-+
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-
-document
-.getElementById("total")
-.innerText=
-
-total
-.toFixed(2)
-.replace(".",",");
-
-
-document
-.getElementById("cart-count")
-.innerText=
-
-quantityTotal;
-
-}
-
-
-/* ==================================
+/* ===============================
    FINALIZAR PEDIDO
-================================== */
+================================ */
 
-function finalizarPedido(){
+function finalizarPedido() {
 
-if(cart.length===0){
-
-alert("Seu carrinho está vazio!");
-
-return;
-
-}
+    if (cart.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
 
 
-let pedido =
-
+    let pedido =
 `🟣 PEDIDO - FULLSTOP STORE 🟣
-
-Olá! Gostaria de fazer este pedido.
 
 📦 PRODUTOS:
 
 `;
 
 
-let total=0;
+    let total = 0;
 
 
-cart.forEach(function(item){
+    cart.forEach(item => {
 
-let subtotal =
-item.price * item.quantity;
+        const subtotal =
+            item.price * item.quantity;
 
 
-pedido +=
-
+        pedido +=
 `• ${item.name}
 Quantidade: ${item.quantity}
-Subtotal: R$ ${subtotal
-.toFixed(2)
-.replace(".",",")}
+Subtotal: R$ ${subtotal.toFixed(2).replace(".", ",")}
 
 `;
 
 
-total += subtotal;
+        total += subtotal;
+    });
 
-});
 
-
-pedido +=
-
-`💰 TOTAL: R$ ${total
-.toFixed(2)
-.replace(".",",")}
+    pedido +=
+`💰 TOTAL: R$ ${total.toFixed(2).replace(".", ",")}
 
 Aguardo atendimento! 🟣`;
 
 
-/* COPIAR PEDIDO */
+    navigator.clipboard.writeText(pedido)
+        .then(() => {
 
-navigator.clipboard
-.writeText(pedido)
-.then(function(){
+            alert(
+                "✅ Pedido copiado! O Discord será aberto."
+            );
 
-alert(
-"✅ Pedido copiado! O Discord será aberto. Cole a mensagem no canal de pedidos."
-);
+            window.open(
+                "https://discord.gg/unYvTKkX4",
+                "_blank"
+            );
 
+        })
+        .catch(() => {
 
-window.open(
-"https://discord.gg/unYvTKkX4",
-"_blank"
-);
+            alert(
+                "Não foi possível copiar o pedido."
+            );
 
-})
-.catch(function(){
-
-alert(
-"Copie o pedido manualmente."
-);
-
-});
-
+        });
 }
 
 </script>
