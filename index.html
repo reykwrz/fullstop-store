@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FullStop STORE</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090909;
+    color: white;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background: #0d0d0d;
+    border-bottom: 2px solid #7b2cff;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #8f3cff;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9d5cff;
+}
+
+.cart-button {
+    background: #7b2cff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ================= INÍCIO ================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+    radial-gradient(circle at center, #401080, #090909 65%);
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #8f3cff;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #7b2cff;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0px 0px 20px #7b2cff;
+}
+
+/* ================= PRODUTOS ================= */
+
+.products-section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.section-title span {
+    color: #8f3cff;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.product {
+    background: #111;
+
+    border: 1px solid #2b2b2b;
+    border-radius: 15px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+
+    border-color: #7b2cff;
+
+    box-shadow:
+    0px 0px 20px
+    rgba(123, 44, 255, 0.5);
+}
+
+.product-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #9d5cff;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.product button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #7b2cff;
+
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.product button:hover {
+    background: #9d5cff;
+}
+
+/* ================= CARRINHO ================= */
+
+.cart {
+    position: fixed;
+
+    right: -400px;
+    top: 0;
+
+    width: 350px;
+    height: 100vh;
+
+    background: #101010;
+
+    border-left: 2px solid #7b2cff;
+
+    z-index: 2000;
+
+    padding: 25px;
+
+    transition: 0.4s;
+
+    overflow-y: auto;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart h2 {
+    margin-bottom: 25px;
+}
+
+.close-cart {
+    position: absolute;
+
+    right: 20px;
+    top: 15px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.cart-item {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background: #181818;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    margin-bottom: 12px;
+}
+
+.cart-item button {
+
+    background: #7b2cff;
+
+    border: none;
+
+    color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.total {
+
+    margin-top: 25px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.discord-button {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    background: #7b2cff;
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.discord-button:hover {
+    background: #9d5cff;
+}
+
+/* ================= SOBRE ================= */
+
+.about {
+
+    padding: 70px 10%;
+
+    text-align: center;
+
+    background: #101010;
+
+    border-top: 1px solid #222;
+}
+
+.about h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.about p {
+
+    color: #bbb;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: #070707;
+
+    color: #777;
+}
+
+/* ================= CELULAR ================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .cart {
+        width: 100%;
+        right: -100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+FullStop <span>STORE</span>
+</div>
+
+<nav>
+
+<a href="#inicio">Início</a>
+
+<a href="#frutas">Frutas</a>
+
+<a href="#sobre">Sobre</a>
+
+</nav>
+
+<button class="cart-button" onclick="openCart()">
+
+🛒 Carrinho
+(<span id="cart-count">0</span>)
+
+</button>
+
+</header>
+
+
+<!-- INÍCIO -->
+
+<section class="hero" id="inicio">
+
+<h1>
+
+FULLSTOP <span>STORE</span>
+
+</h1>
+
+<p>
+
+🟣 Sua loja de Blox Fruits 🟣
+
+</p>
+
+<button onclick="document.getElementById('frutas').scrollIntoView()">
+
+VER PRODUTOS
+
+</button>
+
+</section>
+
+
+<!-- FRUTAS -->
+
+<section class="products-section" id="frutas">
+
+<h2 class="section-title">
+
+🍎 <span>FRUTAS</span>
+
+</h2>
+
+<p class="subtitle">
+
+Escolha sua fruta e adicione ao carrinho.
+
+</p>
+
+
+<div class="products">
+
+
+<!-- BUDDHA -->
+
+<div class="product">
+
+<div class="product-icon">🟡</div>
+
+<h3>Buddha</h3>
+
+<div class="price">
+
+R$ 5,00
+
+</div>
+
+<button onclick="addToCart('Buddha', 5)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- PORTAL -->
+
+<div class="product">
+
+<div class="product-icon">🌀</div>
+
+<h3>Portal</h3>
+
+<div class="price">
+
+R$ 6,00
+
+</div>
+
+<button onclick="addToCart('Portal', 6)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- DOUGH -->
+
+<div class="product">
+
+<div class="product-icon">🍩</div>
+
+<h3>Dough</h3>
+
+<div class="price">
+
+R$ 8,00
+
+</div>
+
+<button onclick="addToCart('Dough', 8)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- MAMMOTH -->
+
+<div class="product">
+
+<div class="product-icon">🦣</div>
+
+<h3>Mammoth</h3>
+
+<div class="price">
+
+R$ 6,00
+
+</div>
+
+<button onclick="addToCart('Mammoth', 6)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- T-REX -->
+
+<div class="product">
+
+<div class="product-icon">🦖</div>
+
+<h3>T-Rex</h3>
+
+<div class="price">
+
+R$ 6,00
+
+</div>
+
+<button onclick="addToCart('T-Rex', 6)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- SPIRIT -->
+
+<div class="product">
+
+<div class="product-icon">👻</div>
+
+<h3>Spirit</h3>
+
+<div class="price">
+
+R$ 8,00
+
+</div>
+
+<button onclick="addToCart('Spirit', 8)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- CONTROL -->
+
+<div class="product">
+
+<div class="product-icon">🎮</div>
+
+<h3>Control</h3>
+
+<div class="price">
+
+R$ 20,00
+
+</div>
+
+<button onclick="addToCart('Control', 20)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- RUMBLE -->
+
+<div class="product">
+
+<div class="product-icon">⚡</div>
+
+<h3>Rumble</h3>
+
+<div class="price">
+
+R$ 20,00
+
+</div>
+
+<button onclick="addToCart('Rumble', 20)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- KITSUNE -->
+
+<div class="product">
+
+<div class="product-icon">🦊</div>
+
+<h3>Kitsune</h3>
+
+<div class="price">
+
+R$ 35,00
+
+</div>
+
+<button onclick="addToCart('Kitsune', 35)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+<!-- DRAGON -->
+
+<div class="product">
+
+<div class="product-icon">🐉</div>
+
+<h3>Dragon</h3>
+
+<div class="price">
+
+R$ 75,00
+
+</div>
+
+<button onclick="addToCart('Dragon', 75)">
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section class="about" id="sobre">
+
+<h2>
+
+🟣 Sobre a FullStop STORE
+
+</h2>
+
+<p>
+
+Bem-vindo à FullStop STORE!
+
+Aqui você encontra produtos relacionados ao Blox Fruits.
+
+Escolha seus produtos, adicione ao carrinho
+e entre em contato pelo nosso Discord para
+realizar seu pedido.
+
+</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 FullStop STORE
+
+</footer>
+
+
+<!-- CARRINHO -->
+
+<div class="cart" id="cart">
+
+
+<button class="close-cart" onclick="closeCart()">
+
+× 
+
+</button>
+
+
+<h2>
+
+🛒 Seu Carrinho
+
+</h2>
+
+
+<div id="cart-items">
+
+</div>
+
+
+<div class="total">
+
+Total: R$ <span id="total">0</span>
+
+</div>
+
+
+<a
+href="https://discord.gg/unYvTKkX4"
+target="_blank"
+class="discord-button">
+
+💬 FINALIZAR PEDIDO NO DISCORD
+
+</a>
+
+
+</div>
+
+
+
+<script>
+
+
+let cart = [];
+
+
+/* ABRIR CARRINHO */
+
+function openCart() {
+
+document
+.getElementById("cart")
+.classList
+.add("active");
+
+}
+
+
+/* FECHAR CARRINHO */
+
+function closeCart() {
+
+document
+.getElementById("cart")
+.classList
+.remove("active");
+
+}
+
+
+/* ADICIONAR PRODUTO */
+
+function addToCart(name, price) {
+
+cart.push({
+
+name: name,
+
+price: price
+
+});
+
+updateCart();
+
+}
+
+
+/* REMOVER PRODUTO */
+
+function removeFromCart(index) {
+
+cart.splice(index, 1);
+
+updateCart();
+
+}
+
+
+/* ATUALIZAR CARRINHO */
+
+function updateCart() {
+
+
+let cartItems =
+
+document.getElementById("cart-items");
+
+
+cartItems.innerHTML = "";
+
+
+let total = 0;
+
+
+/* PRODUTOS */
+
+cart.forEach(function(item, index) {
+
+
+total += item.price;
+
+
+cartItems.innerHTML +=
+
+`
+
+<div class="cart-item">
+
+<div>
+
+<b>${item.name}</b>
+
+<br>
+
+R$ ${item.price},00
+
+</div>
+
+
+<button onclick="removeFromCart(${index})">
+
+Remover
+
+</button>
+
+
+</div>
+
+`;
+
+});
+
+
+/* TOTAL */
+
+document
+.getElementById("total")
+.innerText = total.toFixed(2)
+.replace(".", ",");
+
+
+/* QUANTIDADE */
+
+document
+.getElementById("cart-count")
+.innerText = cart.length;
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
