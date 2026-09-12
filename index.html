@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,6 @@ body{
     color:#ffffff;
 }
 
-
 /* =========================
 TOPO
 ========================= */
@@ -42,7 +40,6 @@ header{
     padding:16px 5%;
 
     background:#0d0d12;
-
     border-bottom:2px solid #7b2cff;
 }
 
@@ -63,13 +60,13 @@ header{
     width:18px;
     height:18px;
 
+    margin-left:5px;
+
     border-radius:50%;
 
     background:#7b2cff;
 
     font-size:12px;
-
-    margin-left:5px;
 }
 
 .cartbtn{
@@ -79,7 +76,6 @@ header{
     border-radius:10px;
 
     background:#7b2cff;
-
     color:white;
 
     cursor:pointer;
@@ -88,6 +84,9 @@ header{
     font-weight:bold;
 }
 
+.cartbtn:hover{
+    background:#914cff;
+}
 
 /* =========================
 CAPA
@@ -99,7 +98,11 @@ CAPA
     padding:60px 15px;
 
     background:
-    radial-gradient(circle,#40136e,#09090d 65%);
+    radial-gradient(
+        circle,
+        #40136e,
+        #09090d 65%
+    );
 }
 
 .hero h1{
@@ -115,7 +118,6 @@ CAPA
     margin-top:12px;
     color:#cccccc;
 }
-
 
 /* =========================
 ABAS
@@ -137,10 +139,9 @@ ABAS
 
     border-radius:10px;
 
-    border:1px solid #333;
+    border:1px solid #333333;
 
     background:#15151c;
-
     color:white;
 
     cursor:pointer;
@@ -154,8 +155,8 @@ ABAS
 
 .tab.active{
     background:#7b2cff;
+    border-color:#a45cff;
 }
-
 
 /* =========================
 SEÇÕES
@@ -192,11 +193,10 @@ SEÇÕES
 .subtitle{
     text-align:center;
 
-    color:#999;
+    color:#999999;
 
     margin-bottom:20px;
 }
-
 
 /* =========================
 GRID
@@ -210,9 +210,8 @@ GRID
     gap:16px;
 }
 
-
 /* =========================
-CARD
+CARDS
 ========================= */
 
 .card{
@@ -235,14 +234,14 @@ CARD
 
 .card img{
     width:100%;
-
     height:250px;
 
     object-fit:cover;
 
     display:block;
-}
 
+    background:#171720;
+}
 
 /* =========================
 INFORMAÇÕES
@@ -282,6 +281,10 @@ INFORMAÇÕES
     margin-bottom:12px;
 }
 
+/* =========================
+BOTÃO
+========================= */
+
 .add{
     width:100%;
 
@@ -303,7 +306,6 @@ INFORMAÇÕES
 .add:hover{
     background:#914cff;
 }
-
 
 /* =========================
 SKINS
@@ -349,6 +351,8 @@ SKINS
 }
 
 .skin-symbol{
+    position:relative;
+
     z-index:2;
 
     width:145px;
@@ -376,9 +380,6 @@ SKINS
     0 0 25px red,
     inset 0 0 20px rgba(255,255,255,.25);
 }
-
-
-/* CORES DAS SKINS */
 
 .skin-purple{
     background:
@@ -430,7 +431,6 @@ SKINS
     );
 }
 
-
 /* =========================
 GAME PASS
 ========================= */
@@ -479,7 +479,9 @@ GAME PASS
     font-size:90px;
 
     filter:
-    drop-shadow(0 0 15px #b878ff);
+    drop-shadow(
+        0 0 15px #b878ff
+    );
 }
 
 .gamepass-image::after{
@@ -496,7 +498,6 @@ GAME PASS
     letter-spacing:3px;
 }
 
-
 /* =========================
 CARRINHO
 ========================= */
@@ -505,11 +506,9 @@ CARRINHO
     position:fixed;
 
     right:-410px;
-
     top:0;
 
     width:390px;
-
     height:100vh;
 
     padding:22px;
@@ -598,7 +597,6 @@ CARRINHO
 
     cursor:pointer;
 }
-
 
 /* =========================
 FINALIZAR PEDIDO
@@ -704,7 +702,7 @@ FINALIZAR PEDIDO
 .checkout-header p{
     margin-top:8px;
 
-    color:#aaa;
+    color:#aaaaaa;
 
     font-size:14px;
 }
@@ -742,7 +740,7 @@ FINALIZAR PEDIDO
 .checkout-product-qty{
     margin-top:4px;
 
-    color:#aaa;
+    color:#aaaaaa;
 
     font-size:13px;
 }
@@ -771,6 +769,10 @@ FINALIZAR PEDIDO
     color:#c68cff;
 }
 
+/* =========================
+PIX
+========================= */
+
 .pix-info{
     margin-top:18px;
 
@@ -778,9 +780,11 @@ FINALIZAR PEDIDO
 
     border-radius:12px;
 
-    background:rgba(123,44,255,.12);
+    background:
+    rgba(123,44,255,.12);
 
-    border:1px solid rgba(123,44,255,.35);
+    border:
+    1px solid rgba(123,44,255,.35);
 }
 
 .pix-title{
@@ -792,11 +796,51 @@ FINALIZAR PEDIDO
 }
 
 .pix-info p{
-    color:#aaa;
+    color:#aaaaaa;
 
     font-size:13px;
 
     line-height:1.5;
+}
+
+.pix-key{
+    margin-top:12px;
+
+    padding:12px;
+
+    background:#0d0d12;
+
+    border:1px solid #7b2cff;
+
+    border-radius:10px;
+
+    color:#d8baff;
+
+    text-align:center;
+
+    font-size:14px;
+
+    word-break:break-all;
+}
+
+.copy-pix{
+    width:100%;
+
+    padding:12px;
+
+    margin-top:10px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#2a1740;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
 }
 
 .copy-order,
@@ -836,7 +880,6 @@ FINALIZAR PEDIDO
     background:#914cff;
 }
 
-
 /* =========================
 RODAPÉ
 ========================= */
@@ -846,9 +889,8 @@ footer{
 
     padding:25px;
 
-    color:#777;
+    color:#777777;
 }
-
 
 /* =========================
 CELULAR
@@ -876,9 +918,7 @@ CELULAR
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
 TOPO
@@ -894,10 +934,12 @@ FullStop <span>STORE</span>
 
 </div>
 
+<button
+class="cartbtn"
+onclick="toggleCart()">
 
-<button class="cartbtn" onclick="toggleCart()">
-
-🛒 <span id="count">0</span>
+🛒
+<span id="count">0</span>
 
 </button>
 
@@ -912,7 +954,8 @@ CAPA
 
 <h1>
 
-FULLSTOP <span>STORE</span>
+FULLSTOP
+<span>STORE</span>
 
 </h1>
 
@@ -931,20 +974,39 @@ ABAS
 
 <div class="tabs">
 
-<button class="tab active" onclick="openTab('normal',this)">
+<button
+class="tab active"
+onclick="openTab('normal',this)">
+
 🍎 Frutas Normais
+
 </button>
 
-<button class="tab" onclick="openTab('perm',this)">
+
+<button
+class="tab"
+onclick="openTab('perm',this)">
+
 💎 Frutas PERM
+
 </button>
 
-<button class="tab" onclick="openTab('skins',this)">
+
+<button
+class="tab"
+onclick="openTab('skins',this)">
+
 🎨 Skins
+
 </button>
 
-<button class="tab" onclick="openTab('gamepass',this)">
+
+<button
+class="tab"
+onclick="openTab('gamepass',this)">
+
 🎮 GAME PASS
+
 </button>
 
 </div>
@@ -954,28 +1016,46 @@ ABAS
 FRUTAS NORMAIS
 ========================= -->
 
-<section id="normal" class="section active">
+<section
+id="normal"
+class="section active">
 
 <h2 class="title">
+
 🟣 Frutas Míticas
+
 </h2>
 
 <p class="subtitle">
+
 Produtos listados de 2 em 2
+
 </p>
 
-<div class="grid" id="mythical"></div>
+<div
+class="grid"
+id="mythical">
+
+</div>
 
 
 <h2 class="title legend">
+
 🟡 Frutas Lendárias
+
 </h2>
 
 <p class="subtitle">
+
 Produtos listados de 2 em 2
+
 </p>
 
-<div class="grid" id="legendary"></div>
+<div
+class="grid"
+id="legendary">
+
+</div>
 
 </section>
 
@@ -984,17 +1064,27 @@ Produtos listados de 2 em 2
 PERM
 ========================= -->
 
-<section id="perm" class="section">
+<section
+id="perm"
+class="section">
 
 <h2 class="title">
+
 💎 Frutas PERM
+
 </h2>
 
 <p class="subtitle">
+
 Produtos listados de 2 em 2
+
 </p>
 
-<div class="grid" id="perms"></div>
+<div
+class="grid"
+id="perms">
+
+</div>
 
 </section>
 
@@ -1003,17 +1093,27 @@ Produtos listados de 2 em 2
 SKINS
 ========================= -->
 
-<section id="skins" class="section">
+<section
+id="skins"
+class="section">
 
 <h2 class="title">
+
 🎨 Skins
+
 </h2>
 
 <p class="subtitle">
+
 Skins listadas de 2 em 2
+
 </p>
 
-<div class="grid" id="skinsGrid"></div>
+<div
+class="grid"
+id="skinsGrid">
+
+</div>
 
 </section>
 
@@ -1022,17 +1122,27 @@ Skins listadas de 2 em 2
 GAME PASS
 ========================= -->
 
-<section id="gamepass" class="section">
+<section
+id="gamepass"
+class="section">
 
 <h2 class="title">
+
 🎮 GAME PASS
+
 </h2>
 
 <p class="subtitle">
+
 Game Pass listados de 2 em 2
+
 </p>
 
-<div class="grid" id="gamepassGrid"></div>
+<div
+class="grid"
+id="gamepassGrid">
+
+</div>
 
 </section>
 
@@ -1041,13 +1151,27 @@ Game Pass listados de 2 em 2
 CARRINHO
 ========================= -->
 
-<div class="cart" id="cart">
+<div
+class="cart"
+id="cart">
 
-<button class="close" onclick="toggleCart()">×</button>
+<button
+class="close"
+onclick="toggleCart()">
 
-<h2>🛒 Carrinho</h2>
+×
+
+</button>
+
+
+<h2>
+
+🛒 Carrinho
+
+</h2>
 
 <br>
+
 
 <div id="cartItems">
 
@@ -1057,15 +1181,23 @@ Carrinho vazio.
 
 <br>
 
+
 <div class="price">
 
 Total:
-<span id="total">R$ 0,00</span>
+
+<span id="total">
+
+R$ 0,00
+
+</span>
 
 </div>
 
 
-<button class="checkout" onclick="checkout()">
+<button
+class="checkout"
+onclick="checkout()">
 
 💜 FINALIZAR PEDIDO
 
@@ -1078,9 +1210,12 @@ Total:
 FINALIZAR PEDIDO
 ========================= -->
 
-<div class="checkout-modal" id="checkoutModal">
+<div
+class="checkout-modal"
+id="checkoutModal">
 
 <div class="checkout-box">
+
 
 <button
 class="checkout-close"
@@ -1099,10 +1234,18 @@ onclick="closeCheckout()">
 
 </div>
 
-<h2>Finalizar Pedido</h2>
+
+<h2>
+
+Finalizar Pedido
+
+</h2>
+
 
 <p>
+
 Confira seus produtos antes de continuar.
+
 </p>
 
 </div>
@@ -1110,16 +1253,28 @@ Confira seus produtos antes de continuar.
 
 <div class="checkout-products">
 
-<h3>Seu pedido</h3>
+<h3>
 
-<div id="checkoutItems"></div>
+Seu pedido
+
+</h3>
+
+
+<div id="checkoutItems">
+
+</div>
 
 </div>
 
 
 <div class="checkout-total">
 
-<span>Total</span>
+<span>
+
+Total
+
+</span>
+
 
 <b id="checkoutTotal">
 
@@ -1138,13 +1293,30 @@ R$ 0,00
 
 </div>
 
+
 <p>
 
-Seu pedido será preparado para pagamento.
-Clique em "Copiar pedido" para copiar os
-produtos selecionados.
+Copie a chave PIX abaixo para realizar o pagamento.
 
 </p>
+
+
+<div
+class="pix-key"
+id="pixKey">
+
+raridadevsync@gmail.com
+
+</div>
+
+
+<button
+class="copy-pix"
+onclick="copyPix()">
+
+📋 Copiar chave PIX
+
+</button>
 
 </div>
 
@@ -1162,7 +1334,7 @@ onclick="copyOrder()">
 class="confirm-order"
 onclick="confirmOrder()">
 
-💜 Confirmar Pedido
+✓ Confirmar pedido
 
 </button>
 
@@ -1185,7 +1357,6 @@ RODAPÉ
 
 <script>
 
-
 /* =========================
 FRUTAS MÍTICAS
 ========================= */
@@ -1193,17 +1364,29 @@ FRUTAS MÍTICAS
 const myth=[
 
 ["Gravity","gravity.jpg","R$ 5,00"],
+
 ["Mammoth","mamuth.jpg","R$ 6,00"],
+
 ["T-Rex","t-rex.jpg","R$ 6,00"],
+
 ["Dough","dough.jpg","R$ 8,00"],
+
 ["Shadow","shadow.jpg","R$ 6,00"],
+
 ["Venom","venom.jpg","R$ 7,00"],
+
 ["Gas","gass.jpg","R$ 8,00"],
+
 ["Spirit","spirit.jpg","R$ 8,00"],
+
 ["Control","control.jpg","R$ 20,00"],
+
 ["Kitsune","kitsune.jpg","R$ 35,00"],
+
 ["Dragon","dragon.jpg","R$ 75,00"],
+
 ["Yeti","yeti.jpg","R$ 10,00"],
+
 ["Tiger","tiger.jpg","R$ 10,00"]
 
 ];
@@ -1216,15 +1399,25 @@ FRUTAS LENDÁRIAS
 const legend=[
 
 ["Buddha","buddha.jpg","R$ 5,00"],
+
 ["Portal","portal.jpg","R$ 6,00"],
+
 ["Rumble","rumble.jpg","R$ 20,00"],
+
 ["Blizzard","blizzard.jpg","R$ 5,00"],
+
 ["Phoenix","phoenix.jpg","R$ 6,00"],
+
 ["Pain","pain.jpg","R$ 7,00"],
+
 ["Lightning","lightning.jpg","R$ 8,00"],
+
 ["Sound","sound.jpg","R$ 6,00"],
+
 ["Quake","quake.jpg","R$ 4,00"],
+
 ["Love","love.jpg","R$ 4,00"],
+
 ["Spider","spider.jpg","R$ 3,00"]
 
 ];
@@ -1237,20 +1430,35 @@ FRUTAS PERM
 const perms=[
 
 ["Dragon PERM","dragon.jpg","R$ 165,00"],
+
 ["Kitsune PERM","kitsune.jpg","R$ 132,00"],
+
 ["Control PERM","control.jpg","R$ 95,00"],
+
 ["Yeti PERM","yeti.jpg","R$ 100,00"],
+
 ["Tiger PERM","tiger.jpg","R$ 100,00"],
+
 ["Shadow PERM","shadow.jpg","R$ 75,00"],
+
 ["Gas PERM","gass.jpg","R$ 85,00"],
+
 ["Venom PERM","venom.jpg","R$ 80,00"],
+
 ["Dough PERM","dough.jpg","R$ 79,00"],
+
 ["Mammoth PERM","mamuth.jpg","R$ 70,00"],
+
 ["T-Rex PERM","t-rex.jpg","R$ 85,00"],
+
 ["Gravity PERM","gravity.jpg","R$ 75,00"],
+
 ["Blizzard PERM","blizzard.jpg","R$ 75,00"],
+
 ["Portal PERM","portal.jpg","R$ 66,00"],
+
 ["Sound PERM","sound.jpg","R$ 62,00"],
+
 ["Buddha PERM","buddha.jpg","R$ 55,00"]
 
 ];
@@ -1263,20 +1471,35 @@ SKINS
 const skins=[
 
 ["RABID BLADE","⚔","R$ 300,00",""],
+
 ["KITSUNE GALAXY","🦊","R$ 280,00","skin-purple"],
+
 ["CRIMSON KITSUNE","🦊","R$ 250,00","skin-orange"],
+
 ["DRAGON EMBER","🐉","R$ 175,00","skin-orange"],
+
 ["RUNIC","✦","R$ 200,00","skin-purple"],
+
 ["MEME","◉","R$ 150,00","skin-yellow"],
+
 ["PURPLE","✧","R$ 120,00","skin-purple"],
+
 ["SUPER SPIRIT PAIN","☁","R$ 100,00","skin-blue"],
+
 ["RED","◆","R$ 80,00",""],
+
 ["DOG BLADE","⚔","R$ 70,00","skin-yellow"],
+
 ["YELLOW","✦","R$ 65,00","skin-yellow"],
+
 ["PORTAL DIVINE","◎","R$ 45,00","skin-blue"],
+
 ["STARLIGHT","★","R$ 65,00","skin-yellow"],
+
 ["CELESTIAL","☾","R$ 45,00","skin-purple"],
+
 ["FIEND","☠","R$ 55,00","skin-orange"],
+
 ["WEREWOLF","🐺","R$ 60,00","skin-green"]
 
 ];
@@ -1289,12 +1512,19 @@ GAME PASS
 const gamepasses=[
 
 ["2X MONEY","💰","R$ 20,00"],
+
 ["2X MASTERY","⚡","R$ 20,00"],
+
 ["FAST BOATS","🚤","R$ 15,00"],
+
 ["FRUIT NOTIFIER","🔔","R$ 30,00"],
+
 ["DARK BLADE","⚔️","R$ 40,00"],
+
 ["2X BOSS DROPS","👑","R$ 20,00"],
+
 ["2X EXP","⭐","R$ 15,00"],
+
 ["FAST SPAWN","🚀","R$ 15,00"]
 
 ];
@@ -1321,7 +1551,10 @@ list.map(item=>`
 
 <img
 src="assets/${item[1]}"
-alt="${item[0]}">
+alt="${item[0]}"
+
+onerror="this.style.display='none'">
+
 
 <div class="info">
 
@@ -1331,13 +1564,20 @@ ${tag}
 
 </div>
 
-<h3>${item[0]}</h3>
+
+<h3>
+
+${item[0]}
+
+</h3>
+
 
 <div class="price">
 
 ${item[2]}
 
 </div>
+
 
 <button
 class="add"
@@ -1378,6 +1618,7 @@ ${item[1]}
 
 </div>
 
+
 <div class="info">
 
 <div class="tag">
@@ -1386,13 +1627,20 @@ SKIN
 
 </div>
 
-<h3>${item[0]}</h3>
+
+<h3>
+
+${item[0]}
+
+</h3>
+
 
 <div class="price">
 
 ${item[2]}
 
 </div>
+
 
 <button
 class="add"
@@ -1433,6 +1681,7 @@ ${item[1]}
 
 </div>
 
+
 <div class="info">
 
 <div class="tag">
@@ -1441,13 +1690,20 @@ GAME PASS
 
 </div>
 
-<h3>${item[0]}</h3>
+
+<h3>
+
+${item[0]}
+
+</h3>
+
 
 <div class="price">
 
 ${item[2]}
 
 </div>
+
 
 <button
 class="add"
@@ -1471,22 +1727,37 @@ RENDERIZAR
 ========================= */
 
 renderFruits(
+
 "mythical",
+
 myth,
+
 "MÍTICA"
+
 );
 
+
 renderFruits(
+
 "legendary",
+
 legend,
+
 "LENDÁRIA"
+
 );
 
+
 renderFruits(
+
 "perms",
+
 perms,
+
 "PERM"
+
 );
+
 
 renderSkins();
 
@@ -1528,7 +1799,7 @@ button.classList.add("active");
 
 
 /* =========================
-ABRIR CARRINHO
+CARRINHO
 ========================= */
 
 function toggleCart(){
@@ -1540,17 +1811,11 @@ document
 }
 
 
-/* =========================
-ADICIONAR ITEM
-========================= */
-
 function addItem(nome,preco){
 
 let item=
 
-cart.find(
-x=>x.nome===nome
-);
+cart.find(x=>x.nome===nome);
 
 
 if(item){
@@ -1634,9 +1899,18 @@ texto+=`
 
 <div class="row">
 
-<b>${item.nome}</b>
+<b>
 
-<span>${item.preco}</span>
+${item.nome}
+
+</b>
+
+
+<span>
+
+${item.preco}
+
+</span>
 
 </div>
 
@@ -1723,23 +1997,22 @@ updateCart();
 
 
 /* =========================
-ABRIR FINALIZAR PEDIDO
+ABRIR CHECKOUT
 ========================= */
 
 function checkout(){
 
 if(!cart.length){
 
-alert("Seu carrinho está vazio!");
+alert(
+
+"Seu carrinho está vazio!"
+
+);
 
 return;
 
 }
-
-
-document
-.getElementById("cart")
-.classList.remove("active");
 
 
 let total=0;
@@ -1749,16 +2022,18 @@ let texto="";
 
 cart.forEach(item=>{
 
-let subtotal=
+let valor=
 
-priceNumber(item.preco)
+priceNumber(item.preco);
+
+
+total+=
+
+valor
 
 *
 
 item.quantidade;
-
-
-total+=subtotal;
 
 
 texto+=`
@@ -1773,6 +2048,7 @@ ${item.nome}
 
 </div>
 
+
 <div class="checkout-product-qty">
 
 Quantidade: ${item.quantidade}
@@ -1784,7 +2060,7 @@ Quantidade: ${item.quantidade}
 
 <div class="checkout-product-price">
 
-R$ ${subtotal
+R$ ${(valor*item.quantidade)
 .toFixed(2)
 .replace(".",",")}
 
@@ -1825,7 +2101,7 @@ document
 
 
 /* =========================
-FECHAR FINALIZAR PEDIDO
+FECHAR CHECKOUT
 ========================= */
 
 function closeCheckout(){
@@ -1838,13 +2114,10 @@ document
 
 
 /* =========================
-CRIAR TEXTO DO PEDIDO
+COPIAR PEDIDO
 ========================= */
 
-function createOrderText(){
-
-let total=0;
-
+function copyOrder(){
 
 let pedido=
 
@@ -1852,18 +2125,6 @@ let pedido=
 
 
 cart.forEach(item=>{
-
-let subtotal=
-
-priceNumber(item.preco)
-
-*
-
-item.quantidade;
-
-
-total+=subtotal;
-
 
 pedido+=
 
@@ -1883,13 +2144,11 @@ item.quantidade
 
 +
 
-" - R$ "
+" - "
 
 +
 
-subtotal
-.toFixed(2)
-.replace(".",",")
+item.preco
 
 +
 
@@ -1898,64 +2157,91 @@ subtotal
 });
 
 
+let total=0;
+
+
+cart.forEach(item=>{
+
+total+=
+
+priceNumber(item.preco)
+
+*
+
+item.quantidade;
+
+});
+
+
 pedido+=
 
-"\n💜 TOTAL: R$ "
+"\nTOTAL: R$ "
 
 +
 
 total
 .toFixed(2)
-.replace(".",",")
+.replace(".",",");
 
-
-+
-
-"\n\n💳 PAGAMENTO: PIX";
-
-
-return pedido;
-
-}
-
-
-/* =========================
-COPIAR PEDIDO
-========================= */
-
-function copyOrder(){
-
-let pedido=
-
-createOrderText();
-
-
-if(navigator.clipboard){
 
 navigator.clipboard
 .writeText(pedido)
 .then(()=>{
 
 alert(
-"Pedido copiado com sucesso!"
+
+"Pedido copiado!"
+
 );
 
 })
 .catch(()=>{
 
 alert(
+
 "Não foi possível copiar automaticamente."
+
 );
 
 });
 
-}else{
+}
+
+
+/* =========================
+COPIAR PIX
+========================= */
+
+function copyPix(){
+
+const chave=
+
+document
+.getElementById("pixKey")
+.textContent
+.trim();
+
+
+navigator.clipboard
+.writeText(chave)
+.then(()=>{
 
 alert(
-"Seu navegador não suporta cópia automática."
+
+"Chave PIX copiada!"
+
 );
 
-}
+})
+.catch(()=>{
+
+alert(
+
+"Não foi possível copiar a chave."
+
+);
+
+});
 
 }
 
@@ -1966,39 +2252,28 @@ CONFIRMAR PEDIDO
 
 function confirmOrder(){
 
+if(!cart.length){
+
 alert(
 
-"Pedido confirmado! Agora você pode combinar o pagamento PIX com o vendedor."
+"Seu carrinho está vazio!"
+
+);
+
+return;
+
+}
+
+
+alert(
+
+"Pedido confirmado! Realize o pagamento usando a chave PIX exibida. Depois, confirme o pagamento pelo canal de atendimento da loja."
 
 );
 
 }
-
-
-/* =========================
-FECHAR MODAL CLICANDO FORA
-========================= */
-
-document
-.getElementById("checkoutModal")
-.addEventListener(
-"click",
-function(event){
-
-if(
-event.target===this
-){
-
-closeCheckout();
-
-}
-
-}
-);
 
 </script>
 
-
 </body>
-
 </html>
