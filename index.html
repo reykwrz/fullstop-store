@@ -17,25 +17,25 @@
 
 body{
     background:#07070a;
-    color:white;
+    color:#fff;
 }
 
-/* TOPO */
+/* ================= TOPO ================= */
 
 header{
-    padding:16px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#0d0d12;
-    border-bottom:2px solid #7b2cff;
     position:sticky;
     top:0;
     z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 5%;
+    background:#0d0d12;
+    border-bottom:2px solid #7b2cff;
 }
 
 .logo{
-    font-size:24px;
+    font-size:25px;
     font-weight:900;
 }
 
@@ -45,33 +45,34 @@ header{
 
 .verified{
     display:inline-flex;
-    align-items:center;
     justify-content:center;
-    margin-left:5px;
+    align-items:center;
     width:18px;
     height:18px;
     border-radius:50%;
     background:#7b2cff;
     font-size:12px;
+    margin-left:5px;
 }
 
 .cartbtn{
+    padding:11px 16px;
+    border:none;
+    border-radius:10px;
     background:#7b2cff;
     color:white;
-    border:0;
-    border-radius:10px;
-    padding:11px 15px;
-    font-weight:bold;
     cursor:pointer;
     font-size:16px;
+    font-weight:bold;
 }
 
-/* CAPA */
+/* ================= CAPA ================= */
 
 .hero{
     text-align:center;
     padding:60px 15px;
-    background:radial-gradient(circle,#3b126d,#08080b 65%);
+    background:
+    radial-gradient(circle,#40136e,#09090d 65%);
 }
 
 .hero h1{
@@ -79,34 +80,33 @@ header{
     font-weight:900;
 }
 
-.hero span{
-    color:#a45cff;
+.hero h1 span{
+    color:#b878ff;
 }
 
 .hero p{
     margin-top:12px;
-    color:#ddd;
+    color:#ccc;
 }
 
-/* ABAS */
+/* ================= ABAS ================= */
 
 .tabs{
     display:flex;
     justify-content:center;
-    flex-wrap:wrap;
     gap:10px;
-    padding:24px 15px;
+    flex-wrap:wrap;
+    padding:25px 15px;
 }
 
 .tab{
     padding:12px 18px;
     border-radius:10px;
+    border:1px solid #333;
     background:#15151c;
     color:white;
-    border:1px solid #333;
     cursor:pointer;
     font-weight:bold;
-    transition:.2s;
 }
 
 .tab:hover{
@@ -115,10 +115,9 @@ header{
 
 .tab.active{
     background:#7b2cff;
-    border-color:#a45cff;
 }
 
-/* SEÇÕES */
+/* ================= SEÇÕES ================= */
 
 .section{
     display:none;
@@ -133,7 +132,7 @@ header{
 
 .title{
     text-align:center;
-    margin:28px 0 8px;
+    margin:25px 0 8px;
     color:#b878ff;
     font-size:27px;
 }
@@ -148,7 +147,7 @@ header{
     margin-bottom:20px;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 
 .grid{
     display:grid;
@@ -156,11 +155,11 @@ header{
     gap:16px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card{
     background:#111119;
-    border:1px solid #2a2933;
+    border:1px solid #2d2d37;
     border-radius:16px;
     overflow:hidden;
     transition:.2s;
@@ -168,7 +167,7 @@ header{
 
 .card:hover{
     transform:translateY(-3px);
-    border-color:#7b2cff;
+    border-color:#914cff;
 }
 
 .card img{
@@ -178,7 +177,7 @@ header{
     display:block;
 }
 
-/* INFORMAÇÕES */
+/* ================= INFORMAÇÕES ================= */
 
 .info{
     padding:14px;
@@ -186,16 +185,16 @@ header{
 
 .tag{
     display:inline-block;
-    background:#2a1740;
-    color:#bd8cff;
+    padding:5px 9px;
     border-radius:15px;
-    padding:5px 8px;
+    background:#2a1740;
+    color:#c89cff;
     font-size:11px;
     margin-bottom:8px;
 }
 
 .info h3{
-    margin:3px 0 10px;
+    margin:4px 0 10px;
 }
 
 .price{
@@ -207,67 +206,142 @@ header{
 
 .add{
     width:100%;
-    background:#7b2cff;
-    color:white;
+    padding:11px;
     border:0;
     border-radius:10px;
-    padding:11px;
-    font-weight:bold;
+    background:#7b2cff;
+    color:white;
     cursor:pointer;
+    font-weight:bold;
 }
 
 .add:hover{
     background:#914cff;
 }
 
-/* SKINS */
+/* ================= IMAGENS CRIADAS PARA SKINS ================= */
 
-.art{
-    width:100%;
+.skin-image{
     height:250px;
+    position:relative;
+    overflow:hidden;
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
-    overflow:hidden;
-    font-size:85px;
-    font-weight:bold;
+    background:
+    radial-gradient(circle at center,#ff3333,#850000 45%,#130000 100%);
 }
 
-.skin-art{
-    background:radial-gradient(circle,#a00000,#400000 50%,#090000);
-    border-bottom:2px solid #ff3030;
-    color:white;
-    text-shadow:0 0 15px white,0 0 30px red;
-}
-
-.skin-art::before{
+.skin-image::before{
     content:"";
     position:absolute;
-    width:300px;
-    height:300px;
-    border:3px solid #ff3333;
+    width:320px;
+    height:320px;
+    border:3px solid rgba(255,255,255,.25);
     border-radius:50%;
-    opacity:.5;
+    box-shadow:
+    0 0 30px red,
+    0 0 70px red;
 }
 
-/* GAME PASS */
-
-.gamepass-art{
-    background:radial-gradient(circle,#482080,#160d2a 60%,#07070a);
-    border-bottom:2px solid #a45cff;
-    color:white;
-    text-shadow:0 0 15px #a45cff,0 0 30px #7b2cff;
-}
-
-.gamepass-art::before{
-    content:"🎮";
+.skin-image::after{
+    content:"";
     position:absolute;
-    font-size:180px;
-    opacity:.12;
+    width:8px;
+    height:100%;
+    left:18px;
+    background:white;
+    box-shadow:
+    0 0 15px white,
+    0 0 35px red;
 }
 
-/* CARRINHO */
+.skin-symbol{
+    z-index:2;
+    width:145px;
+    height:145px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+    background:
+    linear-gradient(135deg,#ff4b4b,#660000);
+    border:5px solid #210000;
+    box-shadow:
+    0 0 25px red,
+    inset 0 0 20px rgba(255,255,255,.25);
+}
+
+/* CORES DAS SKINS */
+
+.skin-purple{
+    background:
+    radial-gradient(circle,#a733ff,#39006d 50%,#100019);
+}
+
+.skin-blue{
+    background:
+    radial-gradient(circle,#00bfff,#003b70 50%,#000b18);
+}
+
+.skin-orange{
+    background:
+    radial-gradient(circle,#ff8c00,#8f2500 50%,#180600);
+}
+
+.skin-green{
+    background:
+    radial-gradient(circle,#27e85f,#006b20 50%,#001408);
+}
+
+.skin-yellow{
+    background:
+    radial-gradient(circle,#ffe600,#9b6200 50%,#181000);
+}
+
+/* ================= GAME PASS ================= */
+
+.gamepass-image{
+    height:250px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle,#6734b7,#241041 55%,#09070d);
+}
+
+.gamepass-image::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:3px solid rgba(190,130,255,.4);
+    box-shadow:
+    0 0 25px #8b3dff,
+    0 0 60px #5e20c0;
+}
+
+.gamepass-icon{
+    z-index:2;
+    font-size:90px;
+    filter:drop-shadow(0 0 15px #b878ff);
+}
+
+.gamepass-image::after{
+    content:"GAME PASS";
+    position:absolute;
+    bottom:15px;
+    font-weight:bold;
+    color:#d8baff;
+    letter-spacing:3px;
+}
+
+/* ================= CARRINHO ================= */
 
 .cart{
     position:fixed;
@@ -275,10 +349,10 @@ header{
     top:0;
     width:390px;
     height:100vh;
+    padding:22px;
     background:#101016;
     border-left:2px solid #7b2cff;
     z-index:200;
-    padding:22px;
     transition:.3s;
     overflow:auto;
 }
@@ -298,9 +372,9 @@ header{
 
 .cartitem{
     background:#191923;
-    border-radius:10px;
     padding:12px;
     margin:10px 0;
+    border-radius:10px;
 }
 
 .row{
@@ -310,19 +384,19 @@ header{
 }
 
 .qty button{
-    background:#7b2cff;
-    color:white;
-    border:0;
-    border-radius:6px;
     padding:5px 10px;
     margin:8px 5px 0 0;
+    border:0;
+    border-radius:6px;
+    background:#7b2cff;
+    color:white;
     cursor:pointer;
 }
 
 .checkout{
-    margin-top:16px;
     width:100%;
     padding:15px;
+    margin-top:16px;
     border:0;
     border-radius:10px;
     background:#7b2cff;
@@ -332,11 +406,7 @@ header{
     cursor:pointer;
 }
 
-.checkout:hover{
-    background:#914cff;
-}
-
-/* RODAPÉ */
+/* ================= RODAPÉ ================= */
 
 footer{
     text-align:center;
@@ -344,7 +414,7 @@ footer{
     color:#777;
 }
 
-/* CELULAR */
+/* ================= CELULAR ================= */
 
 @media(max-width:650px){
 
@@ -368,6 +438,8 @@ footer{
 
 <body>
 
+<!-- TOPO -->
+
 <header>
 
 <div class="logo">
@@ -382,6 +454,8 @@ FullStop <span>STORE</span>
 </header>
 
 
+<!-- CAPA -->
+
 <section class="hero">
 
 <h1>
@@ -389,11 +463,13 @@ FULLSTOP <span>STORE</span>
 </h1>
 
 <p>
-Frutas Normais • PERM • Skins • GAME PASS
+Frutas Normais • Frutas PERM • Skins • GAME PASS
 </p>
 
 </section>
 
+
+<!-- ABAS -->
 
 <div class="tabs">
 
@@ -425,7 +501,7 @@ Frutas Normais • PERM • Skins • GAME PASS
 </h2>
 
 <p class="subtitle">
-Listadas de 2 em 2
+Produtos listados de 2 em 2
 </p>
 
 <div class="grid" id="mythical"></div>
@@ -436,7 +512,7 @@ Listadas de 2 em 2
 </h2>
 
 <p class="subtitle">
-Listadas de 2 em 2
+Produtos listados de 2 em 2
 </p>
 
 <div class="grid" id="legendary"></div>
@@ -453,7 +529,7 @@ Listadas de 2 em 2
 </h2>
 
 <p class="subtitle">
-Listadas de 2 em 2
+Produtos listados de 2 em 2
 </p>
 
 <div class="grid" id="perms"></div>
@@ -470,7 +546,7 @@ Listadas de 2 em 2
 </h2>
 
 <p class="subtitle">
-Skins listadas de 2 em 2
+16 Skins listadas de 2 em 2
 </p>
 
 <div class="grid" id="skinsGrid"></div>
@@ -530,206 +606,141 @@ Total: <span id="total">R$ 0,00</span>
 <script>
 
 /* =========================
-   FRUTAS MÍTICAS
+FRUTAS MÍTICAS
 ========================= */
 
 const myth=[
 
 ["Gravity","gravity.jpg","R$ 5,00"],
-
 ["Mammoth","mamuth.jpg","R$ 6,00"],
-
 ["T-Rex","t-rex.jpg","R$ 6,00"],
-
 ["Dough","dough.jpg","R$ 8,00"],
-
 ["Shadow","shadow.jpg","R$ 6,00"],
-
 ["Venom","venom.jpg","R$ 7,00"],
-
 ["Gas","gass.jpg","R$ 8,00"],
-
 ["Spirit","spirit.jpg","R$ 8,00"],
-
 ["Control","control.jpg","R$ 20,00"],
-
 ["Kitsune","kitsune.jpg","R$ 35,00"],
-
 ["Dragon","dragon.jpg","R$ 75,00"],
-
 ["Yeti","yeti.jpg","R$ 10,00"],
-
 ["Tiger","tiger.jpg","R$ 10,00"]
 
 ];
 
 
 /* =========================
-   FRUTAS LENDÁRIAS
+FRUTAS LENDÁRIAS
 ========================= */
 
 const legend=[
 
 ["Buddha","buddha.jpg","R$ 5,00"],
-
 ["Portal","portal.jpg","R$ 6,00"],
-
 ["Rumble","rumble.jpg","R$ 20,00"],
-
 ["Blizzard","blizzard.jpg","R$ 5,00"],
-
 ["Phoenix","phoenix.jpg","R$ 6,00"],
-
 ["Pain","pain.jpg","R$ 7,00"],
-
 ["Lightning","lightning.jpg","R$ 8,00"],
-
 ["Sound","sound.jpg","R$ 6,00"],
-
 ["Quake","quake.jpg","R$ 4,00"],
-
 ["Love","love.jpg","R$ 4,00"],
-
 ["Spider","spider.jpg","R$ 3,00"]
 
 ];
 
 
 /* =========================
-   FRUTAS PERM
+FRUTAS PERM
 ========================= */
 
 const perms=[
 
 ["Dragon PERM","dragon.jpg","R$ 165,00"],
-
 ["Kitsune PERM","kitsune.jpg","R$ 132,00"],
-
 ["Control PERM","control.jpg","R$ 95,00"],
-
 ["Yeti PERM","yeti.jpg","R$ 100,00"],
-
 ["Tiger PERM","tiger.jpg","R$ 100,00"],
-
 ["Shadow PERM","shadow.jpg","R$ 75,00"],
-
 ["Gas PERM","gass.jpg","R$ 85,00"],
-
 ["Venom PERM","venom.jpg","R$ 80,00"],
-
 ["Dough PERM","dough.jpg","R$ 79,00"],
-
 ["Mammoth PERM","mamuth.jpg","R$ 70,00"],
-
 ["T-Rex PERM","t-rex.jpg","R$ 85,00"],
-
 ["Gravity PERM","gravity.jpg","R$ 75,00"],
-
 ["Blizzard PERM","blizzard.jpg","R$ 75,00"],
-
 ["Portal PERM","portal.jpg","R$ 66,00"],
-
 ["Sound PERM","sound.jpg","R$ 62,00"],
-
 ["Buddha PERM","buddha.jpg","R$ 55,00"]
 
 ];
 
 
 /* =========================
-   SKINS
+16 SKINS
 ========================= */
 
 const skins=[
 
-["RABID BLADE","⚔","R$ 300,00"],
-
-["KITSUNE GALAXY","🦊","R$ 280,00"],
-
-["CRIMSON KITSUNE","🦊","R$ 250,00"],
-
-["DRAGON EMBER","🐉","R$ 175,00"],
-
-["RUNIC","✦","R$ 200,00"],
-
-["MEME","😈","R$ 150,00"],
-
-["PURPLE","✧","R$ 120,00"],
-
-["SUPER SPIRIT PAIN","👻","R$ 100,00"],
-
-["RED","◆","R$ 80,00"],
-
-["DOG BLADE","⚔","R$ 70,00"],
-
-["YELLOW","✦","R$ 65,00"],
-
-["PORTAL DIVINE","◎","R$ 45,00"],
-
-["STARLIGHT","★","R$ 65,00"],
-
-["CELESTIAL","☾","R$ 45,00"],
-
-["FIEND","☠","R$ 55,00"],
-
-["WEREWOLF","🐺","R$ 60,00"]
+["RABID BLADE","⚔","R$ 300,00",""],
+["KITSUNE GALAXY","🦊","R$ 280,00","skin-purple"],
+["CRIMSON KITSUNE","🦊","R$ 250,00","skin-orange"],
+["DRAGON EMBER","🐉","R$ 175,00","skin-orange"],
+["RUNIC","✦","R$ 200,00","skin-purple"],
+["MEME","◉","R$ 150,00","skin-yellow"],
+["PURPLE","✧","R$ 120,00","skin-purple"],
+["SUPER SPIRIT PAIN","☁","R$ 100,00","skin-blue"],
+["RED","◆","R$ 80,00",""],
+["DOG BLADE","⚔","R$ 70,00","skin-yellow"],
+["YELLOW","✦","R$ 65,00","skin-yellow"],
+["PORTAL DIVINE","◎","R$ 45,00","skin-blue"],
+["STARLIGHT","★","R$ 65,00","skin-yellow"],
+["CELESTIAL","☾","R$ 45,00","skin-purple"],
+["FIEND","☠","R$ 55,00","skin-orange"],
+["WEREWOLF","🐺","R$ 60,00","skin-green"]
 
 ];
 
 
 /* =========================
-   GAME PASS
+GAME PASS
 ========================= */
 
 const gamepasses=[
 
 ["2X MONEY","💰","R$ 20,00"],
-
 ["2X MASTERY","⚡","R$ 20,00"],
-
 ["FAST BOATS","🚤","R$ 15,00"],
-
 ["FRUIT NOTIFIER","🔔","R$ 30,00"],
-
-["DARK BLADE","⚔","R$ 40,00"],
-
+["DARK BLADE","⚔️","R$ 40,00"],
 ["2X BOSS DROPS","👑","R$ 20,00"],
-
 ["2X EXP","⭐","R$ 15,00"],
-
 ["FAST SPAWN","🚀","R$ 15,00"]
 
 ];
 
 
 /* =========================
-   CARRINHO
+CARRINHO
 ========================= */
 
 let cart=[];
 
 
 /* =========================
-   RENDERIZAR FRUTAS
+MOSTRAR FRUTAS
 ========================= */
 
 function renderFruits(id,list,tag){
 
 document.getElementById(id).innerHTML=
 
-list.map(item=>{
-
-let nome=item[0];
-let imagem=item[1];
-let preco=item[2];
-
-return `
+list.map(item=>`
 
 <article class="card">
 
 <img
-src="assets/${imagem}"
-alt="${nome}">
+src="assets/${item[1]}"
+alt="${item[0]}">
 
 <div class="info">
 
@@ -737,17 +748,15 @@ alt="${nome}">
 ${tag}
 </div>
 
-<h3>
-${nome}
-</h3>
+<h3>${item[0]}</h3>
 
 <div class="price">
-${preco}
+${item[2]}
 </div>
 
 <button
 class="add"
-onclick="addItem('${nome}','${preco}')">
+onclick="addItem('${item[0]}','${item[2]}')">
 
 🛒 Adicionar
 
@@ -757,33 +766,29 @@ onclick="addItem('${nome}','${preco}')">
 
 </article>
 
-`;
-
-}).join("");
+`).join("");
 
 }
 
 
 /* =========================
-   RENDERIZAR SKINS
+MOSTRAR SKINS
 ========================= */
 
 function renderSkins(){
 
 document.getElementById("skinsGrid").innerHTML=
 
-skins.map(item=>{
-
-let nome=item[0];
-let simbolo=item[1];
-let preco=item[2];
-
-return `
+skins.map(item=>`
 
 <article class="card">
 
-<div class="art skin-art">
-${simbolo}
+<div class="skin-image ${item[3]}">
+
+<div class="skin-symbol">
+${item[1]}
+</div>
+
 </div>
 
 <div class="info">
@@ -792,17 +797,15 @@ ${simbolo}
 SKIN
 </div>
 
-<h3>
-${nome}
-</h3>
+<h3>${item[0]}</h3>
 
 <div class="price">
-${preco}
+${item[2]}
 </div>
 
 <button
 class="add"
-onclick="addItem('${nome}','${preco}')">
+onclick="addItem('${item[0]}','${item[2]}')">
 
 🛒 Adicionar
 
@@ -812,33 +815,29 @@ onclick="addItem('${nome}','${preco}')">
 
 </article>
 
-`;
-
-}).join("");
+`).join("");
 
 }
 
 
 /* =========================
-   RENDERIZAR GAME PASS
+MOSTRAR GAME PASS
 ========================= */
 
 function renderGamePass(){
 
 document.getElementById("gamepassGrid").innerHTML=
 
-gamepasses.map(item=>{
-
-let nome=item[0];
-let simbolo=item[1];
-let preco=item[2];
-
-return `
+gamepasses.map(item=>`
 
 <article class="card">
 
-<div class="art gamepass-art">
-${simbolo}
+<div class="gamepass-image">
+
+<div class="gamepass-icon">
+${item[1]}
+</div>
+
 </div>
 
 <div class="info">
@@ -847,17 +846,15 @@ ${simbolo}
 GAME PASS
 </div>
 
-<h3>
-${nome}
-</h3>
+<h3>${item[0]}</h3>
 
 <div class="price">
-${preco}
+${item[2]}
 </div>
 
 <button
 class="add"
-onclick="addItem('${nome}','${preco}')">
+onclick="addItem('${item[0]}','${item[2]}')">
 
 🛒 Adicionar
 
@@ -867,15 +864,13 @@ onclick="addItem('${nome}','${preco}')">
 
 </article>
 
-`;
-
-}).join("");
+`).join("");
 
 }
 
 
 /* =========================
-   MOSTRAR PRODUTOS
+RENDERIZAR
 ========================= */
 
 renderFruits("mythical",myth,"MÍTICA");
@@ -890,28 +885,27 @@ renderGamePass();
 
 
 /* =========================
-   ABAS
+ABAS
 ========================= */
 
 function openTab(id,button){
 
-document.querySelectorAll(".section")
-.forEach(section=>{
-
-section.classList.remove("active");
-
-});
-
-
-document.querySelectorAll(".tab")
-.forEach(tab=>{
-
-tab.classList.remove("active");
-
-});
+document
+.querySelectorAll(".section")
+.forEach(section=>
+section.classList.remove("active")
+);
 
 
-document.getElementById(id)
+document
+.querySelectorAll(".tab")
+.forEach(tab=>
+tab.classList.remove("active")
+);
+
+
+document
+.getElementById(id)
 .classList.add("active");
 
 
@@ -921,12 +915,13 @@ button.classList.add("active");
 
 
 /* =========================
-   CARRINHO
+CARRINHO
 ========================= */
 
 function toggleCart(){
 
-document.getElementById("cart")
+document
+.getElementById("cart")
 .classList.toggle("active");
 
 }
@@ -959,14 +954,15 @@ quantidade:1
 updateCart();
 
 
-document.getElementById("cart")
+document
+.getElementById("cart")
 .classList.add("active");
 
 }
 
 
 /* =========================
-   CALCULAR PREÇO
+CONVERTER PREÇO
 ========================= */
 
 function priceNumber(preco){
@@ -976,26 +972,24 @@ let numero=
 preco
 .replace("R$","")
 .replace(/\./g,"")
-.replace(",",".")
-.trim();
+.replace(",",".");
 
 
-let valor=parseFloat(numero);
-
-
-return isNaN(valor)?0:valor;
+return parseFloat(numero)||0;
 
 }
 
 
 /* =========================
-   ATUALIZAR CARRINHO
+ATUALIZAR CARRINHO
 ========================= */
 
 function updateCart(){
 
 let quantidadeTotal=0;
+
 let total=0;
+
 let texto="";
 
 
@@ -1003,9 +997,13 @@ cart.forEach((item,index)=>{
 
 quantidadeTotal+=item.quantidade;
 
+
 total+=
+
 priceNumber(item.preco)
+
 *
+
 item.quantidade;
 
 
@@ -1020,7 +1018,6 @@ texto+=`
 <span>${item.preco}</span>
 
 </div>
-
 
 <div class="qty">
 
@@ -1043,17 +1040,22 @@ ${item.quantidade}
 });
 
 
-document.getElementById("cartItems")
+document
+.getElementById("cartItems")
 .innerHTML=
 
 texto || "Carrinho vazio.";
 
 
-document.getElementById("count")
-.textContent=quantidadeTotal;
+document
+.getElementById("count")
+.textContent=
+
+quantidadeTotal;
 
 
-document.getElementById("total")
+document
+.getElementById("total")
 .textContent=
 
 "R$ "
@@ -1068,12 +1070,12 @@ total
 
 
 /* =========================
-   QUANTIDADE
+MUDAR QUANTIDADE
 ========================= */
 
-function changeItem(index,change){
+function changeItem(index,valor){
 
-cart[index].quantidade+=change;
+cart[index].quantidade+=valor;
 
 
 if(cart[index].quantidade<=0){
@@ -1089,7 +1091,7 @@ updateCart();
 
 
 /* =========================
-   PAGAMENTO
+CHECKOUT
 ========================= */
 
 function checkout(){
@@ -1141,7 +1143,9 @@ item.preco
 });
 
 
-pedido+="\n💜 PAGAMENTO: PIX";
+pedido+=
+
+"\n💜 PAGAMENTO: PIX";
 
 
 if(navigator.clipboard){
