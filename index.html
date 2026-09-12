@@ -7,34 +7,29 @@
 <title>FullStop STORE</title>
 
 <style>
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
     background:#07070a;
-    color:white;
+    color:#fff;
 }
 
-/* ================= TOPO ================= */
-
+/* TOPO */
 header{
+    padding:16px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0d0d12;
+    border-bottom:2px solid #7b2cff;
     position:sticky;
     top:0;
     z-index:100;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:16px 5%;
-
-    background:#0d0d12;
-    border-bottom:2px solid #7b2cff;
 }
 
 .logo{
@@ -43,88 +38,56 @@ header{
 }
 
 .logo span{
-    color:#a45cff;
-}
-
-.verified{
-    font-size:16px;
-    color:#5865F2;
-    margin-left:5px;
+    color:#b878ff;
 }
 
 .cartbtn{
     background:#7b2cff;
-    color:white;
-
-    border:none;
+    color:#fff;
+    border:0;
     border-radius:10px;
-
-    padding:11px 16px;
-
+    padding:11px 15px;
     font-weight:bold;
-    font-size:16px;
-
     cursor:pointer;
 }
 
-/* ================= CAPA ================= */
-
+/* CAPA */
 .hero{
     text-align:center;
-
-    padding:65px 15px;
-
-    background:
-    radial-gradient(
-        circle,
-        #481783 0%,
-        #1b092e 40%,
-        #08080b 75%
-    );
+    padding:60px 15px;
+    background:radial-gradient(circle,#3b126d,#08080b 65%);
 }
 
 .hero h1{
-    font-size:48px;
+    font-size:46px;
 }
 
-.hero h1 span{
+.hero span{
     color:#a45cff;
 }
 
 .hero p{
-    margin-top:12px;
-    color:#ccc;
+    margin-top:10px;
+    color:#ddd;
 }
 
-/* ================= ABAS ================= */
-
+/* ABAS */
 .tabs{
     display:flex;
+    gap:10px;
     justify-content:center;
     flex-wrap:wrap;
-
-    gap:10px;
-    padding:25px 15px;
+    padding:24px;
 }
 
 .tab{
-    background:#15151c;
-
-    color:white;
-
-    border:1px solid #333;
-
+    padding:12px 18px;
     border-radius:10px;
-
-    padding:12px 17px;
-
-    font-weight:bold;
-
+    background:#15151c;
+    color:#fff;
+    border:1px solid #333;
     cursor:pointer;
-}
-
-.tab:hover{
-    border-color:#a45cff;
+    font-weight:bold;
 }
 
 .tab.active{
@@ -132,15 +95,11 @@ header{
     border-color:#a45cff;
 }
 
-/* ================= SEÇÕES ================= */
-
+/* SEÇÕES */
 .section{
     display:none;
-
     max-width:1150px;
-
     margin:auto;
-
     padding:10px 16px 50px;
 }
 
@@ -150,13 +109,8 @@ header{
 
 .title{
     text-align:center;
-
-    margin-top:25px;
-    margin-bottom:8px;
-
+    margin:28px 0 8px;
     color:#b878ff;
-
-    font-size:27px;
 }
 
 .legend{
@@ -165,148 +119,81 @@ header{
 
 .subtitle{
     text-align:center;
-
     color:#999;
-
     margin-bottom:20px;
 }
 
-/* ================= GRID ================= */
-
+/* GRID - 2 POR LINHA */
 .grid{
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
     gap:16px;
 }
 
-/* ================= CARD ================= */
-
+/* CARDS */
 .card{
     background:#111119;
-
-    border:1px solid #292934;
-
+    border:1px solid #2a2933;
     border-radius:16px;
-
     overflow:hidden;
-
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-3px);
-    border-color:#7b2cff;
 }
 
 .card img{
     width:100%;
-    height:240px;
-
+    height:250px;
     object-fit:cover;
-
     display:block;
-
-    background:#1b1b22;
-}
-
-.noimage{
-    height:240px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:70px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #281142,
-        #101018
-    );
 }
 
 .info{
-    padding:15px;
+    padding:14px;
 }
 
 .tag{
     display:inline-block;
-
-    background:#291640;
-
-    color:#c69aff;
-
-    padding:5px 9px;
-
+    background:#2a1740;
+    color:#bd8cff;
     border-radius:15px;
-
+    padding:5px 8px;
     font-size:11px;
-
     margin-bottom:8px;
 }
 
 .info h3{
-    margin-bottom:10px;
+    margin:3px 0 10px;
 }
 
 .price{
     color:#b878ff;
-
     font-size:21px;
-
     font-weight:bold;
-
-    margin-bottom:13px;
+    margin-bottom:12px;
 }
 
 .add{
     width:100%;
-
-    padding:12px;
-
     background:#7b2cff;
-
-    color:white;
-
-    border:none;
-
-    border-radius:9px;
-
+    color:#fff;
+    border:0;
+    border-radius:10px;
+    padding:11px;
     font-weight:bold;
-
     cursor:pointer;
 }
 
-.add:hover{
-    background:#914cff;
-}
-
-/* ================= CARRINHO ================= */
-
+/* CARRINHO */
 .cart{
     position:fixed;
-
-    right:-420px;
+    right:-410px;
     top:0;
-
-    width:400px;
+    width:390px;
     height:100vh;
-
     background:#101016;
-
     border-left:2px solid #7b2cff;
-
     z-index:200;
-
     padding:22px;
-
-    overflow-y:auto;
-
     transition:.3s;
+    overflow:auto;
 }
 
 .cart.active{
@@ -315,104 +202,56 @@ header{
 
 .close{
     float:right;
-
     background:none;
-
-    color:white;
-
-    border:none;
-
+    border:0;
+    color:#fff;
     font-size:30px;
-
     cursor:pointer;
 }
 
 .cartitem{
     background:#191923;
-
-    padding:12px;
-
-    margin:10px 0;
-
     border-radius:10px;
+    padding:12px;
+    margin:10px 0;
 }
 
 .row{
     display:flex;
-
     justify-content:space-between;
-
     gap:10px;
-}
-
-.qty{
-    margin-top:10px;
 }
 
 .qty button{
     background:#7b2cff;
-
-    color:white;
-
-    border:none;
-
+    color:#fff;
+    border:0;
     border-radius:6px;
-
     padding:5px 10px;
-
-    margin-right:7px;
-
+    margin:8px 5px 0 0;
     cursor:pointer;
-}
-
-.totalbox{
-    margin-top:20px;
-
-    font-size:20px;
-
-    color:#b878ff;
-
-    font-weight:bold;
 }
 
 .checkout{
+    margin-top:16px;
     width:100%;
-
-    margin-top:15px;
-
-    padding:15px;
-
-    background:#7b2cff;
-
-    color:white;
-
-    border:none;
-
+    padding:14px;
+    border:0;
     border-radius:10px;
-
+    background:#7b2cff;
+    color:#fff;
     font-weight:bold;
-
     font-size:16px;
-
     cursor:pointer;
 }
 
-.checkout:hover{
-    background:#914cff;
-}
-
-/* ================= RODAPÉ ================= */
-
 footer{
     text-align:center;
-
-    padding:30px;
-
+    padding:25px;
     color:#777;
 }
 
-/* ================= CELULAR ================= */
-
+/* CELULAR */
 @media(max-width:650px){
 
     .grid{
@@ -420,7 +259,7 @@ footer{
     }
 
     .hero h1{
-        font-size:35px;
+        font-size:34px;
     }
 
     .cart{
@@ -428,165 +267,119 @@ footer{
         right:-100%;
     }
 
-    .card img,
-    .noimage{
+    .card img{
         height:auto;
         aspect-ratio:16/9;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= TOPO ================= -->
-
+<!-- TOPO -->
 <header>
 
 <div class="logo">
-    FullStop <span>STORE</span>
-    <span class="verified">✓</span>
+FullStop <span>STORE</span> ✓
 </div>
 
 <button class="cartbtn" onclick="toggleCart()">
-    🛒 <span id="count">0</span>
+🛒 <span id="count">0</span>
 </button>
 
 </header>
 
 
-<!-- ================= CAPA ================= -->
-
+<!-- CAPA -->
 <section class="hero">
 
 <h1>
-    FULLSTOP
-    <span>STORE</span>
+FULLSTOP <span>STORE</span>
 </h1>
 
 <p>
-    Frutas Normais • Frutas PERM • Skins • Game Pass
+Frutas Normais • PERM • Skins • GAME PASS
 </p>
 
 </section>
 
 
-<!-- ================= ABAS ================= -->
-
+<!-- ABAS -->
 <div class="tabs">
 
-<button class="tab active"
-onclick="openTab('normal',this)">
+<button class="tab active" onclick="openTab('normal',this)">
 🍎 Frutas Normais
 </button>
 
-<button class="tab"
-onclick="openTab('perm',this)">
+<button class="tab" onclick="openTab('perm',this)">
 💎 Frutas PERM
 </button>
 
-<button class="tab"
-onclick="openTab('skins',this)">
+<button class="tab" onclick="openTab('skins',this)">
 🎨 Skins
 </button>
 
-<button class="tab"
-onclick="openTab('gamepass',this)">
+<button class="tab" onclick="openTab('gamepass',this)">
 🎮 GAME PASS
 </button>
 
 </div>
 
 
-<!-- ================= FRUTAS NORMAIS ================= -->
-
+<!-- FRUTAS NORMAIS -->
 <section id="normal" class="section active">
 
-<h2 class="title">
-🟣 Frutas Míticas
-</h2>
-
-<p class="subtitle">
-Listadas de 2 em 2
-</p>
+<h2 class="title">🟣 Frutas Míticas</h2>
+<p class="subtitle">Listadas de 2 em 2</p>
 
 <div class="grid" id="mythical"></div>
 
-
-<h2 class="title legend">
-🟡 Frutas Lendárias
-</h2>
-
-<p class="subtitle">
-Listadas de 2 em 2
-</p>
+<h2 class="title legend">🟡 Frutas Lendárias</h2>
+<p class="subtitle">Listadas de 2 em 2</p>
 
 <div class="grid" id="legendary"></div>
 
 </section>
 
 
-<!-- ================= PERM ================= -->
-
+<!-- PERM -->
 <section id="perm" class="section">
 
-<h2 class="title">
-💎 Frutas PERM
-</h2>
-
-<p class="subtitle">
-Produtos listados de 2 em 2
-</p>
+<h2 class="title">💎 Frutas PERM</h2>
+<p class="subtitle">Listadas de 2 em 2</p>
 
 <div class="grid" id="perms"></div>
 
 </section>
 
 
-<!-- ================= SKINS ================= -->
-
+<!-- SKINS -->
 <section id="skins" class="section">
 
-<h2 class="title">
-🎨 Skins
-</h2>
-
-<p class="subtitle">
-Skins listadas de 2 em 2
-</p>
+<h2 class="title">🎨 Skins</h2>
+<p class="subtitle">Skins listadas de 2 em 2</p>
 
 <div class="grid" id="skinsGrid"></div>
 
 </section>
 
 
-<!-- ================= GAME PASS ================= -->
-
+<!-- GAME PASS -->
 <section id="gamepass" class="section">
 
-<h2 class="title">
-🎮 GAME PASS
-</h2>
-
-<p class="subtitle">
-Game Pass disponíveis
-</p>
+<h2 class="title">🎮 GAME PASS</h2>
+<p class="subtitle">Game Pass listados de 2 em 2</p>
 
 <div class="grid" id="gamepassGrid"></div>
 
 </section>
 
 
-<!-- ================= CARRINHO ================= -->
-
+<!-- CARRINHO -->
 <div class="cart" id="cart">
 
-<button class="close"
-onclick="toggleCart()">
-×
-</button>
+<button class="close" onclick="toggleCart()">×</button>
 
 <h2>🛒 Carrinho</h2>
 
@@ -596,12 +389,13 @@ onclick="toggleCart()">
 Carrinho vazio.
 </div>
 
-<div class="totalbox">
+<br>
+
+<div class="price">
 Total: <span id="total">R$ 0,00</span>
 </div>
 
-<button class="checkout"
-onclick="checkout()">
+<button class="checkout" onclick="checkout()">
 💜 PAGAR COM PIX
 </button>
 
@@ -615,191 +409,135 @@ onclick="checkout()">
 
 <script>
 
-/* =====================================
+/* =====================
 FRUTAS MÍTICAS
-===================================== */
+===================== */
 
-const myth = [
+const myth=[
 
 ["Gravity","gravity.jpg","R$ 0,00"],
-
 ["Mammoth","mamuth.jpg","R$ 6,00"],
-
 ["T-Rex","t-rex.jpg","R$ 6,00"],
-
 ["Dough","dough.jpg","R$ 8,00"],
-
 ["Shadow","shadow.jpg","R$ 0,00"],
-
 ["Venom","venom.jpg","R$ 0,00"],
-
 ["Gas","gass.jpg","R$ 0,00"],
-
 ["Spirit","spirit.jpg","R$ 8,00"],
-
 ["Control","control.jpg","R$ 20,00"],
-
 ["Kitsune","kitsune.jpg","R$ 35,00"],
-
 ["Dragon","dragon.jpg","R$ 75,00"],
-
 ["Yeti","yeti.jpg","R$ 0,00"],
-
 ["Tiger","tiger.jpg","R$ 0,00"]
 
 ];
 
 
-/* =====================================
+/* =====================
 FRUTAS LENDÁRIAS
-===================================== */
+===================== */
 
-const legend = [
+const legend=[
 
 ["Buddha","buddha.jpg","R$ 5,00"],
-
 ["Portal","portal.jpg","R$ 6,00"],
-
 ["Rumble","rumble.jpg","R$ 20,00"],
-
 ["Blizzard","blizzard.jpg","R$ 0,00"],
-
 ["Phoenix","phoenix.jpg","R$ 0,00"],
-
 ["Pain","pain.jpg","R$ 0,00"],
-
 ["Lightning","lightning.jpg","R$ 0,00"],
-
 ["Sound","sound.jpg","R$ 0,00"],
-
 ["Quake","quake.jpg","R$ 0,00"],
-
 ["Love","love.jpg","R$ 0,00"],
-
 ["Spider","spider.jpg","R$ 0,00"]
 
 ];
 
 
-/* =====================================
+/* =====================
 FRUTAS PERM
-===================================== */
+===================== */
 
-const perms = [
+const perms=[
 
 ["Dragon PERM","perm-dragon.jpg","R$ 165,00"],
-
 ["Kitsune PERM","perm-kitsune.jpg","R$ 132,00"],
-
 ["Control PERM","perm-control.jpg","R$ 0,00"],
-
 ["Yeti PERM","perm-yeti.jpg","R$ 100,00"],
-
 ["Tiger PERM","perm-tiger.jpg","R$ 100,00"],
-
 ["Shadow PERM","perm-shadow.jpg","R$ 0,00"],
-
 ["Gas PERM","perm-gas.jpg","R$ 0,00"],
-
 ["Venom PERM","perm-venom.jpg","R$ 80,00"],
-
 ["Dough PERM","perm-dough.jpg","R$ 79,00"],
-
 ["Gravity PERM","perm-gravity.jpg","R$ 75,00"],
-
 ["Blizzard PERM","perm-blizzard.jpg","R$ 75,00"],
-
 ["Portal PERM","perm-portal.jpg","R$ 66,00"],
-
 ["Sound PERM","perm-sound.jpg","R$ 62,00"]
 
 ];
 
 
-/* =====================================
+/* =====================
 SKINS
-===================================== */
+===================== */
 
-const skins = [
+const skins=[
 
 ["RABID BLADE","skin-rabid.jpg","R$ 300,00"],
-
 ["KITSUNE GALAXY","skin-kitsune-galaxy.jpg","R$ 280,00"],
-
 ["CRIMSON KITSUNE","skin-crimson.jpg","R$ 250,00"],
-
 ["DRAGON EMBER","skin-dragon-ember.jpg","R$ 175,00"],
-
 ["RUNIC","skin-runic.jpg","R$ 200,00"],
-
 ["MEME","skin-meme.jpg","R$ 150,00"],
-
 ["PURPLE","skin-purple.jpg","R$ 120,00"],
-
 ["SUPER SPIRIT PAIN","skin-spirit.jpg","R$ 100,00"],
-
 ["RED","skin-red.jpg","R$ 80,00"],
-
 ["DOG BLADE","skin-dog.jpg","R$ 70,00"],
-
 ["YELLOW","skin-yellow.jpg","R$ 65,00"],
-
 ["PORTAL DIVINE","skin-portal.jpg","R$ 45,00"],
-
 ["STARLIGHT","skin-starlight.jpg","R$ 65,00"],
-
 ["CELESTIAL","skin-celestial.jpg","R$ 45,00"],
-
 ["FIEND","skin-fiend.jpg","R$ 55,00"],
-
 ["WEREWOLF","skin-werewolf.jpg","R$ 60,00"]
 
 ];
 
 
-/* =====================================
+/* =====================
 GAME PASS
-===================================== */
+===================== */
 
-const gamepasses = [
+const gamepasses=[
 
 ["2X MONEY","gamepass-money.jpg","R$ 0,00"],
-
 ["2X MASTERY","gamepass-mastery.jpg","R$ 0,00"],
-
 ["FAST BOATS","gamepass-boats.jpg","R$ 0,00"],
-
 ["FRUIT NOTIFIER","gamepass-notifier.jpg","R$ 0,00"],
-
 ["DARK BLADE","gamepass-darkblade.jpg","R$ 0,00"],
-
 ["2X BOSS DROPS","gamepass-boss.jpg","R$ 0,00"]
 
 ];
 
 
-/* =====================================
+/* =====================
 CARRINHO
-===================================== */
+===================== */
 
-let cart = [];
+let cart=[];
 
 
-/* =====================================
-MOSTRAR PRODUTOS
-===================================== */
+/* =====================
+RENDERIZAR PRODUTOS
+===================== */
 
 function render(id,list,tag){
 
-document.getElementById(id).innerHTML =
+document.getElementById(id).innerHTML=
 
-list.map(item => {
+list.map(item=>{
 
-let nome = item[0];
-
-let imagem = item[1];
-
-let preco = item[2];
+let nome=item[0];
+let imagem=item[1];
+let preco=item[2];
 
 return `
 
@@ -807,14 +545,7 @@ return `
 
 <img
 src="assets/${imagem}"
-alt="${nome}"
-
-onerror="this.style.display='none';
-this.nextElementSibling.style.display='flex'">
-
-<div class="noimage" style="display:none">
-🎮
-</div>
+alt="${nome}">
 
 <div class="info">
 
@@ -830,7 +561,8 @@ ${nome}
 ${preco}
 </div>
 
-<button class="add"
+<button
+class="add"
 onclick="addItem('${nome}','${preco}')">
 
 🛒 Adicionar
@@ -848,50 +580,30 @@ onclick="addItem('${nome}','${preco}')">
 }
 
 
-/* =====================================
-RENDERIZAR
-===================================== */
+/* =====================
+MOSTRAR TUDO
+===================== */
 
-render(
-"mythical",
-myth,
-"MÍTICA"
-);
+render("mythical",myth,"MÍTICA");
 
-render(
-"legendary",
-legend,
-"LENDÁRIA"
-);
+render("legendary",legend,"LENDÁRIA");
 
-render(
-"perms",
-perms,
-"PERM"
-);
+render("perms",perms,"PERM");
 
-render(
-"skinsGrid",
-skins,
-"SKIN"
-);
+render("skinsGrid",skins,"SKIN");
 
-render(
-"gamepassGrid",
-gamepasses,
-"GAME PASS"
-);
+render("gamepassGrid",gamepasses,"GAME PASS");
 
 
-/* =====================================
+/* =====================
 ABAS
-===================================== */
+===================== */
 
 function openTab(id,button){
 
 document
 .querySelectorAll(".section")
-.forEach(section => {
+.forEach(section=>{
 
 section.classList.remove("active");
 
@@ -900,7 +612,7 @@ section.classList.remove("active");
 
 document
 .querySelectorAll(".tab")
-.forEach(tab => {
+.forEach(tab=>{
 
 tab.classList.remove("active");
 
@@ -918,9 +630,9 @@ button
 }
 
 
-/* =====================================
-CARRINHO ABRIR
-===================================== */
+/* =====================
+CARRINHO
+===================== */
 
 function toggleCart(){
 
@@ -931,26 +643,18 @@ document
 }
 
 
-/* =====================================
-ADICIONAR ITEM
-===================================== */
-
 function addItem(nome,preco){
 
-let item =
+let item=
 
-cart.find(
-x => x.nome === nome
-);
+cart.find(x=>x.nome===nome);
 
 
 if(item){
 
 item.quantidade++;
 
-}
-
-else{
+}else{
 
 cart.push({
 
@@ -975,13 +679,9 @@ document
 }
 
 
-/* =====================================
-CONVERTER PREÇO
-===================================== */
-
 function priceNumber(preco){
 
-let numero =
+let numero=
 
 preco
 .replace("R$","")
@@ -990,41 +690,29 @@ preco
 .trim();
 
 
-let valor =
-
-parseFloat(numero);
+let valor=parseFloat(numero);
 
 
-return isNaN(valor)
-
-? 0
-
-: valor;
+return isNaN(valor)?0:valor;
 
 }
 
 
-/* =====================================
-ATUALIZAR CARRINHO
-===================================== */
-
 function updateCart(){
 
-let quantidadeTotal = 0;
+let count=0;
 
-let total = 0;
+let total=0;
 
-let texto = "";
-
-
-cart.forEach((item,index) => {
+let texto="";
 
 
-quantidadeTotal +=
-item.quantidade;
+cart.forEach((item,index)=>{
+
+count+=item.quantidade;
 
 
-total +=
+total+=
 
 priceNumber(item.preco)
 
@@ -1033,36 +721,28 @@ priceNumber(item.preco)
 item.quantidade;
 
 
-texto += `
+texto+=`
 
 <div class="cartitem">
 
 <div class="row">
 
-<b>
-${item.nome}
-</b>
+<b>${item.nome}</b>
 
-<span>
-${item.preco}
-</span>
+<span>${item.preco}</span>
 
 </div>
 
 
 <div class="qty">
 
-<button
-onclick="changeItem(${index},-1)">
+<button onclick="changeItem(${index},-1)">
 −
 </button>
 
-
 ${item.quantidade}
 
-
-<button
-onclick="changeItem(${index},1)">
+<button onclick="changeItem(${index},1)">
 +
 </button>
 
@@ -1077,23 +757,19 @@ onclick="changeItem(${index},1)">
 
 document
 .getElementById("cartItems")
-.innerHTML =
+.innerHTML=
 
-texto ||
-
-"Carrinho vazio.";
+texto || "Carrinho vazio.";
 
 
 document
 .getElementById("count")
-.textContent =
-
-quantidadeTotal;
+.textContent=count;
 
 
 document
 .getElementById("total")
-.textContent =
+.textContent=
 
 "R$ "
 
@@ -1106,20 +782,12 @@ total
 }
 
 
-/* =====================================
-MUDAR QUANTIDADE
-===================================== */
+function changeItem(index,change){
 
-function changeItem(index,mudanca){
-
-cart[index].quantidade += mudanca;
+cart[index].quantidade+=change;
 
 
-if(
-
-cart[index].quantidade <= 0
-
-){
+if(cart[index].quantidade<=0){
 
 cart.splice(index,1);
 
@@ -1131,31 +799,29 @@ updateCart();
 }
 
 
-/* =====================================
-FINALIZAR PEDIDO
-===================================== */
+/* =====================
+PIX
+===================== */
 
 function checkout(){
 
 if(!cart.length){
 
-alert(
-"Seu carrinho está vazio!"
-);
+alert("Seu carrinho está vazio!");
 
 return;
 
 }
 
 
-let pedido =
+let pedido=
 
 "🟣 PEDIDO - FULLSTOP STORE 🟣\n\n";
 
 
-cart.forEach(item => {
+cart.forEach(item=>{
 
-pedido +=
+pedido+=
 
 "• "
 
@@ -1186,20 +852,13 @@ item.preco
 });
 
 
-pedido +=
-
-"\n💜 PAGAMENTO: PIX";
+pedido+="\n💜 PAGAMENTO: PIX";
 
 
-if(navigator.clipboard){
-
-navigator.clipboard
-.writeText(pedido);
-
-}
+navigator.clipboard.writeText(pedido);
 
 
-/* ABRIR DISCORD */
+/* SEU CANAL DO DISCORD */
 
 window.open(
 
@@ -1212,7 +871,7 @@ window.open(
 
 alert(
 
-"Pedido copiado! Agora cole a mensagem no Discord."
+"Pedido copiado! Você será direcionado para o Discord."
 
 );
 
