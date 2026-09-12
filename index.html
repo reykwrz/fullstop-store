@@ -7,7 +7,6 @@
 <title>FullStop STORE</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -19,8 +18,6 @@ body{
     background:#07070a;
     color:#fff
 }
-
-/* TOPO */
 
 header{
     padding:16px 5%;
@@ -39,14 +36,11 @@ header{
     font-weight:900
 }
 
-.logo span,
-.title,
-.price{
+.logo span,.title,.price{
     color:#b878ff
 }
 
-.cartbtn,
-.add{
+.cartbtn,.add{
     background:#7b2cff;
     color:#fff;
     border:0;
@@ -56,17 +50,10 @@ header{
     cursor:pointer
 }
 
-/* CAPA */
-
 .hero{
     text-align:center;
     padding:60px 15px;
-    background:
-    radial-gradient(
-        circle,
-        #3b126d,
-        #08080b 65%
-    )
+    background:radial-gradient(circle,#3b126d,#08080b 65%)
 }
 
 .hero h1{
@@ -76,8 +63,6 @@ header{
 .hero span{
     color:#a45cff
 }
-
-/* ABAS */
 
 .tabs{
     display:flex;
@@ -100,8 +85,6 @@ header{
 .tab.active{
     background:#7b2cff
 }
-
-/* SEÇÕES */
 
 .section{
     display:none;
@@ -129,8 +112,6 @@ header{
     margin-bottom:20px
 }
 
-/* LISTA DE FRUTAS */
-
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -157,13 +138,7 @@ header{
     align-items:center;
     justify-content:center;
     font-size:60px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #281142,
-        #101018
-    )
+    background:linear-gradient(135deg,#281142,#101018)
 }
 
 .info{
@@ -172,17 +147,11 @@ header{
 
 .tag{
     display:inline-block;
-
     background:#2a1740;
-
     color:#bd8cff;
-
     border-radius:15px;
-
     padding:5px 8px;
-
     font-size:11px;
-
     margin-bottom:8px
 }
 
@@ -200,29 +169,17 @@ header{
     width:100%
 }
 
-/* CARRINHO */
-
 .cart{
     position:fixed;
-
     right:-410px;
-
     top:0;
-
     width:390px;
-
     height:100vh;
-
     background:#101016;
-
     border-left:2px solid #7b2cff;
-
     z-index:20;
-
     padding:22px;
-
     transition:.3s;
-
     overflow:auto
 }
 
@@ -232,74 +189,45 @@ header{
 
 .close{
     float:right;
-
     background:none;
-
     border:0;
-
     color:#fff;
-
     font-size:28px;
-
     cursor:pointer
 }
 
 .cartitem{
-
     background:#191923;
-
     border-radius:10px;
-
     padding:12px;
-
     margin:8px 0
 }
 
 .row{
     display:flex;
-
     justify-content:space-between
 }
 
 .qty button{
-
     background:#7b2cff;
-
     color:#fff;
-
     border:0;
-
     border-radius:6px;
-
     padding:4px 9px;
-
     margin:8px 5px 0 0;
-
     cursor:pointer
 }
 
-/* BOTÃO PIX */
-
 .checkout{
-
     margin-top:16px;
-
     width:100%;
-
     padding:14px;
-
     border:0;
-
     border-radius:10px;
-
     background:#7b2cff;
-
     color:#fff;
-
     font-weight:bold;
-
     font-size:16px;
-
     cursor:pointer
 }
 
@@ -307,17 +235,11 @@ header{
     background:#914cff
 }
 
-/* RODAPÉ */
-
 footer{
     text-align:center;
-
     padding:25px;
-
     color:#777
 }
-
-/* CELULAR */
 
 @media(max-width:650px){
 
@@ -334,635 +256,382 @@ footer{
         right:-100%
     }
 
-    .card img,
-    .placeholder{
-
+    .card img,.placeholder{
         height:auto;
-
         aspect-ratio:16/9
     }
 }
-
 </style>
 </head>
 
 <body>
 
-
-<!-- TOPO -->
-
 <header>
+    <div class="logo">FullStop <span>STORE</span></div>
 
-<div class="logo">
-FullStop <span>STORE</span>
-</div>
-
-<button
-class="cartbtn"
-onclick="toggleCart()">
-
-🛒
-<span id="count">0</span>
-
-</button>
-
+    <button class="cartbtn" onclick="toggleCart()">
+        🛒 <span id="count">0</span>
+    </button>
 </header>
 
-
-<!-- CAPA -->
-
 <section class="hero">
-
-<h1>
-
-FULLSTOP
-<span>STORE</span>
-
-</h1>
-
-<p>
-
-Frutas Normais • PERM • Skins
-
-</p>
-
+    <h1>FULLSTOP <span>STORE</span></h1>
+    <p>Frutas Normais • PERM • Skins</p>
 </section>
-
-
-<!-- ABAS -->
 
 <div class="tabs">
 
-<button
-class="tab active"
-onclick="openTab('normal',this)">
+    <button class="tab active" onclick="openTab('normal',this)">
+        🍎 Frutas Normais
+    </button>
 
-🍎 Frutas Normais
+    <button class="tab" onclick="openTab('perm',this)">
+        💎 Frutas PERM
+    </button>
 
-</button>
-
-
-<button
-class="tab"
-onclick="openTab('perm',this)">
-
-💎 Frutas PERM
-
-</button>
-
-
-<button
-class="tab"
-onclick="openTab('skins',this)">
-
-🎨 Skins
-
-</button>
+    <button class="tab" onclick="openTab('skins',this)">
+        🎨 Skins
+    </button>
 
 </div>
 
 
 <!-- FRUTAS NORMAIS -->
 
-<section
-id="normal"
-class="section active">
+<section id="normal" class="section active">
 
-<h2 class="title">
+<h2 class="title">🟣 Frutas Míticas</h2>
+<p class="subtitle">Listadas de 2 em 2</p>
 
-🟣 Frutas Míticas
+<div class="grid" id="mythical"></div>
 
-</h2>
+<h2 class="title legend">🟡 Frutas Lendárias</h2>
+<p class="subtitle">Listadas de 2 em 2</p>
 
-<p class="subtitle">
-
-Listadas de 2 em 2
-
-</p>
-
-
-<div
-class="grid"
-id="mythical">
-
-</div>
-
-
-<h2 class="title legend">
-
-🟡 Frutas Lendárias
-
-</h2>
-
-<p class="subtitle">
-
-Listadas de 2 em 2
-
-</p>
-
-
-<div
-class="grid"
-id="legendary">
-
-</div>
+<div class="grid" id="legendary"></div>
 
 </section>
 
 
-<!-- PERM -->
+<!-- PERMS -->
 
-<section
-id="perm"
-class="section">
+<section id="perm" class="section">
 
-<h2 class="title">
-
-💎 Frutas PERM
-
-</h2>
+<h2 class="title">💎 Frutas PERM</h2>
 
 <p class="subtitle">
-
 Míticas e Lendárias listadas de 2 em 2
-
 </p>
 
-<div
-class="grid"
-id="perms">
-
-</div>
+<div class="grid" id="perms"></div>
 
 </section>
 
 
 <!-- SKINS -->
 
-<section
-id="skins"
-class="section">
+<section id="skins" class="section">
 
-<h2 class="title">
-
-🎨 Skins de Frutas
-
-</h2>
+<h2 class="title">🎨 Skins de Frutas</h2>
 
 <p class="subtitle">
-
 Skins listadas de 2 em 2
-
 </p>
 
-<div
-class="grid"
-id="skinsGrid">
-
-</div>
+<div class="grid" id="skinsGrid"></div>
 
 </section>
 
 
 <!-- CARRINHO -->
 
-<div
-class="cart"
-id="cart">
+<div class="cart" id="cart">
 
-<button
-class="close"
-onclick="toggleCart()">
+<button class="close" onclick="toggleCart()">×</button>
 
-×
-
-</button>
-
-
-<h2>
-
-🛒 Carrinho
-
-</h2>
-
+<h2>🛒 Carrinho</h2>
 
 <div id="cartItems">
-
 Carrinho vazio.
-
 </div>
-
 
 <div class="price">
-
-Total:
-
-<span id="total">
-
-R$ 0,00
-
-</span>
-
+Total: <span id="total">R$ 0,00</span>
 </div>
 
-
-<button
-class="checkout"
-onclick="checkout()">
-
+<button class="checkout" onclick="checkout()">
 💜 PAGAR COM PIX
-
 </button>
-
 
 </div>
 
 
 <footer>
-
 © 2026 FullStop STORE
-
 </footer>
-
 
 
 <script>
 
-
-/* =========================
-FRUTAS MÍTICAS
-========================= */
+/* FRUTAS MÍTICAS */
 
 const myth=[
 
 ["Gravity","gravity.jpg","R$ 0,00"],
-
 ["Mammoth","mamuth.jpg","R$ 6,00"],
-
 ["T-Rex","t-rex.jpg","R$ 6,00"],
-
 ["Dough","dough.jpg","R$ 8,00"],
-
 ["Shadow","shadow.jpg","R$ 0,00"],
-
 ["Venom","venom.jpg","R$ 0,00"],
-
 ["Gas","gass.jpg","R$ 0,00"],
-
 ["Spirit","spirit.jpg","R$ 8,00"],
-
 ["Control","control.jpg","R$ 20,00"],
-
 ["Kitsune","kitsune.jpg","R$ 35,00"],
-
 ["Dragon","dragon.jpg","R$ 75,00"],
-
 ["Yeti","yeti.jpg","R$ 0,00"],
-
 ["Tiger","tiger.jpg","R$ 0,00"]
 
 ];
 
 
-/* =========================
-FRUTAS LENDÁRIAS
-========================= */
+/* FRUTAS LENDÁRIAS */
 
 const legend=[
 
 ["Buddha","buddha.jpg","R$ 5,00"],
-
 ["Portal","portal.jpg","R$ 6,00"],
-
 ["Rumble","rumble.jpg","R$ 12,00"],
-
 ["Blizzard","blizzard.jpg","R$ 0,00"],
-
 ["Phoenix","phoenix.jpg","R$ 0,00"],
-
 ["Pain","pain.jpg","R$ 0,00"],
-
 ["Lightning","lightning.jpg","R$ 0,00"],
-
 ["Sound","sound.jpg","R$ 0,00"],
-
 ["Quake","quake.jpg","R$ 0,00"],
-
 ["Love","love.jpg","R$ 0,00"],
-
 ["Spider","spider.jpg","R$ 0,00"]
 
 ];
 
 
-/* =========================
-FRUTAS PERM
-========================= */
+/* FRUTAS PERM */
 
 const perms=[
 
 ["Dragon","dragon.jpg","R$ 165,00"],
-
 ["Kitsune","kitsune.jpg","R$ 132,00"],
-
 ["Control","control.jpg","R$ —"],
-
 ["Magnete","magnete.jpg","R$ —"],
-
 ["Yeti","yeti.jpg","R$ 100,00"],
-
 ["Tiger","tiger.jpg","R$ 100,00"],
-
 ["Shadow","shadow.jpg","R$ —"],
-
 ["Gas","gass.jpg","R$ —"],
-
 ["Venom","venom.jpg","R$ 80,00"],
-
 ["Dough","dough.jpg","R$ 79,00"],
-
 ["Mammoth","mamuth.jpg","R$ —"],
-
 ["T-Rex","t-rex.jpg","R$ —"],
-
 ["Gravity","gravity.jpg","R$ 75,00"],
-
 ["Blizzard","blizzard.jpg","R$ 75,00"],
-
 ["Pain","pain.jpg","R$ —"],
-
 ["Lightning","lightning.jpg","R$ —"],
-
 ["Portal","portal.jpg","R$ 66,00"],
-
 ["Sound","sound.jpg","R$ 62,00"],
-
 ["Buddha","buddha.jpg","R$ —"],
-
 ["Quake","quake.jpg","R$ —"]
 
 ];
 
 
-/* =========================
-SKINS
-========================= */
+/* 🎨 SKINS COM IMAGENS ILUSTRATIVAS */
 
 const skins=[
 
-"Dragon Red",
+["Dragon Red","https://placehold.co/800x450/8b0000/ffffff?text=DRAGON+RED"],
+["Kitsune Blue","https://placehold.co/800x450/003cff/ffffff?text=KITSUNE+BLUE"],
 
-"Kitsune Blue",
+["Dough Neon","https://placehold.co/800x450/ff00ff/ffffff?text=DOUGH+NEON"],
+["T-Rex Fossil","https://placehold.co/800x450/6b4f2f/ffffff?text=T-REX+FOSSIL"],
 
-"Dough Neon",
+["Mammoth Ice","https://placehold.co/800x450/00bfff/ffffff?text=MAMMOTH+ICE"],
+["Venom Dark","https://placehold.co/800x450/4b0082/ffffff?text=VENOM+DARK"],
 
-"T-Rex Fossil",
+["Shadow Eclipse","https://placehold.co/800x450/111111/ffffff?text=SHADOW+ECLIPSE"],
+["Spirit Flame","https://placehold.co/800x450/ff4500/ffffff?text=SPIRIT+FLAME"],
 
-"Mammoth Ice",
+["Control Cyber","https://placehold.co/800x450/00ffff/000000?text=CONTROL+CYBER"],
+["Kitsune Gold","https://placehold.co/800x450/daa520/ffffff?text=KITSUNE+GOLD"],
 
-"Venom Dark",
+["Dragon Storm","https://placehold.co/800x450/191970/ffffff?text=DRAGON+STORM"],
+["Buddha Gold","https://placehold.co/800x450/ffd700/000000?text=BUDDHA+GOLD"],
 
-"Shadow Eclipse",
+["Portal Galaxy","https://placehold.co/800x450/4b0082/ffffff?text=PORTAL+GALAXY"],
+["Rumble Electric","https://placehold.co/800x450/ffff00/000000?text=RUMBLE+ELECTRIC"],
 
-"Spirit Flame",
-
-"Control Cyber",
-
-"Kitsune Gold",
-
-"Dragon Storm",
-
-"Buddha Gold",
-
-"Portal Galaxy",
-
-"Rumble Electric",
-
-"Blizzard Frost",
-
-"Phoenix Fire"
+["Blizzard Frost","https://placehold.co/800x450/87ceeb/000000?text=BLIZZARD+FROST"],
+["Phoenix Fire","https://placehold.co/800x450/ff4500/ffffff?text=PHOENIX+FIRE"]
 
 ];
 
 
-/* =========================
-CARRINHO
-========================= */
-
 let cart=[];
 
 
-/* =========================
-MOSTRAR PRODUTOS
-========================= */
+/* MOSTRAR FRUTAS */
 
 function render(id,list,tag){
 
-document.getElementById(id).innerHTML=
+document.getElementById(id).innerHTML=list.map(f=>{
 
-list.map(f=>{
-
-let n=Array.isArray(f)?f[0]:f;
-
-let im=Array.isArray(f)?f[1]:null;
-
-let p=Array.isArray(f)?f[2]:"Consultar";
-
+let n=f[0];
+let im=f[1];
+let p=f[2];
 
 return `
 
 <article class="card">
 
-${
-im?
-
-`<img
-src="assets/${im}"
-alt="${n}">`
-
-:
-
-`<div class="placeholder">
-
-🎨
-
-</div>`
-}
-
+<img src="assets/${im}" alt="${n}">
 
 <div class="info">
 
+<div class="tag">${tag}</div>
 
-<div class="tag">
+<h3>${n}</h3>
 
-${tag}
+<div class="price">${p}</div>
 
-</div>
-
-
-<h3>
-
-${n}
-
-</h3>
-
-
-<div class="price">
-
-${p}
-
-</div>
-
-
-<button
-class="add"
-
-onclick="addItem('${n.replace(/'/g,"")}','${p}')">
+<button class="add"
+onclick="addItem('${n}','${p}')">
 
 🛒 Adicionar
 
 </button>
 
-
 </div>
-
 
 </article>
 
-`
+`;
 
-}).join("")
+}).join("");
 
 }
 
 
-/* MOSTRAR */
+/* MOSTRAR SKINS */
 
-render(
-"mythical",
-myth,
-"MÍTICA"
-);
+function renderSkins(){
+
+document.getElementById("skinsGrid").innerHTML=
+
+skins.map(s=>`
+
+<article class="card">
+
+<img
+src="${s[1]}"
+alt="${s[0]}">
+
+<div class="info">
+
+<div class="tag">
+SKIN
+</div>
+
+<h3>
+${s[0]}
+</h3>
+
+<div class="price">
+Consultar
+</div>
+
+<button
+class="add"
+onclick="addItem('${s[0]}','Consultar')">
+
+🛒 Adicionar
+
+</button>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
 
 
-render(
-"legendary",
-legend,
-"LENDÁRIA"
-);
+/* RENDERIZAR */
+
+render("mythical",myth,"MÍTICA");
+
+render("legendary",legend,"LENDÁRIA");
+
+render("perms",perms,"PERM");
+
+renderSkins();
 
 
-render(
-"perms",
-perms,
-"PERM"
-);
-
-
-render(
-"skinsGrid",
-skins,
-"SKIN"
-);
-
-
-/* =========================
-ABAS
-========================= */
+/* ABAS */
 
 function openTab(id,b){
 
-document
-.querySelectorAll(".section")
+document.querySelectorAll(".section")
+.forEach(x=>x.classList.remove("active"));
 
-.forEach(x=>
+document.querySelectorAll(".tab")
+.forEach(x=>x.classList.remove("active"));
 
-x.classList.remove("active")
-
-);
-
-
-document
-.querySelectorAll(".tab")
-
-.forEach(x=>
-
-x.classList.remove("active")
-
-);
-
-
-document
-.getElementById(id)
-
+document.getElementById(id)
 .classList.add("active");
-
 
 b.classList.add("active");
 
 }
 
 
-/* =========================
-ABRIR CARRINHO
-========================= */
+/* CARRINHO */
 
 function toggleCart(){
 
-document
-.getElementById("cart")
-
+document.getElementById("cart")
 .classList.toggle("active");
 
 }
 
 
-/* =========================
-ADICIONAR ITEM
-========================= */
+/* ADICIONAR ITEM */
 
 function addItem(n,p){
 
-let x=
-
-cart.find(i=>i.n===n);
-
+let x=cart.find(i=>i.n===n && i.p===p);
 
 if(x){
 
 x.q++;
 
-}
-
-else{
+}else{
 
 cart.push({
 
 n:n,
-
 p:p,
-
 q:1
 
 });
 
 }
 
-
 update();
 
-
-document
-.getElementById("cart")
-
+document.getElementById("cart")
 .classList.add("active");
 
 }
 
 
-/* =========================
-ATUALIZAR CARRINHO
-========================= */
+/* ATUALIZAR CARRINHO */
 
 function update(){
 
@@ -973,86 +642,50 @@ let txt="";
 
 cart.forEach((x,i)=>{
 
-
 count+=x.q;
-
 
 txt+=`
 
 <div class="cartitem">
 
-
 <div class="row">
 
+<b>${x.n}</b>
 
-<b>
-
-${x.n}
-
-</b>
-
-
-<span>
-
-${x.p}
-
-</span>
-
+<span>${x.p}</span>
 
 </div>
-
 
 <div class="qty">
 
-
-<button
-onclick="change(${i},-1)">
-
+<button onclick="change(${i},-1)">
 −
-
 </button>
-
 
 ${x.q}
 
-
-<button
-onclick="change(${i},1)">
-
+<button onclick="change(${i},1)">
 +
-
 </button>
 
+</div>
 
 </div>
 
-
-</div>
-
-`
+`;
 
 });
 
 
-document
-.getElementById("cartItems")
-
-.innerHTML=
-
-txt ||
-
-"Carrinho vazio.";
+document.getElementById("cartItems")
+.innerHTML=txt || "Carrinho vazio.";
 
 
-document
-.getElementById("count")
-
+document.getElementById("count")
 .textContent=count;
 
 
-document
-.getElementById("total")
-
+document.getElementById("total")
 .textContent=
 
 cart.length
@@ -1068,14 +701,11 @@ cart.length
 }
 
 
-/* =========================
-MUDAR QUANTIDADE
-========================= */
+/* QUANTIDADE */
 
 function change(i,d){
 
 cart[i].q+=d;
-
 
 if(cart[i].q<=0){
 
@@ -1083,31 +713,23 @@ cart.splice(i,1);
 
 }
 
-
 update();
 
 }
 
 
-/* =========================
-PAGAR COM PIX
-========================= */
+/* 💜 PAGAMENTO PIX */
 
 function checkout(){
-
 
 if(!cart.length){
 
 return alert(
-
 "Seu carrinho está vazio!"
-
 );
 
 }
 
-
-/* CRIAR PEDIDO */
 
 let pedido=
 
@@ -1115,29 +737,23 @@ let pedido=
 
 cart.map(x=>
 
-"• "+
+"• "+x.n+
 
-x.n+
+" x"+x.q+
 
-" x"+
-
-x.q+
-
-" - "+
-
-x.p
+" - "+x.p
 
 ).join("\n");
 
 
-/* COPIAR PEDIDO */
-
-navigator.clipboard &&
+if(navigator.clipboard){
 
 navigator.clipboard.writeText(pedido);
 
+}
 
-/* ABRIR CANAL PIX */
+
+/* ABRIR DISCORD */
 
 window.open(
 
@@ -1148,21 +764,15 @@ window.open(
 );
 
 
-/* AVISO */
-
 alert(
 
 "Pedido copiado! Você será direcionado para o pagamento PIX."
 
 );
 
-
 }
-
 
 </script>
 
-
 </body>
-
 </html>
