@@ -1,512 +1,1348 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>FullStop STORE</title>
 
 <style>
+
+/* =========================
+CONFIGURAÇÃO GERAL
+========================= */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial,sans-serif
+    font-family:Arial,sans-serif;
 }
 
 body{
     background:#07070a;
-    color:#fff
+    color:white;
 }
+
+
+/* =========================
+TOPO
+========================= */
 
 header{
     padding:16px 5%;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     background:#0d0d12;
+
     border-bottom:2px solid #7b2cff;
+
     position:sticky;
     top:0;
-    z-index:10
+
+    z-index:100;
 }
 
 .logo{
     font-size:24px;
-    font-weight:900
+    font-weight:900;
 }
 
-.logo span,.title,.price{
-    color:#b878ff
+.logo span{
+    color:#b878ff;
 }
 
-.cartbtn,.add{
-    background:#7b2cff;
-    color:#fff;
-    border:0;
+.cartbtn{
+
+    background:#111119;
+
+    color:white;
+
+    border:1px solid #333;
+
     border-radius:10px;
+
     padding:11px 15px;
+
     font-weight:bold;
-    cursor:pointer
+
+    cursor:pointer;
+
+    font-size:16px;
 }
+
+
+/* =========================
+CAPA
+========================= */
 
 .hero{
+
     text-align:center;
+
     padding:60px 15px;
-    background:radial-gradient(circle,#3b126d,#08080b 65%)
+
+    background:
+
+    radial-gradient(
+        circle,
+        #3b126d,
+        #08080b 65%
+    );
 }
 
 .hero h1{
-    font-size:46px
+
+    font-size:46px;
+
+    font-weight:900;
 }
 
 .hero span{
-    color:#a45cff
+
+    color:#a45cff;
 }
 
+.hero p{
+
+    margin-top:10px;
+
+    color:#ddd;
+
+    font-size:17px;
+}
+
+
+/* =========================
+ABAS
+========================= */
+
 .tabs{
+
     display:flex;
+
     gap:10px;
+
     justify-content:center;
+
     flex-wrap:wrap;
-    padding:24px
+
+    padding:24px;
 }
 
 .tab{
+
     padding:12px 18px;
+
     border-radius:10px;
+
     background:#15151c;
-    color:#fff;
+
+    color:white;
+
     border:1px solid #333;
+
     cursor:pointer;
-    font-weight:bold
+
+    font-weight:bold;
+
+    font-size:15px;
+}
+
+.tab:hover{
+
+    border-color:#7b2cff;
 }
 
 .tab.active{
-    background:#7b2cff
+
+    background:#7b2cff;
+
+    border-color:#a45cff;
 }
 
+
+/* =========================
+SEÇÕES
+========================= */
+
 .section{
+
     display:none;
+
     max-width:1150px;
+
     margin:auto;
-    padding:10px 16px 50px
+
+    padding:10px 16px 50px;
 }
 
 .section.active{
-    display:block
+
+    display:block;
 }
 
 .title{
+
     text-align:center;
-    margin:28px 0 8px
+
+    margin:28px 0 8px;
+
+    color:#b878ff;
+
+    font-size:27px;
 }
 
 .legend{
-    color:#ffd34d
+
+    color:#ffd34d;
 }
 
 .subtitle{
+
     text-align:center;
-    color:#999;
-    margin-bottom:20px
+
+    color:#aaa;
+
+    margin-bottom:20px;
 }
+
+
+/* =========================
+GRID
+========================= */
 
 .grid{
+
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
-    gap:16px
+
+    gap:16px;
 }
 
+
+/* =========================
+CARDS
+========================= */
+
 .card{
+
     background:#111119;
+
     border:1px solid #2a2933;
+
     border-radius:16px;
-    overflow:hidden
+
+    overflow:hidden;
+
+    transition:.2s;
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#7b2cff;
 }
 
 .card img{
+
     width:100%;
+
     height:250px;
+
     object-fit:cover;
-    display:block
+
+    display:block;
 }
+
+
+/* =========================
+PLACEHOLDER
+========================= */
 
 .placeholder{
+
     height:250px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     font-size:60px;
-    background:linear-gradient(135deg,#281142,#101018)
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #281142,
+        #101018
+    );
 }
 
+
+/* =========================
+INFORMAÇÕES
+========================= */
+
 .info{
-    padding:14px
+
+    padding:14px;
 }
 
 .tag{
+
     display:inline-block;
+
     background:#2a1740;
+
     color:#bd8cff;
+
     border-radius:15px;
+
     padding:5px 8px;
+
     font-size:11px;
-    margin-bottom:8px
+
+    margin-bottom:8px;
 }
 
 .info h3{
-    margin:3px 0 10px
+
+    margin:3px 0 10px;
 }
 
 .price{
+
+    color:#b878ff;
+
     font-size:21px;
+
     font-weight:bold;
-    margin-bottom:12px
+
+    margin-bottom:12px;
 }
+
+
+/* =========================
+BOTÃO ADICIONAR
+========================= */
 
 .add{
-    width:100%
+
+    width:100%;
+
+    background:#7b2cff;
+
+    color:white;
+
+    border:0;
+
+    border-radius:10px;
+
+    padding:11px 15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
 }
 
-.cart{
-    position:fixed;
-    right:-410px;
+.add:hover{
+
+    background:#914cff;
+}
+
+
+/* =========================
+SKINS
+========================= */
+
+#skins{
+
+    max-width:1150px;
+}
+
+
+/* EXATAMENTE 2 POR LINHA */
+
+#skinsGrid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:16px;
+}
+
+
+/* CARD DAS SKINS */
+
+.skin-card{
+
+    background:#111119;
+
+    border:1px solid #3b2020;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:.2s;
+}
+
+.skin-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#ff3131;
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,.25);
+}
+
+
+/* IMAGEM VERMELHA */
+
+.skin-image{
+
+    height:260px;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #ff2626 0%,
+        #970000 38%,
+        #210000 72%,
+        #080000 100%
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-bottom:1px solid #421111;
+}
+
+
+/* LUZES LATERAIS */
+
+.skin-image:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:10px;
+
     top:0;
+
+    width:8px;
+
+    height:100%;
+
+    background:white;
+
+    box-shadow:
+    0 0 18px white,
+    0 0 35px red;
+}
+
+.skin-image:after{
+
+    content:"";
+
+    position:absolute;
+
+    right:10px;
+
+    top:0;
+
+    width:8px;
+
+    height:100%;
+
+    background:white;
+
+    box-shadow:
+    0 0 18px white,
+    0 0 35px red;
+}
+
+
+/* DESENHO DA SKIN */
+
+.skin-symbol{
+
+    position:relative;
+
+    z-index:2;
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:35px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff4d4d,
+        #7b0000
+    );
+
+    border:6px solid #160000;
+
+    box-shadow:
+
+    0 0 20px #ff0000,
+
+    inset 0 0 25px
+    rgba(255,255,255,.3);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:80px;
+
+    font-weight:900;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 10px white,
+
+    0 0 20px #ff0000;
+}
+
+
+/* VARIAÇÕES */
+
+.skin-symbol.blue{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #00bfff,
+        #101070
+    );
+}
+
+.skin-symbol.purple{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #cc4dff,
+        #290050
+    );
+}
+
+.skin-symbol.orange{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffb000,
+        #b53000
+    );
+}
+
+.skin-symbol.green{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #38ff55,
+        #006b19
+    );
+}
+
+.skin-symbol.yellow{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fff400,
+        #d97c00
+    );
+}
+
+.skin-symbol.white{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        white,
+        #777;
+    );
+
+    color:#5b00a8;
+}
+
+
+/* =========================
+CARRINHO
+========================= */
+
+.cart{
+
+    position:fixed;
+
+    right:-410px;
+
+    top:0;
+
     width:390px;
+
     height:100vh;
+
     background:#101016;
+
     border-left:2px solid #7b2cff;
-    z-index:20;
+
+    z-index:200;
+
     padding:22px;
+
     transition:.3s;
-    overflow:auto
+
+    overflow:auto;
 }
 
 .cart.active{
-    right:0
+
+    right:0;
 }
 
 .close{
+
     float:right;
+
     background:none;
+
     border:0;
-    color:#fff;
-    font-size:28px;
-    cursor:pointer
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
 }
 
 .cartitem{
+
     background:#191923;
+
     border-radius:10px;
+
     padding:12px;
-    margin:8px 0
+
+    margin:10px 0;
 }
 
 .row{
+
     display:flex;
-    justify-content:space-between
+
+    justify-content:space-between;
+
+    gap:10px;
 }
 
 .qty button{
+
     background:#7b2cff;
-    color:#fff;
+
+    color:white;
+
     border:0;
+
     border-radius:6px;
-    padding:4px 9px;
+
+    padding:5px 10px;
+
     margin:8px 5px 0 0;
-    cursor:pointer
+
+    cursor:pointer;
 }
 
+
+/* =========================
+BOTÃO PIX
+========================= */
+
 .checkout{
+
     margin-top:16px;
+
     width:100%;
-    padding:14px;
+
+    padding:15px;
+
     border:0;
+
     border-radius:10px;
+
     background:#7b2cff;
-    color:#fff;
+
+    color:white;
+
     font-weight:bold;
+
     font-size:16px;
-    cursor:pointer
+
+    cursor:pointer;
 }
 
 .checkout:hover{
-    background:#914cff
+
+    background:#914cff;
 }
 
+
+/* =========================
+RODAPÉ
+========================= */
+
 footer{
+
     text-align:center;
+
     padding:25px;
-    color:#777
+
+    color:#777;
 }
+
+
+/* =========================
+CELULAR
+========================= */
 
 @media(max-width:650px){
 
     .grid{
-        grid-template-columns:1fr
+
+        grid-template-columns:1fr;
+    }
+
+    #skinsGrid{
+
+        grid-template-columns:1fr;
     }
 
     .hero h1{
-        font-size:34px
+
+        font-size:34px;
     }
 
     .cart{
+
         width:100%;
-        right:-100%
+
+        right:-100%;
     }
 
-    .card img,.placeholder{
+    .card img{
+
         height:auto;
-        aspect-ratio:16/9
+
+        aspect-ratio:16/9;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <div class="logo">FullStop <span>STORE</span></div>
 
-    <button class="cartbtn" onclick="toggleCart()">
-        🛒 <span id="count">0</span>
-    </button>
+<!-- =========================
+TOPO
+========================= -->
+
+<header>
+
+<div class="logo">
+
+FullStop
+<span>STORE</span>
+
+</div>
+
+
+<button
+class="cartbtn"
+onclick="toggleCart()">
+
+🛒
+<span id="count">0</span>
+
+</button>
+
 </header>
 
+
+
+<!-- =========================
+CAPA
+========================= -->
+
 <section class="hero">
-    <h1>FULLSTOP <span>STORE</span></h1>
-    <p>Frutas Normais • PERM • Skins</p>
+
+<h1>
+
+FULLSTOP
+
+<span>STORE</span>
+
+</h1>
+
+<p>
+
+Frutas Normais
+•
+
+PERM
+•
+
+Skins
+
+</p>
+
 </section>
+
+
+
+<!-- =========================
+ABAS
+========================= -->
 
 <div class="tabs">
 
-    <button class="tab active" onclick="openTab('normal',this)">
-        🍎 Frutas Normais
-    </button>
 
-    <button class="tab" onclick="openTab('perm',this)">
-        💎 Frutas PERM
-    </button>
+<button
 
-    <button class="tab" onclick="openTab('skins',this)">
-        🎨 Skins
-    </button>
+class="tab active"
 
-</div>
+onclick="openTab('normal',this)">
 
+🍎 Frutas Normais
 
-<!-- FRUTAS NORMAIS -->
-
-<section id="normal" class="section active">
-
-<h2 class="title">🟣 Frutas Míticas</h2>
-<p class="subtitle">Listadas de 2 em 2</p>
-
-<div class="grid" id="mythical"></div>
-
-<h2 class="title legend">🟡 Frutas Lendárias</h2>
-<p class="subtitle">Listadas de 2 em 2</p>
-
-<div class="grid" id="legendary"></div>
-
-</section>
-
-
-<!-- PERMS -->
-
-<section id="perm" class="section">
-
-<h2 class="title">💎 Frutas PERM</h2>
-
-<p class="subtitle">
-Míticas e Lendárias listadas de 2 em 2
-</p>
-
-<div class="grid" id="perms"></div>
-
-</section>
-
-
-<!-- SKINS -->
-
-<section id="skins" class="section">
-
-<h2 class="title">🎨 Skins de Frutas</h2>
-
-<p class="subtitle">
-Skins listadas de 2 em 2
-</p>
-
-<div class="grid" id="skinsGrid"></div>
-
-</section>
-
-
-<!-- CARRINHO -->
-
-<div class="cart" id="cart">
-
-<button class="close" onclick="toggleCart()">×</button>
-
-<h2>🛒 Carrinho</h2>
-
-<div id="cartItems">
-Carrinho vazio.
-</div>
-
-<div class="price">
-Total: <span id="total">R$ 0,00</span>
-</div>
-
-<button class="checkout" onclick="checkout()">
-💜 PAGAR COM PIX
 </button>
 
+
+
+<button
+
+class="tab"
+
+onclick="openTab('perm',this)">
+
+💎 Frutas PERM
+
+</button>
+
+
+
+<button
+
+class="tab"
+
+onclick="openTab('skins',this)">
+
+🎨 Skins
+
+</button>
+
+
 </div>
+
+
+
+<!-- =========================
+FRUTAS NORMAIS
+========================= -->
+
+<section
+
+id="normal"
+
+class="section active">
+
+
+<h2 class="title">
+
+🟣 Frutas Míticas
+
+</h2>
+
+
+<p class="subtitle">
+
+Listadas de 2 em 2
+
+</p>
+
+
+<div
+
+class="grid"
+
+id="mythical">
+
+</div>
+
+
+
+<h2 class="title legend">
+
+🟡 Frutas Lendárias
+
+</h2>
+
+
+<p class="subtitle">
+
+Listadas de 2 em 2
+
+</p>
+
+
+<div
+
+class="grid"
+
+id="legendary">
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+PERM
+========================= -->
+
+<section
+
+id="perm"
+
+class="section">
+
+
+<h2 class="title">
+
+💎 Frutas PERM
+
+</h2>
+
+
+<p class="subtitle">
+
+Míticas e Lendárias listadas de 2 em 2
+
+</p>
+
+
+<div
+
+class="grid"
+
+id="perms">
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+SKINS
+========================= -->
+
+<section
+
+id="skins"
+
+class="section">
+
+
+<h2 class="title">
+
+🎨 Skins de Frutas
+
+</h2>
+
+
+<p class="subtitle">
+
+Skins listadas de 2 em 2
+
+</p>
+
+
+<div
+
+id="skinsGrid">
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+CARRINHO
+========================= -->
+
+<div
+
+class="cart"
+
+id="cart">
+
+
+<button
+
+class="close"
+
+onclick="toggleCart()">
+
+×
+
+
+</button>
+
+
+<h2>
+
+🛒 Carrinho
+
+</h2>
+
+
+<br>
+
+
+<div id="cartItems">
+
+Carrinho vazio.
+
+</div>
+
+
+<br>
+
+
+<div class="price">
+
+Total:
+
+<span id="total">
+
+R$ 0,00
+
+</span>
+
+</div>
+
+
+
+<button
+
+class="checkout"
+
+onclick="checkout()">
+
+💜 PAGAR COM PIX
+
+</button>
+
+
+</div>
+
 
 
 <footer>
+
 © 2026 FullStop STORE
+
 </footer>
+
 
 
 <script>
 
-/* FRUTAS MÍTICAS */
+
+/* =========================
+FRUTAS MÍTICAS
+========================= */
 
 const myth=[
 
 ["Gravity","gravity.jpg","R$ 0,00"],
+
 ["Mammoth","mamuth.jpg","R$ 6,00"],
+
 ["T-Rex","t-rex.jpg","R$ 6,00"],
+
 ["Dough","dough.jpg","R$ 8,00"],
+
 ["Shadow","shadow.jpg","R$ 0,00"],
+
 ["Venom","venom.jpg","R$ 0,00"],
+
 ["Gas","gass.jpg","R$ 0,00"],
+
 ["Spirit","spirit.jpg","R$ 8,00"],
+
 ["Control","control.jpg","R$ 20,00"],
+
 ["Kitsune","kitsune.jpg","R$ 35,00"],
+
 ["Dragon","dragon.jpg","R$ 75,00"],
+
 ["Yeti","yeti.jpg","R$ 0,00"],
+
 ["Tiger","tiger.jpg","R$ 0,00"]
 
 ];
 
 
-/* FRUTAS LENDÁRIAS */
+
+/* =========================
+FRUTAS LENDÁRIAS
+========================= */
 
 const legend=[
 
 ["Buddha","buddha.jpg","R$ 5,00"],
+
 ["Portal","portal.jpg","R$ 6,00"],
+
 ["Rumble","rumble.jpg","R$ 12,00"],
+
 ["Blizzard","blizzard.jpg","R$ 0,00"],
+
 ["Phoenix","phoenix.jpg","R$ 0,00"],
+
 ["Pain","pain.jpg","R$ 0,00"],
+
 ["Lightning","lightning.jpg","R$ 0,00"],
+
 ["Sound","sound.jpg","R$ 0,00"],
+
 ["Quake","quake.jpg","R$ 0,00"],
+
 ["Love","love.jpg","R$ 0,00"],
+
 ["Spider","spider.jpg","R$ 0,00"]
 
 ];
 
 
-/* FRUTAS PERM */
+
+/* =========================
+FRUTAS PERM
+========================= */
 
 const perms=[
 
 ["Dragon","dragon.jpg","R$ 165,00"],
+
 ["Kitsune","kitsune.jpg","R$ 132,00"],
+
 ["Control","control.jpg","R$ —"],
+
 ["Magnete","magnete.jpg","R$ —"],
+
 ["Yeti","yeti.jpg","R$ 100,00"],
+
 ["Tiger","tiger.jpg","R$ 100,00"],
+
 ["Shadow","shadow.jpg","R$ —"],
+
 ["Gas","gass.jpg","R$ —"],
+
 ["Venom","venom.jpg","R$ 80,00"],
+
 ["Dough","dough.jpg","R$ 79,00"],
+
 ["Mammoth","mamuth.jpg","R$ —"],
+
 ["T-Rex","t-rex.jpg","R$ —"],
+
 ["Gravity","gravity.jpg","R$ 75,00"],
+
 ["Blizzard","blizzard.jpg","R$ 75,00"],
+
 ["Pain","pain.jpg","R$ —"],
+
 ["Lightning","lightning.jpg","R$ —"],
+
 ["Portal","portal.jpg","R$ 66,00"],
+
 ["Sound","sound.jpg","R$ 62,00"],
+
 ["Buddha","buddha.jpg","R$ —"],
+
 ["Quake","quake.jpg","R$ —"]
 
 ];
 
 
-/* 🎨 SKINS COM IMAGENS ILUSTRATIVAS */
+
+/* =========================
+16 SKINS
+========================= */
 
 const skins=[
 
-["Dragon Red","https://placehold.co/800x450/8b0000/ffffff?text=DRAGON+RED"],
-["Kitsune Blue","https://placehold.co/800x450/003cff/ffffff?text=KITSUNE+BLUE"],
+["RABID BLADE","⚔","R$ 300,00","blue"],
 
-["Dough Neon","https://placehold.co/800x450/ff00ff/ffffff?text=DOUGH+NEON"],
-["T-Rex Fossil","https://placehold.co/800x450/6b4f2f/ffffff?text=T-REX+FOSSIL"],
+["KITSUNE GALAXY","狐","R$ 280,00","purple"],
 
-["Mammoth Ice","https://placehold.co/800x450/00bfff/ffffff?text=MAMMOTH+ICE"],
-["Venom Dark","https://placehold.co/800x450/4b0082/ffffff?text=VENOM+DARK"],
+["CRIMSON KITSUNE","狐","R$ 250,00","orange"],
 
-["Shadow Eclipse","https://placehold.co/800x450/111111/ffffff?text=SHADOW+ECLIPSE"],
-["Spirit Flame","https://placehold.co/800x450/ff4500/ffffff?text=SPIRIT+FLAME"],
+["DRAGON EMBER","🐉","R$ 175,00","orange"],
 
-["Control Cyber","https://placehold.co/800x450/00ffff/000000?text=CONTROL+CYBER"],
-["Kitsune Gold","https://placehold.co/800x450/daa520/ffffff?text=KITSUNE+GOLD"],
+["RUNIC","✦","R$ 200,00","purple"],
 
-["Dragon Storm","https://placehold.co/800x450/191970/ffffff?text=DRAGON+STORM"],
-["Buddha Gold","https://placehold.co/800x450/ffd700/000000?text=BUDDHA+GOLD"],
+["MEME","◉","R$ 150,00","orange"],
 
-["Portal Galaxy","https://placehold.co/800x450/4b0082/ffffff?text=PORTAL+GALAXY"],
-["Rumble Electric","https://placehold.co/800x450/ffff00/000000?text=RUMBLE+ELECTRIC"],
+["PURPLE","✧","R$ 120,00","purple"],
 
-["Blizzard Frost","https://placehold.co/800x450/87ceeb/000000?text=BLIZZARD+FROST"],
-["Phoenix Fire","https://placehold.co/800x450/ff4500/ffffff?text=PHOENIX+FIRE"]
+["SUPER SPIRIT PAIN","☁","R$ 100,00","blue"],
+
+["RED","◆","R$ 80,00",""],
+
+["DOG BLADE","⚔","R$ 70,00","yellow"],
+
+["YELLOW","✦","R$ 65,00","yellow"],
+
+["PORTAL DIVINE","◎","R$ 45,00","white"],
+
+["STARLIGHT","★","R$ 65,00","yellow"],
+
+["CELESTIAL","☾","R$ 45,00","purple"],
+
+["FIEND","☠","R$ 55,00","orange"],
+
+["WEREWOLF","◈","R$ 60,00","purple"]
 
 ];
 
 
+
+/* =========================
+CARRINHO
+========================= */
+
 let cart=[];
 
 
-/* MOSTRAR FRUTAS */
+
+/* =========================
+MOSTRAR FRUTAS
+========================= */
 
 function render(id,list,tag){
 
-document.getElementById(id).innerHTML=list.map(f=>{
+document.getElementById(id).innerHTML=
+
+list.map(f=>{
 
 let n=f[0];
+
 let im=f[1];
+
 let p=f[2];
+
 
 return `
 
 <article class="card">
 
-<img src="assets/${im}" alt="${n}">
+
+<img
+
+src="assets/${im}"
+
+alt="${n}">
+
 
 <div class="info">
 
-<div class="tag">${tag}</div>
 
-<h3>${n}</h3>
+<div class="tag">
 
-<div class="price">${p}</div>
+${tag}
 
-<button class="add"
+</div>
+
+
+<h3>
+
+${n}
+
+</h3>
+
+
+<div class="price">
+
+${p}
+
+</div>
+
+
+<button
+
+class="add"
+
 onclick="addItem('${n}','${p}')">
 
 🛒 Adicionar
 
 </button>
 
+
 </div>
+
 
 </article>
 
@@ -517,121 +1353,305 @@ onclick="addItem('${n}','${p}')">
 }
 
 
-/* MOSTRAR SKINS */
+
+/* =========================
+MOSTRAR SKINS
+========================= */
 
 function renderSkins(){
 
 document.getElementById("skinsGrid").innerHTML=
 
-skins.map(s=>`
+skins.map((skin,index)=>{
 
-<article class="card">
 
-<img
-src="${s[1]}"
-alt="${s[0]}">
+let nome=skin[0];
+
+let simbolo=skin[1];
+
+let preco=skin[2];
+
+let cor=skin[3];
+
+
+let estoque=
+
+10+(index*3)%14;
+
+
+return `
+
+
+<article class="skin-card">
+
+
+<div class="skin-image">
+
+
+<div
+
+class="skin-symbol ${cor}">
+
+${simbolo}
+
+</div>
+
+
+</div>
+
+
 
 <div class="info">
 
+
 <div class="tag">
+
 SKIN
+
 </div>
+
 
 <h3>
-${s[0]}
+
+${nome}
+
 </h3>
 
-<div class="price">
-Consultar
+
+<div style="color:#ffd34d;font-size:13px;margin-bottom:8px">
+
+★★★★★
+
+<span style="color:#999">
+
+4,9 (avaliações)
+
+</span>
+
 </div>
 
-<button
-class="add"
-onclick="addItem('${s[0]}','Consultar')">
 
-🛒 Adicionar
+<div class="price">
+
+${preco}
+
+</div>
+
+
+<div style="color:#bbb;font-size:13px;margin-bottom:12px">
+
+📦 Estoque: ${estoque}
+
+</div>
+
+
+<button
+
+class="add"
+
+onclick="addItem('${nome}','${preco}')">
+
+🛒 Comprar agora
 
 </button>
 
+
 </div>
+
 
 </article>
 
-`).join("");
+
+`;
+
+}).join("");
 
 }
 
 
-/* RENDERIZAR */
 
-render("mythical",myth,"MÍTICA");
+/* =========================
+RENDERIZAR
+========================= */
 
-render("legendary",legend,"LENDÁRIA");
+render(
 
-render("perms",perms,"PERM");
+"mythical",
+
+myth,
+
+"MÍTICA"
+
+);
+
+
+render(
+
+"legendary",
+
+legend,
+
+"LENDÁRIA"
+
+);
+
+
+render(
+
+"perms",
+
+perms,
+
+"PERM"
+
+);
+
+
+/* SKINS */
 
 renderSkins();
 
 
-/* ABAS */
+
+/* =========================
+ABAS
+========================= */
 
 function openTab(id,b){
 
-document.querySelectorAll(".section")
-.forEach(x=>x.classList.remove("active"));
+document
 
-document.querySelectorAll(".tab")
-.forEach(x=>x.classList.remove("active"));
+.querySelectorAll(".section")
 
-document.getElementById(id)
+.forEach(x=>
+
+x.classList.remove("active")
+
+);
+
+
+document
+
+.querySelectorAll(".tab")
+
+.forEach(x=>
+
+x.classList.remove("active")
+
+);
+
+
+document
+
+.getElementById(id)
+
 .classList.add("active");
+
 
 b.classList.add("active");
 
 }
 
 
-/* CARRINHO */
+
+/* =========================
+ABRIR CARRINHO
+========================= */
 
 function toggleCart(){
 
-document.getElementById("cart")
+document
+
+.getElementById("cart")
+
 .classList.toggle("active");
 
 }
 
 
-/* ADICIONAR ITEM */
+
+/* =========================
+ADICIONAR ITEM
+========================= */
 
 function addItem(n,p){
 
-let x=cart.find(i=>i.n===n && i.p===p);
+let x=
+
+cart.find(i=>i.n===n);
+
 
 if(x){
 
 x.q++;
 
-}else{
+}
+
+else{
 
 cart.push({
 
 n:n,
+
 p:p,
+
 q:1
 
 });
 
 }
 
+
 update();
 
-document.getElementById("cart")
+
+document
+
+.getElementById("cart")
+
 .classList.add("active");
 
 }
 
 
-/* ATUALIZAR CARRINHO */
+
+/* =========================
+CALCULAR PREÇO
+========================= */
+
+function priceNumber(preco){
+
+let numero=
+
+preco
+
+.replace("R$","")
+
+.replace(/\./g,"")
+
+.replace(",",".")
+
+.trim();
+
+
+let valor=
+
+parseFloat(numero);
+
+
+return isNaN(valor)
+
+?0
+
+:valor;
+
+}
+
+
+
+/* =========================
+ATUALIZAR CARRINHO
+========================= */
 
 function update(){
 
@@ -639,36 +1659,78 @@ let count=0;
 
 let txt="";
 
+let total=0;
+
 
 cart.forEach((x,i)=>{
 
+
 count+=x.q;
+
+
+let valor=
+
+priceNumber(x.p);
+
+
+total+=
+
+valor*x.q;
+
+
 
 txt+=`
 
 <div class="cartitem">
 
+
 <div class="row">
 
-<b>${x.n}</b>
 
-<span>${x.p}</span>
+<b>
+
+${x.n}
+
+</b>
+
+
+<span>
+
+${x.p}
+
+</span>
+
 
 </div>
+
+
 
 <div class="qty">
 
-<button onclick="change(${i},-1)">
+
+<button
+
+onclick="change(${i},-1)">
+
 −
+
 </button>
+
 
 ${x.q}
 
-<button onclick="change(${i},1)">
+
+<button
+
+onclick="change(${i},1)">
+
 +
+
 </button>
 
+
 </div>
+
 
 </div>
 
@@ -677,35 +1739,48 @@ ${x.q}
 });
 
 
-document.getElementById("cartItems")
-.innerHTML=txt || "Carrinho vazio.";
+document
+
+.getElementById("cartItems")
+
+.innerHTML=
+
+txt ||
+
+"Carrinho vazio.";
 
 
-document.getElementById("count")
+document
+
+.getElementById("count")
+
 .textContent=count;
 
 
-document.getElementById("total")
+document
+
+.getElementById("total")
+
 .textContent=
 
-cart.length
+"R$ "+
 
-?
+total.toFixed(2)
 
-"Confira os itens"
-
-:
-
-"R$ 0,00";
+.replace(".",",");
 
 }
 
 
-/* QUANTIDADE */
+
+/* =========================
+MUDAR QUANTIDADE
+========================= */
 
 function change(i,d){
 
 cart[i].q+=d;
+
 
 if(cart[i].q<=0){
 
@@ -713,44 +1788,68 @@ cart.splice(i,1);
 
 }
 
+
 update();
 
 }
 
 
-/* 💜 PAGAMENTO PIX */
+
+/* =========================
+PAGAR COM PIX
+========================= */
 
 function checkout(){
+
 
 if(!cart.length){
 
 return alert(
+
 "Seu carrinho está vazio!"
+
 );
 
 }
 
 
+/* PEDIDO */
+
 let pedido=
+
 
 "🟣 PEDIDO - FULLSTOP STORE 🟣\n\n"+
 
+
 cart.map(x=>
 
-"• "+x.n+
+"• "+
 
-" x"+x.q+
+x.n+
 
-" - "+x.p
+" x"+
+
+x.q+
+
+" - "+
+
+x.p
 
 ).join("\n");
 
 
-if(navigator.clipboard){
+pedido+=
+
+"\n\n💜 PAGAMENTO: PIX";
+
+
+/* COPIAR */
+
+navigator.clipboard
+
+&&
 
 navigator.clipboard.writeText(pedido);
-
-}
 
 
 /* ABRIR DISCORD */
@@ -764,15 +1863,20 @@ window.open(
 );
 
 
+/* AVISO */
+
 alert(
 
-"Pedido copiado! Você será direcionado para o pagamento PIX."
+"Pedido copiado! Você será direcionado para o canal de pagamento PIX."
 
 );
 
 }
 
+
 </script>
 
+
 </body>
+
 </html>
