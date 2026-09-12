@@ -7,6 +7,7 @@
 <title>FullStop STORE</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -16,10 +17,11 @@
 
 body{
     background:#07070a;
-    color:#fff;
+    color:white;
 }
 
 /* TOPO */
+
 header{
     padding:16px 5%;
     display:flex;
@@ -41,17 +43,31 @@ header{
     color:#b878ff;
 }
 
+.verified{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:5px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#7b2cff;
+    font-size:12px;
+}
+
 .cartbtn{
     background:#7b2cff;
-    color:#fff;
+    color:white;
     border:0;
     border-radius:10px;
     padding:11px 15px;
     font-weight:bold;
     cursor:pointer;
+    font-size:16px;
 }
 
 /* CAPA */
+
 .hero{
     text-align:center;
     padding:60px 15px;
@@ -60,6 +76,7 @@ header{
 
 .hero h1{
     font-size:46px;
+    font-weight:900;
 }
 
 .hero span{
@@ -67,27 +84,33 @@ header{
 }
 
 .hero p{
-    margin-top:10px;
+    margin-top:12px;
     color:#ddd;
 }
 
 /* ABAS */
+
 .tabs{
     display:flex;
-    gap:10px;
     justify-content:center;
     flex-wrap:wrap;
-    padding:24px;
+    gap:10px;
+    padding:24px 15px;
 }
 
 .tab{
     padding:12px 18px;
     border-radius:10px;
     background:#15151c;
-    color:#fff;
+    color:white;
     border:1px solid #333;
     cursor:pointer;
     font-weight:bold;
+    transition:.2s;
+}
+
+.tab:hover{
+    border-color:#a45cff;
 }
 
 .tab.active{
@@ -96,6 +119,7 @@ header{
 }
 
 /* SEÇÕES */
+
 .section{
     display:none;
     max-width:1150px;
@@ -111,6 +135,7 @@ header{
     text-align:center;
     margin:28px 0 8px;
     color:#b878ff;
+    font-size:27px;
 }
 
 .legend{
@@ -123,19 +148,27 @@ header{
     margin-bottom:20px;
 }
 
-/* GRID - 2 POR LINHA */
+/* GRID */
+
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:16px;
 }
 
-/* CARDS */
+/* CARD */
+
 .card{
     background:#111119;
     border:1px solid #2a2933;
     border-radius:16px;
     overflow:hidden;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    border-color:#7b2cff;
 }
 
 .card img{
@@ -144,6 +177,8 @@ header{
     object-fit:cover;
     display:block;
 }
+
+/* INFORMAÇÕES */
 
 .info{
     padding:14px;
@@ -173,7 +208,7 @@ header{
 .add{
     width:100%;
     background:#7b2cff;
-    color:#fff;
+    color:white;
     border:0;
     border-radius:10px;
     padding:11px;
@@ -181,7 +216,59 @@ header{
     cursor:pointer;
 }
 
+.add:hover{
+    background:#914cff;
+}
+
+/* SKINS */
+
+.art{
+    width:100%;
+    height:250px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    font-size:85px;
+    font-weight:bold;
+}
+
+.skin-art{
+    background:radial-gradient(circle,#a00000,#400000 50%,#090000);
+    border-bottom:2px solid #ff3030;
+    color:white;
+    text-shadow:0 0 15px white,0 0 30px red;
+}
+
+.skin-art::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border:3px solid #ff3333;
+    border-radius:50%;
+    opacity:.5;
+}
+
+/* GAME PASS */
+
+.gamepass-art{
+    background:radial-gradient(circle,#482080,#160d2a 60%,#07070a);
+    border-bottom:2px solid #a45cff;
+    color:white;
+    text-shadow:0 0 15px #a45cff,0 0 30px #7b2cff;
+}
+
+.gamepass-art::before{
+    content:"🎮";
+    position:absolute;
+    font-size:180px;
+    opacity:.12;
+}
+
 /* CARRINHO */
+
 .cart{
     position:fixed;
     right:-410px;
@@ -204,7 +291,7 @@ header{
     float:right;
     background:none;
     border:0;
-    color:#fff;
+    color:white;
     font-size:30px;
     cursor:pointer;
 }
@@ -224,7 +311,7 @@ header{
 
 .qty button{
     background:#7b2cff;
-    color:#fff;
+    color:white;
     border:0;
     border-radius:6px;
     padding:5px 10px;
@@ -235,15 +322,21 @@ header{
 .checkout{
     margin-top:16px;
     width:100%;
-    padding:14px;
+    padding:15px;
     border:0;
     border-radius:10px;
     background:#7b2cff;
-    color:#fff;
+    color:white;
     font-weight:bold;
     font-size:16px;
     cursor:pointer;
 }
+
+.checkout:hover{
+    background:#914cff;
+}
+
+/* RODAPÉ */
 
 footer{
     text-align:center;
@@ -252,6 +345,7 @@ footer{
 }
 
 /* CELULAR */
+
 @media(max-width:650px){
 
     .grid{
@@ -267,21 +361,18 @@ footer{
         right:-100%;
     }
 
-    .card img{
-        height:auto;
-        aspect-ratio:16/9;
-    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- TOPO -->
 <header>
 
 <div class="logo">
-FullStop <span>STORE</span> ✓
+FullStop <span>STORE</span>
+<span class="verified">✓</span>
 </div>
 
 <button class="cartbtn" onclick="toggleCart()">
@@ -291,7 +382,6 @@ FullStop <span>STORE</span> ✓
 </header>
 
 
-<!-- CAPA -->
 <section class="hero">
 
 <h1>
@@ -305,7 +395,6 @@ Frutas Normais • PERM • Skins • GAME PASS
 </section>
 
 
-<!-- ABAS -->
 <div class="tabs">
 
 <button class="tab active" onclick="openTab('normal',this)">
@@ -328,15 +417,27 @@ Frutas Normais • PERM • Skins • GAME PASS
 
 
 <!-- FRUTAS NORMAIS -->
+
 <section id="normal" class="section active">
 
-<h2 class="title">🟣 Frutas Míticas</h2>
-<p class="subtitle">Listadas de 2 em 2</p>
+<h2 class="title">
+🟣 Frutas Míticas
+</h2>
+
+<p class="subtitle">
+Listadas de 2 em 2
+</p>
 
 <div class="grid" id="mythical"></div>
 
-<h2 class="title legend">🟡 Frutas Lendárias</h2>
-<p class="subtitle">Listadas de 2 em 2</p>
+
+<h2 class="title legend">
+🟡 Frutas Lendárias
+</h2>
+
+<p class="subtitle">
+Listadas de 2 em 2
+</p>
 
 <div class="grid" id="legendary"></div>
 
@@ -344,10 +445,16 @@ Frutas Normais • PERM • Skins • GAME PASS
 
 
 <!-- PERM -->
+
 <section id="perm" class="section">
 
-<h2 class="title">💎 Frutas PERM</h2>
-<p class="subtitle">Listadas de 2 em 2</p>
+<h2 class="title">
+💎 Frutas PERM
+</h2>
+
+<p class="subtitle">
+Listadas de 2 em 2
+</p>
 
 <div class="grid" id="perms"></div>
 
@@ -355,10 +462,16 @@ Frutas Normais • PERM • Skins • GAME PASS
 
 
 <!-- SKINS -->
+
 <section id="skins" class="section">
 
-<h2 class="title">🎨 Skins</h2>
-<p class="subtitle">Skins listadas de 2 em 2</p>
+<h2 class="title">
+🎨 Skins
+</h2>
+
+<p class="subtitle">
+Skins listadas de 2 em 2
+</p>
 
 <div class="grid" id="skinsGrid"></div>
 
@@ -366,10 +479,16 @@ Frutas Normais • PERM • Skins • GAME PASS
 
 
 <!-- GAME PASS -->
+
 <section id="gamepass" class="section">
 
-<h2 class="title">🎮 GAME PASS</h2>
-<p class="subtitle">Game Pass listados de 2 em 2</p>
+<h2 class="title">
+🎮 GAME PASS
+</h2>
+
+<p class="subtitle">
+Game Pass listados de 2 em 2
+</p>
 
 <div class="grid" id="gamepassGrid"></div>
 
@@ -377,6 +496,7 @@ Frutas Normais • PERM • Skins • GAME PASS
 
 
 <!-- CARRINHO -->
+
 <div class="cart" id="cart">
 
 <button class="close" onclick="toggleCart()">×</button>
@@ -409,127 +529,191 @@ Total: <span id="total">R$ 0,00</span>
 
 <script>
 
-/* =====================
-FRUTAS MÍTICAS
-===================== */
+/* =========================
+   FRUTAS MÍTICAS
+========================= */
 
 const myth=[
 
-["Gravity","gravity.jpg","R$ 0,00"],
+["Gravity","gravity.jpg","R$ 5,00"],
+
 ["Mammoth","mamuth.jpg","R$ 6,00"],
+
 ["T-Rex","t-rex.jpg","R$ 6,00"],
+
 ["Dough","dough.jpg","R$ 8,00"],
-["Shadow","shadow.jpg","R$ 0,00"],
-["Venom","venom.jpg","R$ 0,00"],
-["Gas","gass.jpg","R$ 0,00"],
+
+["Shadow","shadow.jpg","R$ 6,00"],
+
+["Venom","venom.jpg","R$ 7,00"],
+
+["Gas","gass.jpg","R$ 8,00"],
+
 ["Spirit","spirit.jpg","R$ 8,00"],
+
 ["Control","control.jpg","R$ 20,00"],
+
 ["Kitsune","kitsune.jpg","R$ 35,00"],
+
 ["Dragon","dragon.jpg","R$ 75,00"],
-["Yeti","yeti.jpg","R$ 0,00"],
-["Tiger","tiger.jpg","R$ 0,00"]
+
+["Yeti","yeti.jpg","R$ 10,00"],
+
+["Tiger","tiger.jpg","R$ 10,00"]
 
 ];
 
 
-/* =====================
-FRUTAS LENDÁRIAS
-===================== */
+/* =========================
+   FRUTAS LENDÁRIAS
+========================= */
 
 const legend=[
 
 ["Buddha","buddha.jpg","R$ 5,00"],
+
 ["Portal","portal.jpg","R$ 6,00"],
+
 ["Rumble","rumble.jpg","R$ 20,00"],
-["Blizzard","blizzard.jpg","R$ 0,00"],
-["Phoenix","phoenix.jpg","R$ 0,00"],
-["Pain","pain.jpg","R$ 0,00"],
-["Lightning","lightning.jpg","R$ 0,00"],
-["Sound","sound.jpg","R$ 0,00"],
-["Quake","quake.jpg","R$ 0,00"],
-["Love","love.jpg","R$ 0,00"],
-["Spider","spider.jpg","R$ 0,00"]
+
+["Blizzard","blizzard.jpg","R$ 5,00"],
+
+["Phoenix","phoenix.jpg","R$ 6,00"],
+
+["Pain","pain.jpg","R$ 7,00"],
+
+["Lightning","lightning.jpg","R$ 8,00"],
+
+["Sound","sound.jpg","R$ 6,00"],
+
+["Quake","quake.jpg","R$ 4,00"],
+
+["Love","love.jpg","R$ 4,00"],
+
+["Spider","spider.jpg","R$ 3,00"]
 
 ];
 
 
-/* =====================
-FRUTAS PERM
-===================== */
+/* =========================
+   FRUTAS PERM
+========================= */
 
 const perms=[
 
-["Dragon PERM","perm-dragon.jpg","R$ 165,00"],
-["Kitsune PERM","perm-kitsune.jpg","R$ 132,00"],
-["Control PERM","perm-control.jpg","R$ 0,00"],
-["Yeti PERM","perm-yeti.jpg","R$ 100,00"],
-["Tiger PERM","perm-tiger.jpg","R$ 100,00"],
-["Shadow PERM","perm-shadow.jpg","R$ 0,00"],
-["Gas PERM","perm-gas.jpg","R$ 0,00"],
-["Venom PERM","perm-venom.jpg","R$ 80,00"],
-["Dough PERM","perm-dough.jpg","R$ 79,00"],
-["Gravity PERM","perm-gravity.jpg","R$ 75,00"],
-["Blizzard PERM","perm-blizzard.jpg","R$ 75,00"],
-["Portal PERM","perm-portal.jpg","R$ 66,00"],
-["Sound PERM","perm-sound.jpg","R$ 62,00"]
+["Dragon PERM","dragon.jpg","R$ 165,00"],
+
+["Kitsune PERM","kitsune.jpg","R$ 132,00"],
+
+["Control PERM","control.jpg","R$ 95,00"],
+
+["Yeti PERM","yeti.jpg","R$ 100,00"],
+
+["Tiger PERM","tiger.jpg","R$ 100,00"],
+
+["Shadow PERM","shadow.jpg","R$ 75,00"],
+
+["Gas PERM","gass.jpg","R$ 85,00"],
+
+["Venom PERM","venom.jpg","R$ 80,00"],
+
+["Dough PERM","dough.jpg","R$ 79,00"],
+
+["Mammoth PERM","mamuth.jpg","R$ 70,00"],
+
+["T-Rex PERM","t-rex.jpg","R$ 85,00"],
+
+["Gravity PERM","gravity.jpg","R$ 75,00"],
+
+["Blizzard PERM","blizzard.jpg","R$ 75,00"],
+
+["Portal PERM","portal.jpg","R$ 66,00"],
+
+["Sound PERM","sound.jpg","R$ 62,00"],
+
+["Buddha PERM","buddha.jpg","R$ 55,00"]
 
 ];
 
 
-/* =====================
-SKINS
-===================== */
+/* =========================
+   SKINS
+========================= */
 
 const skins=[
 
-["RABID BLADE","skin-rabid.jpg","R$ 300,00"],
-["KITSUNE GALAXY","skin-kitsune-galaxy.jpg","R$ 280,00"],
-["CRIMSON KITSUNE","skin-crimson.jpg","R$ 250,00"],
-["DRAGON EMBER","skin-dragon-ember.jpg","R$ 175,00"],
-["RUNIC","skin-runic.jpg","R$ 200,00"],
-["MEME","skin-meme.jpg","R$ 150,00"],
-["PURPLE","skin-purple.jpg","R$ 120,00"],
-["SUPER SPIRIT PAIN","skin-spirit.jpg","R$ 100,00"],
-["RED","skin-red.jpg","R$ 80,00"],
-["DOG BLADE","skin-dog.jpg","R$ 70,00"],
-["YELLOW","skin-yellow.jpg","R$ 65,00"],
-["PORTAL DIVINE","skin-portal.jpg","R$ 45,00"],
-["STARLIGHT","skin-starlight.jpg","R$ 65,00"],
-["CELESTIAL","skin-celestial.jpg","R$ 45,00"],
-["FIEND","skin-fiend.jpg","R$ 55,00"],
-["WEREWOLF","skin-werewolf.jpg","R$ 60,00"]
+["RABID BLADE","⚔","R$ 300,00"],
+
+["KITSUNE GALAXY","🦊","R$ 280,00"],
+
+["CRIMSON KITSUNE","🦊","R$ 250,00"],
+
+["DRAGON EMBER","🐉","R$ 175,00"],
+
+["RUNIC","✦","R$ 200,00"],
+
+["MEME","😈","R$ 150,00"],
+
+["PURPLE","✧","R$ 120,00"],
+
+["SUPER SPIRIT PAIN","👻","R$ 100,00"],
+
+["RED","◆","R$ 80,00"],
+
+["DOG BLADE","⚔","R$ 70,00"],
+
+["YELLOW","✦","R$ 65,00"],
+
+["PORTAL DIVINE","◎","R$ 45,00"],
+
+["STARLIGHT","★","R$ 65,00"],
+
+["CELESTIAL","☾","R$ 45,00"],
+
+["FIEND","☠","R$ 55,00"],
+
+["WEREWOLF","🐺","R$ 60,00"]
 
 ];
 
 
-/* =====================
-GAME PASS
-===================== */
+/* =========================
+   GAME PASS
+========================= */
 
 const gamepasses=[
 
-["2X MONEY","gamepass-money.jpg","R$ 0,00"],
-["2X MASTERY","gamepass-mastery.jpg","R$ 0,00"],
-["FAST BOATS","gamepass-boats.jpg","R$ 0,00"],
-["FRUIT NOTIFIER","gamepass-notifier.jpg","R$ 0,00"],
-["DARK BLADE","gamepass-darkblade.jpg","R$ 0,00"],
-["2X BOSS DROPS","gamepass-boss.jpg","R$ 0,00"]
+["2X MONEY","💰","R$ 20,00"],
+
+["2X MASTERY","⚡","R$ 20,00"],
+
+["FAST BOATS","🚤","R$ 15,00"],
+
+["FRUIT NOTIFIER","🔔","R$ 30,00"],
+
+["DARK BLADE","⚔","R$ 40,00"],
+
+["2X BOSS DROPS","👑","R$ 20,00"],
+
+["2X EXP","⭐","R$ 15,00"],
+
+["FAST SPAWN","🚀","R$ 15,00"]
 
 ];
 
 
-/* =====================
-CARRINHO
-===================== */
+/* =========================
+   CARRINHO
+========================= */
 
 let cart=[];
 
 
-/* =====================
-RENDERIZAR PRODUTOS
-===================== */
+/* =========================
+   RENDERIZAR FRUTAS
+========================= */
 
-function render(id,list,tag){
+function renderFruits(id,list,tag){
 
 document.getElementById(id).innerHTML=
 
@@ -580,29 +764,138 @@ onclick="addItem('${nome}','${preco}')">
 }
 
 
-/* =====================
-MOSTRAR TUDO
-===================== */
+/* =========================
+   RENDERIZAR SKINS
+========================= */
 
-render("mythical",myth,"MÍTICA");
+function renderSkins(){
 
-render("legendary",legend,"LENDÁRIA");
+document.getElementById("skinsGrid").innerHTML=
 
-render("perms",perms,"PERM");
+skins.map(item=>{
 
-render("skinsGrid",skins,"SKIN");
+let nome=item[0];
+let simbolo=item[1];
+let preco=item[2];
 
-render("gamepassGrid",gamepasses,"GAME PASS");
+return `
+
+<article class="card">
+
+<div class="art skin-art">
+${simbolo}
+</div>
+
+<div class="info">
+
+<div class="tag">
+SKIN
+</div>
+
+<h3>
+${nome}
+</h3>
+
+<div class="price">
+${preco}
+</div>
+
+<button
+class="add"
+onclick="addItem('${nome}','${preco}')">
+
+🛒 Adicionar
+
+</button>
+
+</div>
+
+</article>
+
+`;
+
+}).join("");
+
+}
 
 
-/* =====================
-ABAS
-===================== */
+/* =========================
+   RENDERIZAR GAME PASS
+========================= */
+
+function renderGamePass(){
+
+document.getElementById("gamepassGrid").innerHTML=
+
+gamepasses.map(item=>{
+
+let nome=item[0];
+let simbolo=item[1];
+let preco=item[2];
+
+return `
+
+<article class="card">
+
+<div class="art gamepass-art">
+${simbolo}
+</div>
+
+<div class="info">
+
+<div class="tag">
+GAME PASS
+</div>
+
+<h3>
+${nome}
+</h3>
+
+<div class="price">
+${preco}
+</div>
+
+<button
+class="add"
+onclick="addItem('${nome}','${preco}')">
+
+🛒 Adicionar
+
+</button>
+
+</div>
+
+</article>
+
+`;
+
+}).join("");
+
+}
+
+
+/* =========================
+   MOSTRAR PRODUTOS
+========================= */
+
+renderFruits("mythical",myth,"MÍTICA");
+
+renderFruits("legendary",legend,"LENDÁRIA");
+
+renderFruits("perms",perms,"PERM");
+
+renderSkins();
+
+renderGamePass();
+
+
+/* =========================
+   ABAS
+========================= */
 
 function openTab(id,button){
 
-document
-.querySelectorAll(".section")
+document.querySelectorAll(".section")
 .forEach(section=>{
 
 section.classList.remove("active");
@@ -610,8 +903,7 @@ section.classList.remove("active");
 });
 
 
-document
-.querySelectorAll(".tab")
+document.querySelectorAll(".tab")
 .forEach(tab=>{
 
 tab.classList.remove("active");
@@ -619,25 +911,22 @@ tab.classList.remove("active");
 });
 
 
-document
-.getElementById(id)
+document.getElementById(id)
 .classList.add("active");
 
 
-button
-.classList.add("active");
+button.classList.add("active");
 
 }
 
 
-/* =====================
-CARRINHO
-===================== */
+/* =========================
+   CARRINHO
+========================= */
 
 function toggleCart(){
 
-document
-.getElementById("cart")
+document.getElementById("cart")
 .classList.toggle("active");
 
 }
@@ -659,9 +948,7 @@ item.quantidade++;
 cart.push({
 
 nome:nome,
-
 preco:preco,
-
 quantidade:1
 
 });
@@ -672,12 +959,15 @@ quantidade:1
 updateCart();
 
 
-document
-.getElementById("cart")
+document.getElementById("cart")
 .classList.add("active");
 
 }
 
+
+/* =========================
+   CALCULAR PREÇO
+========================= */
 
 function priceNumber(preco){
 
@@ -698,26 +988,24 @@ return isNaN(valor)?0:valor;
 }
 
 
+/* =========================
+   ATUALIZAR CARRINHO
+========================= */
+
 function updateCart(){
 
-let count=0;
-
+let quantidadeTotal=0;
 let total=0;
-
 let texto="";
 
 
 cart.forEach((item,index)=>{
 
-count+=item.quantidade;
-
+quantidadeTotal+=item.quantidade;
 
 total+=
-
 priceNumber(item.preco)
-
 *
-
 item.quantidade;
 
 
@@ -755,20 +1043,17 @@ ${item.quantidade}
 });
 
 
-document
-.getElementById("cartItems")
+document.getElementById("cartItems")
 .innerHTML=
 
 texto || "Carrinho vazio.";
 
 
-document
-.getElementById("count")
-.textContent=count;
+document.getElementById("count")
+.textContent=quantidadeTotal;
 
 
-document
-.getElementById("total")
+document.getElementById("total")
 .textContent=
 
 "R$ "
@@ -781,6 +1066,10 @@ total
 
 }
 
+
+/* =========================
+   QUANTIDADE
+========================= */
 
 function changeItem(index,change){
 
@@ -799,9 +1088,9 @@ updateCart();
 }
 
 
-/* =====================
-PIX
-===================== */
+/* =========================
+   PAGAMENTO
+========================= */
 
 function checkout(){
 
@@ -855,10 +1144,12 @@ item.preco
 pedido+="\n💜 PAGAMENTO: PIX";
 
 
+if(navigator.clipboard){
+
 navigator.clipboard.writeText(pedido);
 
+}
 
-/* SEU CANAL DO DISCORD */
 
 window.open(
 
@@ -871,7 +1162,7 @@ window.open(
 
 alert(
 
-"Pedido copiado! Você será direcionado para o Discord."
+"Pedido copiado! Você será direcionado para o pagamento."
 
 );
 
