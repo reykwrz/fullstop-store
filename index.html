@@ -1,25 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-<meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FullStop STORE</title>
 
 <style>
 
-/* =========================
-CONFIGURAÇÃO GERAL
-========================= */
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial,sans-serif;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
@@ -27,26 +20,21 @@ body{
     color:white;
 }
 
-
-/* =========================
-TOPO
-========================= */
+/* ================= TOPO ================= */
 
 header{
-    padding:16px 5%;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:#0d0d12;
-
-    border-bottom:2px solid #7b2cff;
-
     position:sticky;
     top:0;
-
     z-index:100;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:16px 5%;
+
+    background:#0d0d12;
+    border-bottom:2px solid #7b2cff;
 }
 
 .logo{
@@ -55,125 +43,98 @@ header{
 }
 
 .logo span{
-    color:#b878ff;
+    color:#a45cff;
+}
+
+.verified{
+    font-size:16px;
+    color:#5865F2;
+    margin-left:5px;
 }
 
 .cartbtn{
-
-    background:#111119;
-
+    background:#7b2cff;
     color:white;
 
-    border:1px solid #333;
-
+    border:none;
     border-radius:10px;
 
-    padding:11px 15px;
+    padding:11px 16px;
 
     font-weight:bold;
+    font-size:16px;
 
     cursor:pointer;
-
-    font-size:16px;
 }
 
-
-/* =========================
-CAPA
-========================= */
+/* ================= CAPA ================= */
 
 .hero{
-
     text-align:center;
 
-    padding:60px 15px;
+    padding:65px 15px;
 
     background:
-
     radial-gradient(
         circle,
-        #3b126d,
-        #08080b 65%
+        #481783 0%,
+        #1b092e 40%,
+        #08080b 75%
     );
 }
 
 .hero h1{
-
-    font-size:46px;
-
-    font-weight:900;
+    font-size:48px;
 }
 
-.hero span{
-
+.hero h1 span{
     color:#a45cff;
 }
 
 .hero p{
-
-    margin-top:10px;
-
-    color:#ddd;
-
-    font-size:17px;
+    margin-top:12px;
+    color:#ccc;
 }
 
-
-/* =========================
-ABAS
-========================= */
+/* ================= ABAS ================= */
 
 .tabs{
-
     display:flex;
-
-    gap:10px;
-
     justify-content:center;
-
     flex-wrap:wrap;
 
-    padding:24px;
+    gap:10px;
+    padding:25px 15px;
 }
 
 .tab{
-
-    padding:12px 18px;
-
-    border-radius:10px;
-
     background:#15151c;
 
     color:white;
 
     border:1px solid #333;
 
-    cursor:pointer;
+    border-radius:10px;
+
+    padding:12px 17px;
 
     font-weight:bold;
 
-    font-size:15px;
+    cursor:pointer;
 }
 
 .tab:hover{
-
-    border-color:#7b2cff;
-}
-
-.tab.active{
-
-    background:#7b2cff;
-
     border-color:#a45cff;
 }
 
+.tab.active{
+    background:#7b2cff;
+    border-color:#a45cff;
+}
 
-/* =========================
-SEÇÕES
-========================= */
+/* ================= SEÇÕES ================= */
 
 .section{
-
     display:none;
 
     max-width:1150px;
@@ -184,15 +145,14 @@ SEÇÕES
 }
 
 .section.active{
-
     display:block;
 }
 
 .title{
-
     text-align:center;
 
-    margin:28px 0 8px;
+    margin-top:25px;
+    margin-bottom:8px;
 
     color:#b878ff;
 
@@ -200,26 +160,20 @@ SEÇÕES
 }
 
 .legend{
-
     color:#ffd34d;
 }
 
 .subtitle{
-
     text-align:center;
 
-    color:#aaa;
+    color:#999;
 
     margin-bottom:20px;
 }
 
-
-/* =========================
-GRID
-========================= */
+/* ================= GRID ================= */
 
 .grid{
-
     display:grid;
 
     grid-template-columns:repeat(2,1fr);
@@ -227,16 +181,12 @@ GRID
     gap:16px;
 }
 
-
-/* =========================
-CARDS
-========================= */
+/* ================= CARD ================= */
 
 .card{
-
     background:#111119;
 
-    border:1px solid #2a2933;
+    border:1px solid #292934;
 
     border-radius:16px;
 
@@ -246,42 +196,32 @@ CARDS
 }
 
 .card:hover{
-
     transform:translateY(-3px);
-
     border-color:#7b2cff;
 }
 
 .card img{
-
     width:100%;
-
-    height:250px;
+    height:240px;
 
     object-fit:cover;
 
     display:block;
+
+    background:#1b1b22;
 }
 
-
-/* =========================
-PLACEHOLDER
-========================= */
-
-.placeholder{
-
-    height:250px;
+.noimage{
+    height:240px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    font-size:60px;
+    font-size:70px;
 
     background:
-
     linear-gradient(
         135deg,
         #281142,
@@ -289,27 +229,20 @@ PLACEHOLDER
     );
 }
 
-
-/* =========================
-INFORMAÇÕES
-========================= */
-
 .info{
-
-    padding:14px;
+    padding:15px;
 }
 
 .tag{
-
     display:inline-block;
 
-    background:#2a1740;
+    background:#291640;
 
-    color:#bd8cff;
+    color:#c69aff;
+
+    padding:5px 9px;
 
     border-radius:15px;
-
-    padding:5px 8px;
 
     font-size:11px;
 
@@ -317,39 +250,31 @@ INFORMAÇÕES
 }
 
 .info h3{
-
-    margin:3px 0 10px;
+    margin-bottom:10px;
 }
 
 .price{
-
     color:#b878ff;
 
     font-size:21px;
 
     font-weight:bold;
 
-    margin-bottom:12px;
+    margin-bottom:13px;
 }
 
-
-/* =========================
-BOTÃO ADICIONAR
-========================= */
-
 .add{
-
     width:100%;
+
+    padding:12px;
 
     background:#7b2cff;
 
     color:white;
 
-    border:0;
+    border:none;
 
-    border-radius:10px;
-
-    padding:11px 15px;
+    border-radius:9px;
 
     font-weight:bold;
 
@@ -357,271 +282,18 @@ BOTÃO ADICIONAR
 }
 
 .add:hover{
-
     background:#914cff;
 }
 
-
-/* =========================
-SKINS
-========================= */
-
-#skins{
-
-    max-width:1150px;
-}
-
-
-/* EXATAMENTE 2 POR LINHA */
-
-#skinsGrid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:16px;
-}
-
-
-/* CARD DAS SKINS */
-
-.skin-card{
-
-    background:#111119;
-
-    border:1px solid #3b2020;
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    transition:.2s;
-}
-
-.skin-card:hover{
-
-    transform:translateY(-3px);
-
-    border-color:#ff3131;
-
-    box-shadow:
-    0 0 20px rgba(255,0,0,.25);
-}
-
-
-/* IMAGEM VERMELHA */
-
-.skin-image{
-
-    height:260px;
-
-    background:
-
-    radial-gradient(
-        circle at center,
-        #ff2626 0%,
-        #970000 38%,
-        #210000 72%,
-        #080000 100%
-    );
-
-    position:relative;
-
-    overflow:hidden;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-bottom:1px solid #421111;
-}
-
-
-/* LUZES LATERAIS */
-
-.skin-image:before{
-
-    content:"";
-
-    position:absolute;
-
-    left:10px;
-
-    top:0;
-
-    width:8px;
-
-    height:100%;
-
-    background:white;
-
-    box-shadow:
-    0 0 18px white,
-    0 0 35px red;
-}
-
-.skin-image:after{
-
-    content:"";
-
-    position:absolute;
-
-    right:10px;
-
-    top:0;
-
-    width:8px;
-
-    height:100%;
-
-    background:white;
-
-    box-shadow:
-    0 0 18px white,
-    0 0 35px red;
-}
-
-
-/* DESENHO DA SKIN */
-
-.skin-symbol{
-
-    position:relative;
-
-    z-index:2;
-
-    width:170px;
-
-    height:170px;
-
-    border-radius:35px;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #ff4d4d,
-        #7b0000
-    );
-
-    border:6px solid #160000;
-
-    box-shadow:
-
-    0 0 20px #ff0000,
-
-    inset 0 0 25px
-    rgba(255,255,255,.3);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:80px;
-
-    font-weight:900;
-
-    color:white;
-
-    text-shadow:
-
-    0 0 10px white,
-
-    0 0 20px #ff0000;
-}
-
-
-/* VARIAÇÕES */
-
-.skin-symbol.blue{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #00bfff,
-        #101070
-    );
-}
-
-.skin-symbol.purple{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #cc4dff,
-        #290050
-    );
-}
-
-.skin-symbol.orange{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #ffb000,
-        #b53000
-    );
-}
-
-.skin-symbol.green{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #38ff55,
-        #006b19
-    );
-}
-
-.skin-symbol.yellow{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #fff400,
-        #d97c00
-    );
-}
-
-.skin-symbol.white{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        white,
-        #777;
-    );
-
-    color:#5b00a8;
-}
-
-
-/* =========================
-CARRINHO
-========================= */
+/* ================= CARRINHO ================= */
 
 .cart{
-
     position:fixed;
 
-    right:-410px;
-
+    right:-420px;
     top:0;
 
-    width:390px;
-
+    width:400px;
     height:100vh;
 
     background:#101016;
@@ -632,25 +304,23 @@ CARRINHO
 
     padding:22px;
 
-    transition:.3s;
+    overflow-y:auto;
 
-    overflow:auto;
+    transition:.3s;
 }
 
 .cart.active{
-
     right:0;
 }
 
 .close{
-
     float:right;
 
     background:none;
 
-    border:0;
-
     color:white;
+
+    border:none;
 
     font-size:30px;
 
@@ -658,18 +328,16 @@ CARRINHO
 }
 
 .cartitem{
-
     background:#191923;
-
-    border-radius:10px;
 
     padding:12px;
 
     margin:10px 0;
+
+    border-radius:10px;
 }
 
 .row{
-
     display:flex;
 
     justify-content:space-between;
@@ -677,43 +345,50 @@ CARRINHO
     gap:10px;
 }
 
-.qty button{
+.qty{
+    margin-top:10px;
+}
 
+.qty button{
     background:#7b2cff;
 
     color:white;
 
-    border:0;
+    border:none;
 
     border-radius:6px;
 
     padding:5px 10px;
 
-    margin:8px 5px 0 0;
+    margin-right:7px;
 
     cursor:pointer;
 }
 
+.totalbox{
+    margin-top:20px;
 
-/* =========================
-BOTÃO PIX
-========================= */
+    font-size:20px;
+
+    color:#b878ff;
+
+    font-weight:bold;
+}
 
 .checkout{
-
-    margin-top:16px;
-
     width:100%;
 
+    margin-top:15px;
+
     padding:15px;
-
-    border:0;
-
-    border-radius:10px;
 
     background:#7b2cff;
 
     color:white;
+
+    border:none;
+
+    border-radius:10px;
 
     font-weight:bold;
 
@@ -723,397 +398,228 @@ BOTÃO PIX
 }
 
 .checkout:hover{
-
     background:#914cff;
 }
 
-
-/* =========================
-RODAPÉ
-========================= */
+/* ================= RODAPÉ ================= */
 
 footer{
-
     text-align:center;
 
-    padding:25px;
+    padding:30px;
 
     color:#777;
 }
 
-
-/* =========================
-CELULAR
-========================= */
+/* ================= CELULAR ================= */
 
 @media(max-width:650px){
 
     .grid{
-
-        grid-template-columns:1fr;
-    }
-
-    #skinsGrid{
-
         grid-template-columns:1fr;
     }
 
     .hero h1{
-
-        font-size:34px;
+        font-size:35px;
     }
 
     .cart{
-
         width:100%;
-
         right:-100%;
     }
 
-    .card img{
-
+    .card img,
+    .noimage{
         height:auto;
-
         aspect-ratio:16/9;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-TOPO
-========================= -->
+<!-- ================= TOPO ================= -->
 
 <header>
 
 <div class="logo">
-
-FullStop
-<span>STORE</span>
-
+    FullStop <span>STORE</span>
+    <span class="verified">✓</span>
 </div>
 
-
-<button
-class="cartbtn"
-onclick="toggleCart()">
-
-🛒
-<span id="count">0</span>
-
+<button class="cartbtn" onclick="toggleCart()">
+    🛒 <span id="count">0</span>
 </button>
 
 </header>
 
 
-
-<!-- =========================
-CAPA
-========================= -->
+<!-- ================= CAPA ================= -->
 
 <section class="hero">
 
 <h1>
-
-FULLSTOP
-
-<span>STORE</span>
-
+    FULLSTOP
+    <span>STORE</span>
 </h1>
 
 <p>
-
-Frutas Normais
-•
-
-PERM
-•
-
-Skins
-
+    Frutas Normais • Frutas PERM • Skins • Game Pass
 </p>
 
 </section>
 
 
-
-<!-- =========================
-ABAS
-========================= -->
+<!-- ================= ABAS ================= -->
 
 <div class="tabs">
 
-
-<button
-
-class="tab active"
-
+<button class="tab active"
 onclick="openTab('normal',this)">
-
 🍎 Frutas Normais
-
 </button>
 
-
-
-<button
-
-class="tab"
-
+<button class="tab"
 onclick="openTab('perm',this)">
-
 💎 Frutas PERM
-
 </button>
 
-
-
-<button
-
-class="tab"
-
+<button class="tab"
 onclick="openTab('skins',this)">
-
 🎨 Skins
-
 </button>
 
+<button class="tab"
+onclick="openTab('gamepass',this)">
+🎮 GAME PASS
+</button>
 
 </div>
 
 
+<!-- ================= FRUTAS NORMAIS ================= -->
 
-<!-- =========================
-FRUTAS NORMAIS
-========================= -->
-
-<section
-
-id="normal"
-
-class="section active">
-
+<section id="normal" class="section active">
 
 <h2 class="title">
-
 🟣 Frutas Míticas
-
 </h2>
 
-
 <p class="subtitle">
-
 Listadas de 2 em 2
-
 </p>
 
-
-<div
-
-class="grid"
-
-id="mythical">
-
-</div>
-
+<div class="grid" id="mythical"></div>
 
 
 <h2 class="title legend">
-
 🟡 Frutas Lendárias
-
 </h2>
 
-
 <p class="subtitle">
-
 Listadas de 2 em 2
-
 </p>
 
-
-<div
-
-class="grid"
-
-id="legendary">
-
-</div>
-
+<div class="grid" id="legendary"></div>
 
 </section>
 
 
+<!-- ================= PERM ================= -->
 
-<!-- =========================
-PERM
-========================= -->
-
-<section
-
-id="perm"
-
-class="section">
-
+<section id="perm" class="section">
 
 <h2 class="title">
-
 💎 Frutas PERM
-
 </h2>
 
-
 <p class="subtitle">
-
-Míticas e Lendárias listadas de 2 em 2
-
+Produtos listados de 2 em 2
 </p>
 
-
-<div
-
-class="grid"
-
-id="perms">
-
-</div>
-
+<div class="grid" id="perms"></div>
 
 </section>
 
 
+<!-- ================= SKINS ================= -->
 
-<!-- =========================
-SKINS
-========================= -->
-
-<section
-
-id="skins"
-
-class="section">
-
+<section id="skins" class="section">
 
 <h2 class="title">
-
-🎨 Skins de Frutas
-
+🎨 Skins
 </h2>
 
-
 <p class="subtitle">
-
 Skins listadas de 2 em 2
-
 </p>
 
-
-<div
-
-id="skinsGrid">
-
-</div>
-
+<div class="grid" id="skinsGrid"></div>
 
 </section>
 
 
+<!-- ================= GAME PASS ================= -->
 
-<!-- =========================
-CARRINHO
-========================= -->
+<section id="gamepass" class="section">
 
-<div
+<h2 class="title">
+🎮 GAME PASS
+</h2>
 
-class="cart"
+<p class="subtitle">
+Game Pass disponíveis
+</p>
 
-id="cart">
+<div class="grid" id="gamepassGrid"></div>
+
+</section>
 
 
-<button
+<!-- ================= CARRINHO ================= -->
 
-class="close"
+<div class="cart" id="cart">
 
+<button class="close"
 onclick="toggleCart()">
-
 ×
-
-
 </button>
 
-
-<h2>
-
-🛒 Carrinho
-
-</h2>
-
+<h2>🛒 Carrinho</h2>
 
 <br>
-
 
 <div id="cartItems">
-
 Carrinho vazio.
-
 </div>
 
-
-<br>
-
-
-<div class="price">
-
-Total:
-
-<span id="total">
-
-R$ 0,00
-
-</span>
-
+<div class="totalbox">
+Total: <span id="total">R$ 0,00</span>
 </div>
 
-
-
-<button
-
-class="checkout"
-
+<button class="checkout"
 onclick="checkout()">
-
 💜 PAGAR COM PIX
-
 </button>
 
-
 </div>
-
 
 
 <footer>
-
 © 2026 FullStop STORE
-
 </footer>
-
 
 
 <script>
 
-
-/* =========================
+/* =====================================
 FRUTAS MÍTICAS
-========================= */
+===================================== */
 
-const myth=[
+const myth = [
 
 ["Gravity","gravity.jpg","R$ 0,00"],
 
@@ -1144,18 +650,17 @@ const myth=[
 ];
 
 
-
-/* =========================
+/* =====================================
 FRUTAS LENDÁRIAS
-========================= */
+===================================== */
 
-const legend=[
+const legend = [
 
 ["Buddha","buddha.jpg","R$ 5,00"],
 
 ["Portal","portal.jpg","R$ 6,00"],
 
-["Rumble","rumble.jpg","R$ 12,00"],
+["Rumble","rumble.jpg","R$ 20,00"],
 
 ["Blizzard","blizzard.jpg","R$ 0,00"],
 
@@ -1176,173 +681,163 @@ const legend=[
 ];
 
 
-
-/* =========================
+/* =====================================
 FRUTAS PERM
-========================= */
+===================================== */
 
-const perms=[
+const perms = [
 
-["Dragon","dragon.jpg","R$ 165,00"],
+["Dragon PERM","perm-dragon.jpg","R$ 165,00"],
 
-["Kitsune","kitsune.jpg","R$ 132,00"],
+["Kitsune PERM","perm-kitsune.jpg","R$ 132,00"],
 
-["Control","control.jpg","R$ —"],
+["Control PERM","perm-control.jpg","R$ 0,00"],
 
-["Magnete","magnete.jpg","R$ —"],
+["Yeti PERM","perm-yeti.jpg","R$ 100,00"],
 
-["Yeti","yeti.jpg","R$ 100,00"],
+["Tiger PERM","perm-tiger.jpg","R$ 100,00"],
 
-["Tiger","tiger.jpg","R$ 100,00"],
+["Shadow PERM","perm-shadow.jpg","R$ 0,00"],
 
-["Shadow","shadow.jpg","R$ —"],
+["Gas PERM","perm-gas.jpg","R$ 0,00"],
 
-["Gas","gass.jpg","R$ —"],
+["Venom PERM","perm-venom.jpg","R$ 80,00"],
 
-["Venom","venom.jpg","R$ 80,00"],
+["Dough PERM","perm-dough.jpg","R$ 79,00"],
 
-["Dough","dough.jpg","R$ 79,00"],
+["Gravity PERM","perm-gravity.jpg","R$ 75,00"],
 
-["Mammoth","mamuth.jpg","R$ —"],
+["Blizzard PERM","perm-blizzard.jpg","R$ 75,00"],
 
-["T-Rex","t-rex.jpg","R$ —"],
+["Portal PERM","perm-portal.jpg","R$ 66,00"],
 
-["Gravity","gravity.jpg","R$ 75,00"],
-
-["Blizzard","blizzard.jpg","R$ 75,00"],
-
-["Pain","pain.jpg","R$ —"],
-
-["Lightning","lightning.jpg","R$ —"],
-
-["Portal","portal.jpg","R$ 66,00"],
-
-["Sound","sound.jpg","R$ 62,00"],
-
-["Buddha","buddha.jpg","R$ —"],
-
-["Quake","quake.jpg","R$ —"]
+["Sound PERM","perm-sound.jpg","R$ 62,00"]
 
 ];
 
 
+/* =====================================
+SKINS
+===================================== */
 
-/* =========================
-16 SKINS
-========================= */
+const skins = [
 
-const skins=[
+["RABID BLADE","skin-rabid.jpg","R$ 300,00"],
 
-["RABID BLADE","⚔","R$ 300,00","blue"],
+["KITSUNE GALAXY","skin-kitsune-galaxy.jpg","R$ 280,00"],
 
-["KITSUNE GALAXY","狐","R$ 280,00","purple"],
+["CRIMSON KITSUNE","skin-crimson.jpg","R$ 250,00"],
 
-["CRIMSON KITSUNE","狐","R$ 250,00","orange"],
+["DRAGON EMBER","skin-dragon-ember.jpg","R$ 175,00"],
 
-["DRAGON EMBER","🐉","R$ 175,00","orange"],
+["RUNIC","skin-runic.jpg","R$ 200,00"],
 
-["RUNIC","✦","R$ 200,00","purple"],
+["MEME","skin-meme.jpg","R$ 150,00"],
 
-["MEME","◉","R$ 150,00","orange"],
+["PURPLE","skin-purple.jpg","R$ 120,00"],
 
-["PURPLE","✧","R$ 120,00","purple"],
+["SUPER SPIRIT PAIN","skin-spirit.jpg","R$ 100,00"],
 
-["SUPER SPIRIT PAIN","☁","R$ 100,00","blue"],
+["RED","skin-red.jpg","R$ 80,00"],
 
-["RED","◆","R$ 80,00",""],
+["DOG BLADE","skin-dog.jpg","R$ 70,00"],
 
-["DOG BLADE","⚔","R$ 70,00","yellow"],
+["YELLOW","skin-yellow.jpg","R$ 65,00"],
 
-["YELLOW","✦","R$ 65,00","yellow"],
+["PORTAL DIVINE","skin-portal.jpg","R$ 45,00"],
 
-["PORTAL DIVINE","◎","R$ 45,00","white"],
+["STARLIGHT","skin-starlight.jpg","R$ 65,00"],
 
-["STARLIGHT","★","R$ 65,00","yellow"],
+["CELESTIAL","skin-celestial.jpg","R$ 45,00"],
 
-["CELESTIAL","☾","R$ 45,00","purple"],
+["FIEND","skin-fiend.jpg","R$ 55,00"],
 
-["FIEND","☠","R$ 55,00","orange"],
-
-["WEREWOLF","◈","R$ 60,00","purple"]
+["WEREWOLF","skin-werewolf.jpg","R$ 60,00"]
 
 ];
 
 
+/* =====================================
+GAME PASS
+===================================== */
 
-/* =========================
+const gamepasses = [
+
+["2X MONEY","gamepass-money.jpg","R$ 0,00"],
+
+["2X MASTERY","gamepass-mastery.jpg","R$ 0,00"],
+
+["FAST BOATS","gamepass-boats.jpg","R$ 0,00"],
+
+["FRUIT NOTIFIER","gamepass-notifier.jpg","R$ 0,00"],
+
+["DARK BLADE","gamepass-darkblade.jpg","R$ 0,00"],
+
+["2X BOSS DROPS","gamepass-boss.jpg","R$ 0,00"]
+
+];
+
+
+/* =====================================
 CARRINHO
-========================= */
+===================================== */
 
-let cart=[];
+let cart = [];
 
 
-
-/* =========================
-MOSTRAR FRUTAS
-========================= */
+/* =====================================
+MOSTRAR PRODUTOS
+===================================== */
 
 function render(id,list,tag){
 
-document.getElementById(id).innerHTML=
+document.getElementById(id).innerHTML =
 
-list.map(f=>{
+list.map(item => {
 
-let n=f[0];
+let nome = item[0];
 
-let im=f[1];
+let imagem = item[1];
 
-let p=f[2];
-
+let preco = item[2];
 
 return `
 
 <article class="card">
 
-
 <img
+src="assets/${imagem}"
+alt="${nome}"
 
-src="assets/${im}"
+onerror="this.style.display='none';
+this.nextElementSibling.style.display='flex'">
 
-alt="${n}">
-
+<div class="noimage" style="display:none">
+🎮
+</div>
 
 <div class="info">
 
-
 <div class="tag">
-
 ${tag}
-
 </div>
-
 
 <h3>
-
-${n}
-
+${nome}
 </h3>
 
-
 <div class="price">
-
-${p}
-
+${preco}
 </div>
 
-
-<button
-
-class="add"
-
-onclick="addItem('${n}','${p}')">
+<button class="add"
+onclick="addItem('${nome}','${preco}')">
 
 🛒 Adicionar
 
 </button>
 
-
 </div>
-
 
 </article>
 
@@ -1353,237 +848,105 @@ onclick="addItem('${n}','${p}')">
 }
 
 
-
-/* =========================
-MOSTRAR SKINS
-========================= */
-
-function renderSkins(){
-
-document.getElementById("skinsGrid").innerHTML=
-
-skins.map((skin,index)=>{
-
-
-let nome=skin[0];
-
-let simbolo=skin[1];
-
-let preco=skin[2];
-
-let cor=skin[3];
-
-
-let estoque=
-
-10+(index*3)%14;
-
-
-return `
-
-
-<article class="skin-card">
-
-
-<div class="skin-image">
-
-
-<div
-
-class="skin-symbol ${cor}">
-
-${simbolo}
-
-</div>
-
-
-</div>
-
-
-
-<div class="info">
-
-
-<div class="tag">
-
-SKIN
-
-</div>
-
-
-<h3>
-
-${nome}
-
-</h3>
-
-
-<div style="color:#ffd34d;font-size:13px;margin-bottom:8px">
-
-★★★★★
-
-<span style="color:#999">
-
-4,9 (avaliações)
-
-</span>
-
-</div>
-
-
-<div class="price">
-
-${preco}
-
-</div>
-
-
-<div style="color:#bbb;font-size:13px;margin-bottom:12px">
-
-📦 Estoque: ${estoque}
-
-</div>
-
-
-<button
-
-class="add"
-
-onclick="addItem('${nome}','${preco}')">
-
-🛒 Comprar agora
-
-</button>
-
-
-</div>
-
-
-</article>
-
-
-`;
-
-}).join("");
-
-}
-
-
-
-/* =========================
+/* =====================================
 RENDERIZAR
-========================= */
+===================================== */
 
 render(
-
 "mythical",
-
 myth,
-
 "MÍTICA"
-
 );
 
-
 render(
-
 "legendary",
-
 legend,
-
 "LENDÁRIA"
-
 );
-
 
 render(
-
 "perms",
-
 perms,
-
 "PERM"
+);
 
+render(
+"skinsGrid",
+skins,
+"SKIN"
+);
+
+render(
+"gamepassGrid",
+gamepasses,
+"GAME PASS"
 );
 
 
-/* SKINS */
-
-renderSkins();
-
-
-
-/* =========================
+/* =====================================
 ABAS
-========================= */
+===================================== */
 
-function openTab(id,b){
+function openTab(id,button){
 
 document
-
 .querySelectorAll(".section")
+.forEach(section => {
 
-.forEach(x=>
+section.classList.remove("active");
 
-x.classList.remove("active")
-
-);
+});
 
 
 document
-
 .querySelectorAll(".tab")
+.forEach(tab => {
 
-.forEach(x=>
+tab.classList.remove("active");
 
-x.classList.remove("active")
-
-);
+});
 
 
 document
-
 .getElementById(id)
-
 .classList.add("active");
 
 
-b.classList.add("active");
+button
+.classList.add("active");
 
 }
 
 
-
-/* =========================
-ABRIR CARRINHO
-========================= */
+/* =====================================
+CARRINHO ABRIR
+===================================== */
 
 function toggleCart(){
 
 document
-
 .getElementById("cart")
-
 .classList.toggle("active");
 
 }
 
 
-
-/* =========================
+/* =====================================
 ADICIONAR ITEM
-========================= */
+===================================== */
 
-function addItem(n,p){
+function addItem(nome,preco){
 
-let x=
+let item =
 
-cart.find(i=>i.n===n);
+cart.find(
+x => x.nome === nome
+);
 
 
-if(x){
+if(item){
 
-x.q++;
+item.quantidade++;
 
 }
 
@@ -1591,146 +954,119 @@ else{
 
 cart.push({
 
-n:n,
+nome:nome,
 
-p:p,
+preco:preco,
 
-q:1
+quantidade:1
 
 });
 
 }
 
 
-update();
+updateCart();
 
 
 document
-
 .getElementById("cart")
-
 .classList.add("active");
 
 }
 
 
-
-/* =========================
-CALCULAR PREÇO
-========================= */
+/* =====================================
+CONVERTER PREÇO
+===================================== */
 
 function priceNumber(preco){
 
-let numero=
+let numero =
 
 preco
-
 .replace("R$","")
-
 .replace(/\./g,"")
-
 .replace(",",".")
-
 .trim();
 
 
-let valor=
+let valor =
 
 parseFloat(numero);
 
 
 return isNaN(valor)
 
-?0
+? 0
 
-:valor;
+: valor;
 
 }
 
 
-
-/* =========================
+/* =====================================
 ATUALIZAR CARRINHO
-========================= */
+===================================== */
 
-function update(){
+function updateCart(){
 
-let count=0;
+let quantidadeTotal = 0;
 
-let txt="";
+let total = 0;
 
-let total=0;
-
-
-cart.forEach((x,i)=>{
+let texto = "";
 
 
-count+=x.q;
+cart.forEach((item,index) => {
 
 
-let valor=
-
-priceNumber(x.p);
-
-
-total+=
-
-valor*x.q;
+quantidadeTotal +=
+item.quantidade;
 
 
+total +=
 
-txt+=`
+priceNumber(item.preco)
+
+*
+
+item.quantidade;
+
+
+texto += `
 
 <div class="cartitem">
 
-
 <div class="row">
 
-
 <b>
-
-${x.n}
-
+${item.nome}
 </b>
 
-
 <span>
-
-${x.p}
-
+${item.preco}
 </span>
 
-
 </div>
-
 
 
 <div class="qty">
 
-
 <button
-
-onclick="change(${i},-1)">
-
+onclick="changeItem(${index},-1)">
 −
-
 </button>
 
 
-${x.q}
+${item.quantidade}
 
 
 <button
-
-onclick="change(${i},1)">
-
+onclick="changeItem(${index},1)">
 +
-
 </button>
-
 
 </div>
-
 
 </div>
 
@@ -1740,116 +1076,127 @@ onclick="change(${i},1)">
 
 
 document
-
 .getElementById("cartItems")
+.innerHTML =
 
-.innerHTML=
-
-txt ||
+texto ||
 
 "Carrinho vazio.";
 
 
 document
-
 .getElementById("count")
+.textContent =
 
-.textContent=count;
+quantidadeTotal;
 
 
 document
-
 .getElementById("total")
+.textContent =
 
-.textContent=
+"R$ "
 
-"R$ "+
++
 
-total.toFixed(2)
-
+total
+.toFixed(2)
 .replace(".",",");
 
 }
 
 
-
-/* =========================
+/* =====================================
 MUDAR QUANTIDADE
-========================= */
+===================================== */
 
-function change(i,d){
+function changeItem(index,mudanca){
 
-cart[i].q+=d;
+cart[index].quantidade += mudanca;
 
 
-if(cart[i].q<=0){
+if(
 
-cart.splice(i,1);
+cart[index].quantidade <= 0
+
+){
+
+cart.splice(index,1);
 
 }
 
 
-update();
+updateCart();
 
 }
 
 
-
-/* =========================
-PAGAR COM PIX
-========================= */
+/* =====================================
+FINALIZAR PEDIDO
+===================================== */
 
 function checkout(){
 
-
 if(!cart.length){
 
-return alert(
-
+alert(
 "Seu carrinho está vazio!"
-
 );
+
+return;
 
 }
 
 
-/* PEDIDO */
+let pedido =
 
-let pedido=
-
-
-"🟣 PEDIDO - FULLSTOP STORE 🟣\n\n"+
+"🟣 PEDIDO - FULLSTOP STORE 🟣\n\n";
 
 
-cart.map(x=>
+cart.forEach(item => {
 
-"• "+
+pedido +=
 
-x.n+
+"• "
 
-" x"+
++
 
-x.q+
+item.nome
 
-" - "+
++
 
-x.p
+" x"
 
-).join("\n");
++
+
+item.quantidade
+
++
+
+" - "
+
++
+
+item.preco
+
++
+
+"\n";
+
+});
 
 
-pedido+=
+pedido +=
 
-"\n\n💜 PAGAMENTO: PIX";
+"\n💜 PAGAMENTO: PIX";
 
 
-/* COPIAR */
+if(navigator.clipboard){
 
 navigator.clipboard
+.writeText(pedido);
 
-&&
-
-navigator.clipboard.writeText(pedido);
+}
 
 
 /* ABRIR DISCORD */
@@ -1863,20 +1210,15 @@ window.open(
 );
 
 
-/* AVISO */
-
 alert(
 
-"Pedido copiado! Você será direcionado para o canal de pagamento PIX."
+"Pedido copiado! Agora cole a mensagem no Discord."
 
 );
 
 }
 
-
 </script>
 
-
 </body>
-
 </html>
