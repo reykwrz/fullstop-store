@@ -1,162 +1,2201 @@
-/* ================= FINALIZAR PEDIDO ================= */
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FullStop STORE</title>
+
+<style>
+
+/* =========================
+CONFIGURAÇÃO GERAL
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#07070a;
+    color:#fff;
+}
+
+
+/* =========================
+TOPO
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 5%;
+
+    background:#0d0d12;
+
+    border-bottom:2px solid #7b2cff;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#b878ff;
+}
+
+.verified{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#7b2cff;
+
+    font-size:12px;
+
+    margin-left:5px;
+}
+
+.cartbtn{
+
+    padding:11px 16px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#7b2cff;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+CAPA
+========================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:60px 15px;
+
+    background:
+    radial-gradient(
+        circle,
+        #40136e,
+        #09090d 65%
+    );
+}
+
+.hero h1{
+
+    font-size:46px;
+
+    font-weight:900;
+}
+
+.hero h1 span{
+
+    color:#b878ff;
+}
+
+.hero p{
+
+    margin-top:12px;
+
+    color:#ccc;
+}
+
+
+/* =========================
+ABAS
+========================= */
+
+.tabs{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    padding:25px 15px;
+}
+
+.tab{
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    border:1px solid #333;
+
+    background:#15151c;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.tab:hover{
+
+    border-color:#a45cff;
+}
+
+.tab.active{
+
+    background:#7b2cff;
+}
+
+
+/* =========================
+SEÇÕES
+========================= */
+
+.section{
+
+    display:none;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:10px 16px 50px;
+}
+
+.section.active{
+
+    display:block;
+}
+
+.title{
+
+    text-align:center;
+
+    margin:25px 0 8px;
+
+    color:#b878ff;
+
+    font-size:27px;
+}
+
+.legend{
+
+    color:#ffd34d;
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#999;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+}
+
+
+/* =========================
+CARD
+========================= */
+
+.card{
+
+    background:#111119;
+
+    border:1px solid #2d2d37;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:.2s;
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#914cff;
+}
+
+.card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* =========================
+INFORMAÇÕES
+========================= */
+
+.info{
+
+    padding:14px;
+}
+
+.tag{
+
+    display:inline-block;
+
+    padding:5px 9px;
+
+    border-radius:15px;
+
+    background:#2a1740;
+
+    color:#c89cff;
+
+    font-size:11px;
+
+    margin-bottom:8px;
+}
+
+.info h3{
+
+    margin:4px 0 10px;
+}
+
+.price{
+
+    color:#b878ff;
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+}
+
+.add{
+
+    width:100%;
+
+    padding:11px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#7b2cff;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.add:hover{
+
+    background:#914cff;
+}
+
+
+/* =========================
+SKINS
+========================= */
+
+.skin-image{
+
+    height:250px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #ff3333,
+        #850000 45%,
+        #130000 100%
+    );
+}
+
+.skin-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border:3px solid rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 30px red,
+    0 0 70px red;
+}
+
+.skin-symbol{
+
+    z-index:2;
+
+    width:145px;
+
+    height:145px;
+
+    border-radius:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:65px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4b4b,
+        #660000
+    );
+
+    border:5px solid #210000;
+
+    box-shadow:
+    0 0 25px red;
+}
+
+.skin-purple{
+
+    background:
+    radial-gradient(
+        circle,
+        #a733ff,
+        #39006d 50%,
+        #100019
+    );
+}
+
+.skin-blue{
+
+    background:
+    radial-gradient(
+        circle,
+        #00bfff,
+        #003b70 50%,
+        #000b18
+    );
+}
+
+.skin-orange{
+
+    background:
+    radial-gradient(
+        circle,
+        #ff8c00,
+        #8f2500 50%,
+        #180600
+    );
+}
+
+.skin-green{
+
+    background:
+    radial-gradient(
+        circle,
+        #27e85f,
+        #006b20 50%,
+        #001408
+    );
+}
+
+.skin-yellow{
+
+    background:
+    radial-gradient(
+        circle,
+        #ffe600,
+        #9b6200 50%,
+        #181000
+    );
+}
+
+
+/* =========================
+GAME PASS
+========================= */
+
+.gamepass-image{
+
+    height:250px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle,
+        #6734b7,
+        #241041 55%,
+        #09070d
+    );
+}
+
+.gamepass-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(190,130,255,.4);
+
+    box-shadow:
+    0 0 25px #8b3dff,
+    0 0 60px #5e20c0;
+}
+
+.gamepass-icon{
+
+    z-index:2;
+
+    font-size:90px;
+
+    filter:
+    drop-shadow(
+        0 0 15px #b878ff
+    );
+}
+
+.gamepass-image::after{
+
+    content:"GAME PASS";
+
+    position:absolute;
+
+    bottom:15px;
+
+    font-weight:bold;
+
+    color:#d8baff;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================
+CARRINHO
+========================= */
+
+.cart{
+
+    position:fixed;
+
+    right:-410px;
+
+    top:0;
+
+    width:390px;
+
+    height:100vh;
+
+    padding:22px;
+
+    background:#101016;
+
+    border-left:2px solid #7b2cff;
+
+    z-index:200;
+
+    transition:.3s;
+
+    overflow:auto;
+}
+
+.cart.active{
+
+    right:0;
+}
+
+.close{
+
+    float:right;
+
+    background:none;
+
+    border:0;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+.cartitem{
+
+    background:#191923;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    border-radius:10px;
+}
+
+.row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+}
+
+.qty button{
+
+    padding:5px 10px;
+
+    margin:8px 5px 0 0;
+
+    border:0;
+
+    border-radius:6px;
+
+    background:#7b2cff;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.checkout{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:16px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#7b2cff;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+FINALIZAR PEDIDO
+========================= */
 
 .checkout-modal{
+
     display:none;
+
     position:fixed;
+
     inset:0;
+
+    background:rgba(0,0,0,.75);
+
     z-index:500;
-    background:rgba(0,0,0,.78);
-    align-items:center;
+
     justify-content:center;
-    padding:15px;
+
+    align-items:center;
+
+    padding:20px;
 }
 
 .checkout-modal.active{
+
     display:flex;
 }
 
 .checkout-box{
+
     width:100%;
+
     max-width:500px;
+
     max-height:90vh;
+
     overflow:auto;
-    position:relative;
-    padding:25px;
-    border-radius:20px;
-    background:linear-gradient(180deg,#17131f,#0c0c11);
+
+    background:#111119;
+
     border:1px solid #7b2cff;
-    box-shadow:0 0 40px rgba(123,44,255,.35);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    position:relative;
+
+    box-shadow:
+    0 0 40px rgba(123,44,255,.35);
 }
 
 .checkout-close{
+
     position:absolute;
-    top:10px;
+
     right:15px;
+
+    top:10px;
+
     background:none;
-    border:0;
+
+    border:none;
+
     color:white;
-    font-size:30px;
+
+    font-size:32px;
+
     cursor:pointer;
 }
 
 .checkout-header{
+
     text-align:center;
-    padding-bottom:20px;
-    border-bottom:1px solid #30283b;
+
+    margin-bottom:25px;
 }
 
 .checkout-icon{
-    width:65px;
-    height:65px;
-    margin:0 auto 12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#7b2cff;
-    font-size:30px;
+
+    font-size:50px;
+
+    margin-bottom:10px;
 }
 
 .checkout-header h2{
-    font-size:26px;
+
+    color:#c89cff;
+
+    margin-bottom:8px;
 }
 
 .checkout-header p{
-    margin-top:8px;
+
     color:#aaa;
+
     font-size:14px;
 }
 
 .checkout-products{
-    padding:20px 0;
+
+    background:#191923;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:15px;
 }
 
 .checkout-products h3{
+
     margin-bottom:12px;
 }
 
 .checkout-product{
+
     display:flex;
+
     justify-content:space-between;
-    align-items:center;
+
     gap:10px;
-    padding:12px;
-    margin-bottom:8px;
-    border-radius:10px;
-    background:#1b1922;
+
+    padding:8px 0;
+
+    border-bottom:1px solid #333;
 }
 
-.checkout-product-name{
-    font-weight:bold;
-}
+.checkout-product:last-child{
 
-.checkout-product-qty{
-    margin-top:4px;
-    color:#aaa;
-    font-size:13px;
-}
-
-.checkout-product-price{
-    color:#c68cff;
-    font-weight:bold;
+    border-bottom:none;
 }
 
 .checkout-total{
+
     display:flex;
+
     justify-content:space-between;
-    padding:16px;
+
+    padding:15px;
+
     border-radius:12px;
-    background:#21162e;
-    font-size:19px;
+
+    background:#25153b;
+
+    font-size:20px;
+
+    margin-bottom:15px;
 }
 
 .checkout-total b{
-    color:#c68cff;
+
+    color:#d0a6ff;
 }
 
 .pix-info{
-    margin-top:18px;
+
     padding:15px;
+
     border-radius:12px;
-    background:rgba(123,44,255,.12);
-    border:1px solid rgba(123,44,255,.35);
+
+    background:#15151c;
+
+    border:1px solid #3c2850;
+
+    margin-bottom:15px;
 }
 
 .pix-title{
-    margin-bottom:8px;
-    color:#c68cff;
+
     font-weight:bold;
+
+    color:#c89cff;
+
+    margin-bottom:8px;
 }
 
 .pix-info p{
+
     color:#aaa;
-    font-size:13px;
+
+    font-size:14px;
+
     line-height:1.5;
 }
 
-.copy-order,
-.confirm-order{
-    width:100%;
-    padding:14px;
-    border-radius:10px;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
 .copy-order{
-    margin-top:18px;
-    background:#24212b;
-    border:1px solid #40384a;
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#292936;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
 }
 
 .confirm-order{
-    margin-top:10px;
-    border:0;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
     background:#7b2cff;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
     font-size:16px;
 }
 
-.confirm-order:hover{
-    background:#914cff;
+
+/* =========================
+RODAPÉ
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#777;
 }
+
+
+/* =========================
+CELULAR
+========================= */
+
+@media(max-width:650px){
+
+    .grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+
+        font-size:34px;
+    }
+
+    .cart{
+
+        width:100%;
+
+        right:-100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+TOPO
+========================= -->
+
+<header>
+
+<div class="logo">
+
+FullStop <span>STORE</span>
+
+<span class="verified">
+
+✓
+
+</span>
+
+</div>
+
+
+<button class="cartbtn" onclick="toggleCart()">
+
+🛒
+
+<span id="count">
+
+0
+
+</span>
+
+</button>
+
+</header>
+
+
+<!-- =========================
+CAPA
+========================= -->
+
+<section class="hero">
+
+<h1>
+
+FULLSTOP
+
+<span>STORE</span>
+
+</h1>
+
+<p>
+
+Frutas Normais • Frutas PERM • Skins • GAME PASS
+
+</p>
+
+</section>
+
+
+<!-- =========================
+ABAS
+========================= -->
+
+<div class="tabs">
+
+
+<button
+class="tab active"
+onclick="openTab('normal',this)">
+
+🍎 Frutas Normais
+
+</button>
+
+
+<button
+class="tab"
+onclick="openTab('perm',this)">
+
+💎 Frutas PERM
+
+</button>
+
+
+<button
+class="tab"
+onclick="openTab('skins',this)">
+
+🎨 Skins
+
+</button>
+
+
+<button
+class="tab"
+onclick="openTab('gamepass',this)">
+
+🎮 GAME PASS
+
+</button>
+
+
+</div>
+
+
+<!-- =========================
+FRUTAS NORMAIS
+========================= -->
+
+<section id="normal" class="section active">
+
+<h2 class="title">
+
+🟣 Frutas Míticas
+
+</h2>
+
+<p class="subtitle">
+
+Produtos listados de 2 em 2
+
+</p>
+
+<div class="grid" id="mythical">
+
+</div>
+
+
+<h2 class="title legend">
+
+🟡 Frutas Lendárias
+
+</h2>
+
+<p class="subtitle">
+
+Produtos listados de 2 em 2
+
+</p>
+
+<div class="grid" id="legendary">
+
+</div>
+
+</section>
+
+
+<!-- =========================
+PERM
+========================= -->
+
+<section id="perm" class="section">
+
+<h2 class="title">
+
+💎 Frutas PERM
+
+</h2>
+
+<div class="grid" id="perms">
+
+</div>
+
+</section>
+
+
+<!-- =========================
+SKINS
+========================= -->
+
+<section id="skins" class="section">
+
+<h2 class="title">
+
+🎨 Skins
+
+</h2>
+
+<p class="subtitle">
+
+16 Skins
+
+</p>
+
+<div class="grid" id="skinsGrid">
+
+</div>
+
+</section>
+
+
+<!-- =========================
+GAME PASS
+========================= -->
+
+<section id="gamepass" class="section">
+
+<h2 class="title">
+
+🎮 GAME PASS
+
+</h2>
+
+<div class="grid" id="gamepassGrid">
+
+</div>
+
+</section>
+
+
+<!-- =========================
+CARRINHO
+========================= -->
+
+<div class="cart" id="cart">
+
+<button
+class="close"
+onclick="toggleCart()">
+
+×
+
+</button>
+
+
+<h2>
+
+🛒 Carrinho
+
+</h2>
+
+<br>
+
+
+<div id="cartItems">
+
+Carrinho vazio.
+
+</div>
+
+<br>
+
+
+<div class="price">
+
+Total:
+
+<span id="total">
+
+R$ 0,00
+
+</span>
+
+</div>
+
+
+<button
+class="checkout"
+onclick="checkout()">
+
+💜 FINALIZAR PEDIDO
+
+</button>
+
+</div>
+
+
+<!-- =========================
+FINALIZAR PEDIDO
+========================= -->
+
+<div
+class="checkout-modal"
+id="checkoutModal">
+
+
+<div class="checkout-box">
+
+
+<button
+class="checkout-close"
+onclick="closeCheckout()">
+
+×
+
+</button>
+
+
+<div class="checkout-header">
+
+<div class="checkout-icon">
+
+🛒
+
+</div>
+
+
+<h2>
+
+Finalizar Pedido
+
+</h2>
+
+
+<p>
+
+Confira seus produtos antes de continuar.
+
+</p>
+
+</div>
+
+
+<div class="checkout-products">
+
+<h3>
+
+Seu pedido
+
+</h3>
+
+
+<div id="checkoutItems">
+
+</div>
+
+</div>
+
+
+<div class="checkout-total">
+
+<span>
+
+Total
+
+</span>
+
+
+<b id="checkoutTotal">
+
+R$ 0,00
+
+</b>
+
+</div>
+
+
+<div class="pix-info">
+
+<div class="pix-title">
+
+💜 Pagamento via PIX
+
+</div>
+
+
+<p>
+
+Confira seu pedido e continue para a próxima etapa.
+
+</p>
+
+</div>
+
+
+<button
+class="copy-order"
+onclick="copyOrder()">
+
+📋 Copiar pedido
+
+</button>
+
+
+<button
+class="confirm-order"
+onclick="confirmOrder()">
+
+💜 Confirmar pedido
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+RODAPÉ
+========================= -->
+
+<footer>
+
+© 2026 FullStop STORE
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+FRUTAS MÍTICAS
+========================= */
+
+const myth=[
+
+["Gravity","gravity.jpg","R$ 5,00"],
+
+["Mammoth","mamuth.jpg","R$ 6,00"],
+
+["T-Rex","t-rex.jpg","R$ 6,00"],
+
+["Dough","dough.jpg","R$ 8,00"],
+
+["Shadow","shadow.jpg","R$ 6,00"],
+
+["Venom","venom.jpg","R$ 7,00"],
+
+["Gas","gass.jpg","R$ 8,00"],
+
+["Spirit","spirit.jpg","R$ 8,00"],
+
+["Control","control.jpg","R$ 20,00"],
+
+["Kitsune","kitsune.jpg","R$ 35,00"],
+
+["Dragon","dragon.jpg","R$ 75,00"],
+
+["Yeti","yeti.jpg","R$ 10,00"],
+
+["Tiger","tiger.jpg","R$ 10,00"]
+
+];
+
+
+/* =========================
+FRUTAS LENDÁRIAS
+========================= */
+
+const legend=[
+
+["Buddha","buddha.jpg","R$ 5,00"],
+
+["Portal","portal.jpg","R$ 6,00"],
+
+["Rumble","rumble.jpg","R$ 20,00"],
+
+["Blizzard","blizzard.jpg","R$ 5,00"],
+
+["Phoenix","phoenix.jpg","R$ 6,00"],
+
+["Pain","pain.jpg","R$ 7,00"],
+
+["Lightning","lightning.jpg","R$ 8,00"],
+
+["Sound","sound.jpg","R$ 6,00"],
+
+["Quake","quake.jpg","R$ 4,00"],
+
+["Love","love.jpg","R$ 4,00"],
+
+["Spider","spider.jpg","R$ 3,00"]
+
+];
+
+
+/* =========================
+FRUTAS PERM
+========================= */
+
+const perms=[
+
+["Dragon PERM","dragon.jpg","R$ 165,00"],
+
+["Kitsune PERM","kitsune.jpg","R$ 132,00"],
+
+["Control PERM","control.jpg","R$ 95,00"],
+
+["Yeti PERM","yeti.jpg","R$ 100,00"],
+
+["Tiger PERM","tiger.jpg","R$ 100,00"],
+
+["Shadow PERM","shadow.jpg","R$ 75,00"],
+
+["Gas PERM","gass.jpg","R$ 85,00"],
+
+["Venom PERM","venom.jpg","R$ 80,00"],
+
+["Dough PERM","dough.jpg","R$ 79,00"],
+
+["Mammoth PERM","mamuth.jpg","R$ 70,00"],
+
+["T-Rex PERM","t-rex.jpg","R$ 85,00"],
+
+["Gravity PERM","gravity.jpg","R$ 75,00"],
+
+["Blizzard PERM","blizzard.jpg","R$ 75,00"],
+
+["Portal PERM","portal.jpg","R$ 66,00"],
+
+["Sound PERM","sound.jpg","R$ 62,00"],
+
+["Buddha PERM","buddha.jpg","R$ 55,00"]
+
+];
+
+
+/* =========================
+SKINS
+========================= */
+
+const skins=[
+
+["RABID BLADE","⚔","R$ 300,00",""],
+
+["KITSUNE GALAXY","🦊","R$ 280,00","skin-purple"],
+
+["CRIMSON KITSUNE","🦊","R$ 250,00","skin-orange"],
+
+["DRAGON EMBER","🐉","R$ 175,00","skin-orange"],
+
+["RUNIC","✦","R$ 200,00","skin-purple"],
+
+["MEME","◉","R$ 150,00","skin-yellow"],
+
+["PURPLE","✧","R$ 120,00","skin-purple"],
+
+["SUPER SPIRIT PAIN","☁","R$ 100,00","skin-blue"],
+
+["RED","◆","R$ 80,00",""],
+
+["DOG BLADE","⚔","R$ 70,00","skin-yellow"],
+
+["YELLOW","✦","R$ 65,00","skin-yellow"],
+
+["PORTAL DIVINE","◎","R$ 45,00","skin-blue"],
+
+["STARLIGHT","★","R$ 65,00","skin-yellow"],
+
+["CELESTIAL","☾","R$ 45,00","skin-purple"],
+
+["FIEND","☠","R$ 55,00","skin-orange"],
+
+["WEREWOLF","🐺","R$ 60,00","skin-green"]
+
+];
+
+
+/* =========================
+GAME PASS
+========================= */
+
+const gamepasses=[
+
+["2X MONEY","💰","R$ 20,00"],
+
+["2X MASTERY","⚡","R$ 20,00"],
+
+["FAST BOATS","🚤","R$ 15,00"],
+
+["FRUIT NOTIFIER","🔔","R$ 30,00"],
+
+["DARK BLADE","⚔️","R$ 40,00"],
+
+["2X BOSS DROPS","👑","R$ 20,00"],
+
+["2X EXP","⭐","R$ 15,00"],
+
+["FAST SPAWN","🚀","R$ 15,00"]
+
+];
+
+
+/* =========================
+CARRINHO
+========================= */
+
+let cart=[];
+
+
+/* =========================
+MOSTRAR FRUTAS
+========================= */
+
+function renderFruits(id,list,tag){
+
+document.getElementById(id).innerHTML=
+
+list.map(item=>`
+
+<article class="card">
+
+<img
+src="assets/${item[1]}"
+alt="${item[0]}">
+
+<div class="info">
+
+<div class="tag">
+
+${tag}
+
+</div>
+
+<h3>
+
+${item[0]}
+
+</h3>
+
+<div class="price">
+
+${item[2]}
+
+</div>
+
+<button
+class="add"
+onclick="addItem('${item[0]}','${item[2]}')">
+
+🛒 Adicionar
+
+</button>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
+
+
+/* =========================
+MOSTRAR SKINS
+========================= */
+
+function renderSkins(){
+
+document.getElementById("skinsGrid").innerHTML=
+
+skins.map(item=>`
+
+<article class="card">
+
+<div class="skin-image ${item[3]}">
+
+<div class="skin-symbol">
+
+${item[1]}
+
+</div>
+
+</div>
+
+<div class="info">
+
+<div class="tag">
+
+SKIN
+
+</div>
+
+<h3>
+
+${item[0]}
+
+</h3>
+
+<div class="price">
+
+${item[2]}
+
+</div>
+
+<button
+class="add"
+onclick="addItem('${item[0]}','${item[2]}')">
+
+🛒 Adicionar
+
+</button>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
+
+
+/* =========================
+MOSTRAR GAME PASS
+========================= */
+
+function renderGamePass(){
+
+document.getElementById("gamepassGrid").innerHTML=
+
+gamepasses.map(item=>`
+
+<article class="card">
+
+<div class="gamepass-image">
+
+<div class="gamepass-icon">
+
+${item[1]}
+
+</div>
+
+</div>
+
+<div class="info">
+
+<div class="tag">
+
+GAME PASS
+
+</div>
+
+<h3>
+
+${item[0]}
+
+</h3>
+
+<div class="price">
+
+${item[2]}
+
+</div>
+
+<button
+class="add"
+onclick="addItem('${item[0]}','${item[2]}')">
+
+🛒 Adicionar
+
+</button>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
+
+
+/* =========================
+RENDERIZAR
+========================= */
+
+renderFruits(
+"mythical",
+myth,
+"MÍTICA"
+);
+
+renderFruits(
+"legendary",
+legend,
+"LENDÁRIA"
+);
+
+renderFruits(
+"perms",
+perms,
+"PERM"
+);
+
+renderSkins();
+
+renderGamePass();
+
+
+/* =========================
+ABAS
+========================= */
+
+function openTab(id,button){
+
+document
+.querySelectorAll(".section")
+.forEach(section=>
+section.classList.remove("active")
+);
+
+
+document
+.querySelectorAll(".tab")
+.forEach(tab=>
+tab.classList.remove("active")
+);
+
+
+document
+.getElementById(id)
+.classList.add("active");
+
+
+button.classList.add("active");
+
+}
+
+
+/* =========================
+CARRINHO
+========================= */
+
+function toggleCart(){
+
+document
+.getElementById("cart")
+.classList.toggle("active");
+
+}
+
+
+function addItem(nome,preco){
+
+let item=
+
+cart.find(x=>x.nome===nome);
+
+
+if(item){
+
+item.quantidade++;
+
+}
+
+else{
+
+cart.push({
+
+nome:nome,
+
+preco:preco,
+
+quantidade:1
+
+});
+
+}
+
+
+updateCart();
+
+
+document
+.getElementById("cart")
+.classList.add("active");
+
+}
+
+
+/* =========================
+CONVERTER PREÇO
+========================= */
+
+function priceNumber(preco){
+
+let numero=
+
+preco
+.replace("R$","")
+.replace(/\./g,"")
+.replace(",",".");
+
+
+return parseFloat(numero)||0;
+
+}
+
+
+/* =========================
+ATUALIZAR CARRINHO
+========================= */
+
+function updateCart(){
+
+let quantidadeTotal=0;
+
+let total=0;
+
+let texto="";
+
+
+cart.forEach((item,index)=>{
+
+
+quantidadeTotal+=item.quantidade;
+
+
+total+=
+
+priceNumber(item.preco)
+
+*
+
+item.quantidade;
+
+
+texto+=`
+
+<div class="cartitem">
+
+<div class="row">
+
+<b>
+
+${item.nome}
+
+</b>
+
+<span>
+
+${item.preco}
+
+</span>
+
+</div>
+
+
+<div class="qty">
+
+<button
+onclick="changeItem(${index},-1)">
+
+−
+
+</button>
+
+
+${item.quantidade}
+
+
+<button
+onclick="changeItem(${index},1)">
+
++
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+document
+.getElementById("cartItems")
+.innerHTML=
+
+texto ||
+
+"Carrinho vazio.";
+
+
+document
+.getElementById("count")
+.textContent=
+
+quantidadeTotal;
+
+
+document
+.getElementById("total")
+.textContent=
+
+"R$ "
+
++
+
+total
+.toFixed(2)
+.replace(".",",");
+
+}
+
+
+/* =========================
+MUDAR QUANTIDADE
+========================= */
+
+function changeItem(index,valor){
+
+cart[index].quantidade+=valor;
+
+
+if(cart[index].quantidade<=0){
+
+cart.splice(index,1);
+
+}
+
+
+updateCart();
+
+}
+
+
+/* =========================
+ABRIR CHECKOUT
+========================= */
+
+function checkout(){
+
+if(!cart.length){
+
+alert(
+
+"Seu carrinho está vazio!"
+
+);
+
+return;
+
+}
+
+
+let texto="";
+
+let total=0;
+
+
+cart.forEach(item=>{
+
+
+let valor=
+
+priceNumber(item.preco);
+
+
+total+=
+
+valor
+
+*
+
+item.quantidade;
+
+
+texto+=`
+
+<div class="checkout-product">
+
+<span>
+
+${item.nome} x${item.quantidade}
+
+</span>
+
+<b>
+
+${item.preco}
+
+</b>
+
+</div>
+
+`;
+
+});
+
+
+document
+.getElementById("checkoutItems")
+.innerHTML=
+
+texto;
+
+
+document
+.getElementById("checkoutTotal")
+.textContent=
+
+"R$ "
+
++
+
+total
+.toFixed(2)
+.replace(".",",");
+
+
+document
+.getElementById("checkoutModal")
+.classList.add("active");
+
+}
+
+
+/* =========================
+FECHAR CHECKOUT
+========================= */
+
+function closeCheckout(){
+
+document
+.getElementById("checkoutModal")
+.classList.remove("active");
+
+}
+
+
+/* =========================
+CRIAR TEXTO DO PEDIDO
+========================= */
+
+function getOrderText(){
+
+let pedido=
+
+"🟣 PEDIDO - FULLSTOP STORE 🟣\n\n";
+
+
+let total=0;
+
+
+cart.forEach(item=>{
+
+
+pedido+=
+
+"• "
+
++
+
+item.nome
+
++
+
+" x"
+
++
+
+item.quantidade
+
++
+
+" - "
+
++
+
+item.preco
+
++
+
+"\n";
+
+
+total+=
+
+priceNumber(item.preco)
+
+*
+
+item.quantidade;
+
+});
+
+
+pedido+=
+
+"\nTOTAL: R$ "
+
++
+
+total
+.toFixed(2)
+.replace(".",",");
+
+
+pedido+=
+
+"\n\n💜 PAGAMENTO: PIX";
+
+
+return pedido;
+
+}
+
+
+/* =========================
+COPIAR PEDIDO
+========================= */
+
+function copyOrder(){
+
+let pedido=
+
+getOrderText();
+
+
+if(navigator.clipboard){
+
+navigator.clipboard
+.writeText(pedido)
+
+.then(()=>{
+
+alert(
+
+"Pedido copiado com sucesso!"
+
+);
+
+});
+
+}
+
+else{
+
+alert(
+
+"Não foi possível copiar automaticamente."
+
+);
+
+}
+
+}
+
+
+/* =========================
+CONFIRMAR PEDIDO
+========================= */
+
+function confirmOrder(){
+
+let pedido=
+
+getOrderText();
+
+
+if(navigator.clipboard){
+
+navigator.clipboard
+.writeText(pedido);
+
+}
+
+
+/* NÃO ABRE DISCORD */
+
+alert(
+
+"✅ Pedido confirmado!\n\nSeu pedido foi copiado. O pagamento PIX ainda precisa ser configurado na loja."
+
+);
+
+}
+
+
+</script>
+
+</body>
+
+</html>
